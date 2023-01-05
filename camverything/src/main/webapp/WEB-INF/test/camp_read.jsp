@@ -72,18 +72,25 @@
           	</div>
         </div>
       </div>
-      <div class="col-lg-4" id="font">
-       <h2>인천청라국제도시 <br/>해변공원캠핑장</h2>
-		  <p>청라국제도시의 해변공원 내에 위치한 도심 캠핑장 캠핑을 위해 이동하는 거리가 아까운 이들에게 최적인 도심지 캠핑장이다. </p>
-		  <p>	인천 서구 첨단서로 190 (청라동)</p>
-		  <p>	일반야영장</p>
-		<p>예약일자</p> 
-		<p>예약자명</p> 
-		<p>예약인원</p> 
-		<p>부가옵션</p> 
-		<button type="button" class="btn btn-primary btn-lg">예약하기</button>
-     </div>
-  </div>
+	     <form role="form" class="form-horizontal" 
+					action="/camp/res/insert.do" method="POST"
+					name="myform">
+	      <div class="col-lg-4" id="font">
+	       <h2>인천청라국제도시 <br/>해변공원캠핑장</h2>
+			  <p>청라국제도시의 해변공원 내에 위치한 도심 캠핑장 캠핑을 위해 이동하는 거리가 아까운 이들에게 최적인 도심지 캠핑장이다. </p>
+			  <p>	인천 서구 첨단서로 190 (청라동)</p>
+			  <p>	일반야영장</p>
+			<p>예약넘버 <input type="text" name="res_no"></p>
+			<p>사업자번호 <input type="text" name="business_no"></p>
+			<p>아이디 <input type="text" name="id"></p>
+			<p>체크인 <input type="text" name="checkin"></p>
+			<p>체크아웃 <input type="text" name="checkout"></p>
+			<p>이름 <input type="text" name="name"></p>
+			
+			<button type="submit" class="btn btn-primary btn-lg">예약하기</button>
+	     </div>
+  		</form>
+ 	 </div>
   </div>
  <hr>
 <div class="container">

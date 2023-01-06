@@ -90,5 +90,7 @@ p {
 		<!-- 이곳에 footer화면을 연결하세요" -->
 		<tiles:insertAttribute name="footer"></tiles:insertAttribute>
 	</div>
+	
+	
 </body>
 </html>

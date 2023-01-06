@@ -26,6 +26,7 @@
 		<beans:property name="order" value="2"/>
 	</beans:bean>
 	
+	
 	<!-- ============================tiles기반으로 화면을 만드는 ViewResolver를 등록=============================-->
 	<!-- 1. tiles설정파일을 읽어서 작업할 수 있도록 설정파일을 등록 -->
 	<beans:bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
@@ -35,6 +36,7 @@
 			</beans:list>
 		</beans:property>
 	</beans:bean>
+	
 	<!-- 2. Tiles기반으로 뷰를 만들 수 있도록 ViewResolver를 등록 -->
 	<beans:bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<beans:property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>
@@ -52,6 +54,7 @@
 	<beans:bean id="template" class="org.springframework.jdbc.core.JdbcTemplate">
 		<beans:constructor-arg ref="ds"/>
 	</beans:bean>
+	
 	<!-- spring과 mybatis연결클래스(mybatis에서 오라클을 연결)-->
 	<beans:bean id ="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<beans:property name="dataSource" ref="ds"/>
@@ -62,6 +65,7 @@
 	<beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<beans:constructor-arg ref="sqlSessionFactory"/>
 	</beans:bean>
+	
 	<!-- ===========파일업로드=============== -->
 	<beans:bean id="multipartResolver"
 	class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
@@ -70,7 +74,7 @@
 	
 	
 	<!-- =========빈을 생성하기 위해 패키지등록========== -->	
-	<context:component-scan base-package="com.multi.camp" />
+	<context:component-scan base-package="com" />
 	
-	
+
 </beans:beans>

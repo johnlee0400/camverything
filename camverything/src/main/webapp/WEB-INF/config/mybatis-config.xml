@@ -4,9 +4,9 @@
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		
+		<typeAlias type="com.multi.camp.register.MemberDTO" alias="member"/>
 	</typeAliases>
 	<mappers>
-	
+		<mapper resource="com/multi/camp/mapper/register.xml"/>
 	</mappers>
 </configuration>

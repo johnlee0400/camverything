@@ -18,8 +18,8 @@
 	<h4>회원 가입</h4>
 	<div class="container-fluid">
 			
-			<form role="form" class="form-horizontal"	action="/camverything/join/insert.do" 
-				method="POST"		name="myform">
+			<form role="form" class="form-horizontal"	action="/camp/main/insert.do" 
+				method="POST"	name="myform">
 				<fieldset>
 					<div id="legend">
 					</div>
@@ -56,59 +56,29 @@
 
 						</div>
 					</div>
-					<!-- 비밀번호 확인 집어넣기 -->
+					 
+					<!-- 비밀번호 확인 집어넣기--> 
 					<div class="form-group">
-						<!-- 패스워드-->
-						<label class="control-label col-sm-3" for="pass2">비밀번호 확인</label>
+						
+						<label class="control-label col-sm-3" for="pass">비밀번호 확인</label>
 						<div class="col-sm-3">
-							<input type="text" id="pass2" name="pass2"
+							<input type="text" id="pass2" name="pass"
 								placeholder="패스워드" class="form-control" >
 
-						</div>
+						</div> 
+					
 					</div>
 					<div class="form-group">
 						<!-- 이름-->
-						<label class="control-label col-sm-3" for="orgname">이름</label>
+						<label class="control-label col-sm-3" for="name">이름</label>
 						<div class="col-sm-3">
 							<input type="text" id="orgname" name="name"
 								placeholder="이름" class="form-control" minlength="3" >
 
 						</div>
 					</div>
-					<div class="form-group">
-						<!-- 핸드폰-->
-						<label class="control-label col-sm-3" for="tel">핸드폰번호</label>
-						<div>
-						 <div class="col-sm-3"> 
-							<input type="text" id="tel" name="tel" class="form-control" size="3" >
-							<!-- 
-							<input type="text" id="tel" name="tel2"	class="form-control" size="4" >
-							<input type="text" id="tel" name="tel3" class="form-control" size="4" > -->
-						</div>
-					</div>
-					
-					<div class="form-group">
-						<!-- 생년월일-->
-						<label class="control-label col-sm-3" for="ssn">생년월일 6자리</label>
-						<div class="col-sm-3">
-							<input type="text" id="ssn" name="ssn" class="form-control" size="6">
-
-						</div>
-					</div>
-					
-					<div class="form-group">
-						<!-- 이메일-->
-						<label class="control-label col-sm-3" for="grade" >이메일</label>
-						<div class="col-sm-3" >
-							<input type="text" id="email" name="email" class="form-control" >
-							<select name="mail" class="form-control" >
-								<option>@naver.com</option>
-								<option>@hanmail.net</option>
-								<option>직접 입력</option> <!-- 직접 입력 선택하면 입력 칸으로 어떻게 넘어가게 할지..? -->
-							</select>
-						</div>
-					</div>
-					
+							
+											
 					<div class="form-group">
 						<label class="col-sm-3 col-sm-3 control-label">우편번호</label>
 						<div class="col-sm-3">
@@ -137,19 +107,48 @@
 					
 					</div>
 					
+					<div class="form-group">
+						<!-- 핸드폰-->
+						<label class="control-label col-sm-3" for="tel">핸드폰번호</label>
+						<div>
+						 <div class="col-sm-3"> 
+							<input type="text" id="tel" name="tel" class="form-control" size="3" >
+							<!-- 
+							<input type="text" id="tel" name="tel2"	class="form-control" size="4" >
+							<input type="text" id="tel" name="tel3" class="form-control" size="4" > -->
+						</div>
+					</div>
 													
 					<div class="form-group">
 						<!-- 닉네임-->
-						<label class="control-label col-sm-3" for="nick">닉네임</label>
+						<label class="control-label col-sm-3" for="nickname">닉네임</label>
 						<div class="col-sm-3">
-							<input type="text" id="nick" name="nick" 
+							<input type="text" id="nick" name="nickname" 
 							placeholder="두 글자 이상 입력하세요"
 								class="form-control" minlength="2" >
 
 						</div>
 					</div>
-					
-					
+					<div class="form-group">
+						<!-- 생년월일-->
+						<label class="control-label col-sm-3" for="birth">생년월일 6자리</label>
+						<div class="col-sm-3">
+							<input type="text" id="ssn" name="birth" class="form-control" size="6">
+
+						</div>
+					</div>
+					<div class="form-group">
+						<!-- 이메일-->
+						<label class="control-label col-sm-3" for="email" >이메일</label>
+						<div class="col-sm-3" >
+							<input type="text" id="email" name="email" class="form-control" >
+							<select name="mail" class="form-control" >
+								<option>@naver.com</option>
+								<option>@hanmail.net</option>
+								<option>직접 입력</option> <!-- 직접 입력 선택하면 입력 칸으로 어떻게 넘어가게 할지..? -->
+							</select>
+						</div>
+					</div>
 						
 					
 					<div class="form-group">

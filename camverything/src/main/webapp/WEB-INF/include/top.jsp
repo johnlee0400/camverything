@@ -71,7 +71,7 @@
                                     <ul class="nav navbar-nav">                                                                                                                                     
                                         <li><a href="/camp/test/index">Home</a></li>
                                         <li><a href="/camp/test/search">상세 검색</a></li>
-                                        <li><a href="/camp/test/board">커뮤니티</a></li>
+                                        <li><a href="/camp/board/list.do?category=all">커뮤니티</a></li>
                                         <li><a href="/camp/test/product">용품구매</a></li>
                                         <li><a href="/camp/test/servicecenter">고객센터</a></li>
                                     </ul>

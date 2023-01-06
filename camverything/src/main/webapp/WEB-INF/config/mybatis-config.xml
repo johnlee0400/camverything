@@ -4,9 +4,9 @@
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		
+		<typeAlias type="com.multi.camp.reservation.ReservationDTO" alias="reservation"/>
 	</typeAliases>
 	<mappers>
-	
+		<mapper resource = "com/multi/camp/mapper/reservation.xml"/>
 	</mappers>
 </configuration>

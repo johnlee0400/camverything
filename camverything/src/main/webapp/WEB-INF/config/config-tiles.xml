@@ -31,7 +31,9 @@
 	
 	
 	
-	
+	<!-- <definition name="test/datepicker" extends="indexTemplate">
+	<put-attribute name="content" value="/WEB-INF/test/datepicker.jsp"/>
+	</definition> -->
 	
 	<definition name="test/campread" extends="indexTemplate">
 	<put-attribute name="content" value="/WEB-INF/test/camp_read.jsp"/>

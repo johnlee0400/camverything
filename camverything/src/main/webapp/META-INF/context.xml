@@ -29,6 +29,6 @@
     <Resource name="jdbc/myspring" auth="Container"
               type="javax.sql.DataSource" driverClassName="oracle.jdbc.driver.OracleDriver"
               url="jdbc:oracle:thin:@127.0.0.1:1521:xe"
-              username="erp" password="erp" maxTotal="20" maxIdle="10"
+              username="camp" password="camp" maxTotal="20" maxIdle="10"
               maxWaitMillis="-1"/>
 </Context>

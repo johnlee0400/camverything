@@ -22,10 +22,12 @@
 		<put-attribute name="content"
 			value="/WEB-INF/main/search.jsp" />
 	</definition>
+
 	<definition name="board" extends="indexTemplate">
 		<put-attribute name="content"
 			value="/WEB-INF/board/board.jsp" />
 	</definition>
+
 	<definition name="product" extends="indexTemplate">
 		<put-attribute name="content"
 			value="/WEB-INF/product/productpage.jsp" />
@@ -45,6 +47,9 @@
 	</definition>
 	
 	
+	<definition name="test/campread" extends="indexTemplate">
+	<put-attribute name
+	="content" value="/WEB-INF/test/camp_read.jsp"/>
 	
 	
 	

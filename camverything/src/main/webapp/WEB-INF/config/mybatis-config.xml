@@ -4,6 +4,13 @@
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
+		<typeAlias type="com.multi.camp.board.BoardDTO" alias="board"/>
+		<typeAlias type="com.multi.camp.board.BoardFileDTO" alias="boardfile"/>
+		<typeAlias type="com.multi.camp.member.MemberDTO" alias="member"/>
+	</typeAliases>
+	<mappers>
+		<mapper resource="mapper/board.xml"/>
+		<mapper resource="mapper/member.xml"/>
 
 		<typeAlias type="com.multi.camp.camping.campingDTO" alias="campingList"/>
 	</typeAliases>

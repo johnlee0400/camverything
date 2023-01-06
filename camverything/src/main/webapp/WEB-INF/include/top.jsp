@@ -40,7 +40,7 @@
 			<div class="col-lg-2">
 				<nav>
 	                <ul class="nav navbar-nav" id="topendfont">                                                                                                                                     
-	                    <li><a href="#">고객센터</a></li>
+	                    <li><a href="/camp/test/servicecenter">고객센터</a></li>
 	                    <li><a href="#">로그인</a></li>
 	                    <li><a href="#">회원가입</a></li>
 	                </ul>
@@ -71,7 +71,7 @@
                                     <ul class="nav navbar-nav">                                                                                                                                     
                                         <li><a href="/camp/test/index">Home</a></li>
                                         <li><a href="/camp/test/search">상세 검색</a></li>
-                                        <li><a href="/camp/test/board">커뮤니티</a></li>
+                                        <li><a href="/camp/board/list.do?category=all">커뮤니티</a></li>
                                         <li><a href="/camp/camping/list.do">캠핑장목록</a></li>
                                         <li><a href="/camp/test/product">용품구매</a></li>
                                         <li><a href="/camp/test/servicecenter">고객센터</a></li>

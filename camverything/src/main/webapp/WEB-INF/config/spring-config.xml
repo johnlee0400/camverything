@@ -21,7 +21,7 @@
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="prefix" value="/WEB-INF/" />
 		<beans:property name="suffix" value=".jsp" />
 		<beans:property name="order" value="2"/>
 	</beans:bean>
@@ -71,7 +71,6 @@
 	
 	<!-- =========빈을 생성하기 위해 패키지등록========== -->	
 	<context:component-scan base-package="com.multi.camp" />
-	
 	
 	
 </beans:beans>

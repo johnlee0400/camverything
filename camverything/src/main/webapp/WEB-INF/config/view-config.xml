@@ -8,16 +8,9 @@
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
 <view-controller path="/test/index" view-name="index"/>
-
 <view-controller path="/test/search" view-name="search"/>
-
-<view-controller path="/test/board" view-name="board"/>
 <view-controller path="/test/product" view-name="product"/>
 <view-controller path="/test/servicecenter" view-name="servicecenter"/>
-
-
-
-
 <view-controller path="/test/camp_read" view-name="test/campread"/>
 	
 	

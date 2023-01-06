@@ -11,5 +11,16 @@
 	<mappers>
 		<mapper resource="mapper/board.xml"/>
 		<mapper resource="mapper/member.xml"/>
+
+		<typeAlias type="com.multi.camp.camping.campingDTO" alias="campingList"/>
+	</typeAliases>
+	<mappers>
+		<mapper resource="com/multi/camp/mapper/campingList.xml"/>
+
+		<typeAlias type="com.multi.camp.reservation.ReservationDTO" alias="reservation"/>
+	</typeAliases>
+	<mappers>
+		<mapper resource = "com/multi/camp/mapper/reservation.xml"/>
+
 	</mappers>
 </configuration>

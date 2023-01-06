@@ -2,11 +2,14 @@ package com.multi.camp.reservation;
 
 import java.sql.Date;
 
+//@DateTimeFormat(pattern = "yyyy-MM-dd")
+//Date mydate;  Date형식으로 하고싶으면
+
 public class ReservationDTO {
 	private int res_no;
 	private int business_no;
 	private String id;
-	private Date checkin;
+	private String checkin;
 	private Date checkout;
 	private String name;
 	
@@ -15,7 +18,7 @@ public class ReservationDTO {
 	}
 	
 	
-	public ReservationDTO(int res_no, int business_no, String id, Date checkin, Date checkout, String name) {
+	public ReservationDTO(int res_no, int business_no, String id, String checkin, Date checkout, String name) {
 		super();
 		this.res_no = res_no;
 		this.business_no = business_no;
@@ -56,12 +59,12 @@ public class ReservationDTO {
 	}
 
 
-	public Date getCheckin() {
+	public String getCheckin() {
 		return checkin;
 	}
 
 
-	public void setCheckin(Date checkin) {
+	public void setCheckin(String checkin) {
 		this.checkin = checkin;
 	}
 

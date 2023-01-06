@@ -37,6 +37,8 @@
 		 /*  alert("hihih"); */
 		  $("#result").attr("src","/camp/images/camp3.jpg");
 	  })
+	  //=============================
+	  $('.datepicker').datepicker();
 	  
   })
 </script>
@@ -84,7 +86,7 @@
 			<p>사업자번호 <input type="text" name="business_no"></p>
 			<p>아이디 <input type="text" name="id"></p>
 			<p>체크인 <input type="text" name="checkin"></p>
-			<p>체크아웃 <input type="text" name="checkout"></p>
+			<!-- <p>체크아웃 <input type="text" name="checkout"></p> -->
 			<p>이름 <input type="text" name="name"></p>
 			
 			<button type="submit" class="btn btn-primary btn-lg">예약하기</button>
@@ -139,7 +141,16 @@
 </div>  
 <hr> 
 <div class="container">
-	
+
+<div class="datepicker"></div>
+<input data-provide="datepicker">
+
+<div class="input-group date" data-provide="datepicker-inline">
+    <input type="text" class="form-control">
+    <div class="input-group-addon">
+        <span class="glyphicon glyphicon-th"></span>
+    </div>
+</div>
 </div>
 </body>
 </html>

@@ -6,7 +6,6 @@
   
 <mapper namespace="com.multi.camp.reservation">
 	<insert id="insert" parameterType="reservation">
-		insert into reservation 
-		values (#{res_no},#{business_no},#{id},#{checkin},#{checkout},#{name})
+		insert into reservation values (#{res_no},#{business_no},#{id},to_date(#{checkin},'mm-dd-yyyy hh24:mi:ss'),sysdate,#{name})
 	</insert>
 </mapper>

@@ -31,6 +31,7 @@
 			value="/WEB-INF/product/productpage.jsp" />
 	</definition>
 	<definition name="servicecenter" extends="indexTemplate">
+
 		<put-attribute name="content"
 			value="/WEB-INF/main/servicecenter.jsp" />
 	</definition>
@@ -38,6 +39,19 @@
 		<put-attribute name="content"
 			value="/WEB-INF/camping/campingList.jsp" />
 	</definition>
+
+
+	<put-attribute name="content" value="/WEB-INF/main/servicecenter.jsp"/>
+	</definition>
+	
+	
+	
+	
+	
+	<!-- <definition name="test/datepicker" extends="indexTemplate">
+	<put-attribute name="content" value="/WEB-INF/test/datepicker.jsp"/>
+	</definition> -->
+	
 
 	<definition name="test/campread" extends="indexTemplate">
 		<put-attribute name="content"

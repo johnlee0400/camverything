@@ -12,7 +12,14 @@
 <view-controller path="/test/board" view-name="board"/>
 <view-controller path="/test/product" view-name="product"/>
 <view-controller path="/test/servicecenter" view-name="servicecenter"/>
+
 <view-controller path="/test/camp_read" view-name="test/campread"/>
+
+
+
+
+
+
 	
 	
 </beans:beans>

@@ -4,36 +4,43 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
 	<!-- 템플릿등록 -->
-	<definition name="indexTemplate" template="/WEB-INF/layout/index.jsp">
-		<put-attribute name="content" value="/WEB-INF/include/content.jsp"/>
-		<put-attribute name="top" value="/WEB-INF/include/top.jsp"/>
-		<put-attribute name="footer" value="/WEB-INF/include/footer.jsp"/>
-	</definition> 
-	
+	<definition name="indexTemplate"
+		template="/WEB-INF/layout/index.jsp">
+		<put-attribute name="content"
+			value="/WEB-INF/include/content.jsp" />
+		<put-attribute name="top"
+			value="/WEB-INF/include/top.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/include/footer.jsp" />
+	</definition>
+
 	<!-- 뷰등록 -->
 	<definition name="index" extends="indexTemplate">
 	</definition>
-	
+
 	<definition name="search" extends="indexTemplate">
-	<put-attribute name="content" value="/WEB-INF/main/search.jsp"/>
+		<put-attribute name="content"
+			value="/WEB-INF/main/search.jsp" />
 	</definition>
 	<definition name="board" extends="indexTemplate">
-	<put-attribute name="content" value="/WEB-INF/board/board.jsp"/>
+		<put-attribute name="content"
+			value="/WEB-INF/board/board.jsp" />
 	</definition>
 	<definition name="product" extends="indexTemplate">
-	<put-attribute name="content" value="/WEB-INF/product/productpage.jsp"/>
+		<put-attribute name="content"
+			value="/WEB-INF/product/productpage.jsp" />
 	</definition>
 	<definition name="servicecenter" extends="indexTemplate">
-	<put-attribute name="content" value="/WEB-INF/main/servicecenter.jsp"/>
+		<put-attribute name="content"
+			value="/WEB-INF/main/servicecenter.jsp" />
 	</definition>
-	
-	
-	
-	
-	
-	
-	
+	<definition name="campingList" extends="indexTemplate">
+		<put-attribute name="content"
+			value="/WEB-INF/camping/campingList.jsp" />
+	</definition>
+
 	<definition name="test/campread" extends="indexTemplate">
-	<put-attribute name="content" value="/WEB-INF/test/camp_read.jsp"/>
+		<put-attribute name="content"
+			value="/WEB-INF/test/camp_read.jsp" />
 	</definition>
 </tiles-definitions>

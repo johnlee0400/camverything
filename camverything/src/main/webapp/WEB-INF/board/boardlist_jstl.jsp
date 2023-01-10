@@ -6,8 +6,6 @@
 <head>
 <title>Bootstrap Example</title>
 <meta charset="UTF-8">
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script
@@ -28,11 +26,26 @@
 		});
 	});
 </script>
+<style type="text/css">
+#imageeee {
+  padding-top: 10.5rem;
+  padding-bottom: 15rem;
+  text-align: center;
+  color: #fff;
+  background-image: url("/camp/images/img/bg/board.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+}
+</style>
 </head>
 <body>
-	<h1>JSTL게시판</h1>
-	
-	
+<div id="imageeee">
+	<div class="container">
+		<div class="masthead-subheading"><h1>커뮤니티</h1></div>
+	</div>
+</div>
 	<div style="padding-top: 30px">
 		<div class="col-md-3" style="padding-bottom:10px">
 		    구분:
@@ -79,6 +92,5 @@
 			<li><a href="/camp/board/write.do" style="text-align: right;">글쓰기</a></li>
 		</ul>
 	</form>
-
 </body>
 </html>

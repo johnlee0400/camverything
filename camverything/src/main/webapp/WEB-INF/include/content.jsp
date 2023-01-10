@@ -6,316 +6,429 @@
 <title>Bootstrap Theme Simply Me</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style type="text/css">
-.festival-info:hover .festival-caption {
-  border: 1px solid #c4c4c4;
-  border-top: transparent;
-}
-
-/* line 9, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
-.festival-info:hover .festival-img img {
-  transform: rotate(1deg) scale(1.1);
-  /*그림확대비율*/
-}
-
-/* line 14, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
-.festival-info .festival-img {
-  overflow: hidden;
-}
-
-/* line 16, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
-.festival-info .festival-img img {
-  width: 100%;
-  transform: rotate(0deg) scale(1);
-  -webkit-transition: all 0.6s ease-out 0s;
-  -moz-transition: all 0.6s ease-out 0s;
-  -ms-transition: all 0.6s ease-out 0s;
-  -o-transition: all 0.6s ease-out 0s;
-  transition: all 0.6s ease-out 0s;
-}
-
-/* line 22, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
-.festival-info .festival-caption {
-  padding: 33px 20px 33px 30px;
-  box-shadow: 1.395px 19.951px 38px 0px rgba(0, 0, 0, 0.05);
-  border: 1px solid transparent;
-  border-radius: 0 0 5px 5px;
-  border-top: 0;
-  -webkit-transition: all 0.3s ease-out 0s;
-  -moz-transition: all 0.3s ease-out 0s;
-  -ms-transition: all 0.3s ease-out 0s;
-  -o-transition: all 0.3s ease-out 0s;
-  transition: all 0.3s ease-out 0s;
-}
-
-/* line 31, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
-.festival-info .festival-caption:hover h3 a {
-  color: #dca73a;
-}
-
-/* line 36, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
-.festival-info .festival-caption h3 {
-  color: #112e41;
-  font-size: 25px;
-  font-weight: 600;
-  margin-bottom: 19px;
-  /*글자관련*/
-}
-.font-back-tittle {
-  position: relative;
-  text-align: center;
-}
-
-/* line 79, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
-.font-back-tittle .archivment-front {
-  position: relative;
-  z-index: 9;
-}
-
-/* line 83, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
-.font-back-tittle .archivment-front h3 {
-  color: #112e41;
-  font-size: 50px;
-  font-weight: 700;
-  font-family: 'Noto Serif', serif;
-}
-
-@media (max-width: 767px) {
-  /* line 83, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
-  .font-back-tittle .archivment-front h3 {
-    font-size: 37px;
-  }
-}
-
-/* line 92, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
-.font-back-tittle h3.archivment-back {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-56%);
-  font-size: 130px;
-  font-family: 'Snell Roundhand';
-  font-style: italic;
-  right: 0;
-  left: 0;
-  margin: 0 auto;
-  font-family: 'Noto Serif', serif;
-  color: rgba(17, 46, 65, 0.031);
-}
-
-@media (max-width: 767px) {
-  /* line 92, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
-  .font-back-tittle h3.archivment-back {
-    transform: translateY(-56%);
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  /* line 92, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
-  .font-back-tittle h3.archivment-back {
-    font-size: 93px;
-  }
-}
-
-@media (max-width: 767px) {
-  /* line 92, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
-  .font-back-tittle h3.archivment-back {
-    font-size: 48px;
-  }
-}
-
-/* line 114, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
-.font-back-tittle img {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-56%);
-  right: 0;
-  left: 0;
-  margin: 0 auto;
-}
-.carousel-inner img {/* make all photos black and white */
-  width: 100%; /* Set width to 100% */
-  margin: auto;
-}
-
-.carousel-caption h3 {
-  color: #fff !important;
-}
-
-@media (max-width: 600px) {
-  .carousel-caption {
-    display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
-  }
-}
-</style>
 </head>
 <body>
-		<div class="col-xl-15">
-			<div id="myCarousel" class="carousel slide" data-ride="carousel">
-				<!-- Indicators -->
-				<ol class="carousel-indicators">
-					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel" data-slide-to="1"></li>
-					<li data-target="#myCarousel" data-slide-to="2"></li>
-				</ol>
-
-				<!-- Wrapper for slides -->
-				<div class="carousel-inner" role="listbox">
-					<div class="item active">
-						<img src="/camp/images/test.jpg" alt="New York">
-						<div class="carousel-caption">
-							<h3>To Travel is ti Live.</h3>
-							<!-- 여행하는 것이 곧 삶이다. -->
-							<p>- Hans Christian Andersen -</p>
-						</div>
-					</div>
-
-					<div class="item">
-						<img src="/camp/images/test.jpg" alt="Chicago">
-						<div class="carousel-caption">
-							<h3>Travel and change of place inpact new vigor to the mind.</h3>
-							<!-- 여행이나 장소를 바꾸는 것은 마음에 새로운 활기를 준다 -->
-							<p>- Seneca -</p>
-						</div>
-					</div>
-
-					<div class="item">
-						<img src="/camp/images/test.jpg" alt="Los Angeles">
-						<div class="carousel-caption">
-							<h3>Traveling - it leaves you speechless, then tyens you into a storyteller.</h3>
-							<!-- 여행은 당신으로 하여금 할말을 잃게 만든후,스토리텔러로 변화시켜준다. -->
-							<p>- Ibn Battuta -</p>
-						</div>
-					</div>
-				</div>
-
-				<!-- Left and right controls -->
-				<a class="left carousel-control" href="#myCarousel" role="button"
-					data-slide="prev"> <span
-					class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a> <a class="right carousel-control" href="#myCarousel" role="button"
-					data-slide="next"> <span
-					class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
-			</div>
-		</div>
-<div class="container text-center">
-	<div class="col-sm-12">
-	<div class="text-center">
-		<p>공지사항란</p>
-	</div>
-		<div class="row" >
-			<div class="col-sm-4" >
-				<p>공지사항1</p>
-				<br> <img src="/camp/images/logo.png" alt="Random Name">
-			</div>
-			<div class="col-sm-4">
-				<p>공지사항2</p>
-				<br> <img src="/camp/images/logo.png" alt="Random Name">
-			</div>
-			<div class="col-sm-4">
-				<p>공지사항3</p>
-				<br> <img src="/camp/images/logo.png" alt="Random Name">
-			</div>
-		</div>
-	</div>
-</div>
-
-	<div class="container-fluid bg-2 text-center">
-		<form class="navbar-form navbar-center" action="/action_page.php">
-			<div class="form-group">
-				<input type="text" class="form-control" placeholder="Search"
-					name="search">
-			</div>
-			<button type="submit" class="btn btn-default">Search</button>
-		</form>
-	</div>
-
-	<section class="room-area">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-xl-8">
-					<!--font-back-tittle  -->
-					<div class="font-back-tittle mb-45">
-						<div class="archivment-front">
-							<h3>축제</h3>
-						</div>
-						<h3 class="archivment-back">Festival</h3>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xl-2 col-lg-3 col-md-3">
-					<!-- Single Room -->
-					<div class="festival-info mb-50">
-						<div class="festival-img">
-							<a href="#"><img src="/camp/images/fes_1.jpg" alt=""></a>
-						</div>
-						<div class="festival-caption">
-							<h3>
-								<a href="#">양주 눈꽃 축제</a>
-							</h3>
-							<div class="per-night">
-								<span>11000원 <span>(평일)대인</span></span> <span>2022. 12.
-									23.(금)~2023. 2. 19.(일)</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-2 col-lg-3 col-md-3">
-					<!-- Single Room -->
-					<div class="festival-info mb-50">
-						<div class="festival-img">
-							<a href="#"><img src="/camp/images/fes_1.jpg" alt=""></a>
-						</div>
-						<div class="festival-caption">
-							<h3>
-								<a href="#">양주 눈꽃 축제</a>
-							</h3>
-							<div class="per-night">
-								<span>11000원 <span>(평일)대인</span></span> <span>2022. 12.
-									23.(금)~2023. 2. 19.(일)</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-2 col-lg-3 col-md-3">
-					<!-- Single Room -->
-					<div class="festival-info mb-50">
-						<div class="festival-img">
-							<a href="#"><img src="/camp/images/fes_1.jpg" alt=""></a>
-						</div>
-						<div class="festival-caption">
-							<h3>
-								<a href="#">양주 눈꽃 축제</a>
-							</h3>
-							<div class="per-night">
-								<span>11000원 <span>(평일)대인</span></span> <span>2022. 12.
-									23.(금)~2023. 2. 19.(일)</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-2 col-lg-3 col-md-3">
-					<!-- Single Room -->
-					<div class="festival-info mb-50">
-						<div class="festival-img">
-							<a href="#"><img src="/camp/images/fes_1.jpg" alt=""></a>
-						</div>
-						<div class="festival-caption">
-							<h3>
-								<a href="#">양주 눈꽃 축제</a>
-							</h3>
-							<div class="per-night">
-								<span>11000원 <span>(평일)대인</span></span> <span>2022. 12.
-									23.(금)~2023. 2. 19.(일)</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+ <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">Welcome To Camverything!</div>
+                <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#search">Search</a>
+            </div>
+        </header>
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">공지사항</h2>
+                    <h3 class="section-subheading text-muted">저희 사이트의 변경된 사항을 알아봐요.</h3>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">E-Commerce</h4>
+                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Responsive Design</h4>
+                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Web Security</h4>
+                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio Grid-->
+        <section class="page-section bg-light" id="portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">축제정보</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 1-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="/camp/images/img/portfolio/1.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Threads</div>
+                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 2-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="/camp/images/img/portfolio/2.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Explore</div>
+                                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 3-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="/camp/images/img/portfolio/3.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Finish</div>
+                                <div class="portfolio-caption-subheading text-muted">Identity</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                        <!-- Portfolio item 4-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="/camp/images/img/portfolio/4.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Lines</div>
+                                <div class="portfolio-caption-subheading text-muted">Branding</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                        <!-- Portfolio item 5-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="/camp/images/img/portfolio/5.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Southwest</div>
+                                <div class="portfolio-caption-subheading text-muted">Website Design</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <!-- Portfolio item 6-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="/camp/images/img/portfolio/6.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Window</div>
+                                <div class="portfolio-caption-subheading text-muted">Photography</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About-->
+        <!-- About끝 -->
+        <!-- Team-->
+      <!--  <section class="page-section bg-light" id="team">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">우리의 팀원</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="/camp/images/img/team/johnlee0400.png" alt="..." />
+                            <h4>Johnlee0400</h4>
+                            <p class="text-muted">Team Leader</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="/camp/images/img/team/Ljungyun.png" alt="..." />
+                            <h4>Ljungyun</h4>
+                            <p class="text-muted">Handsome</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="/camp/images/img/team/seounglee.png" alt="..." />
+                            <h4>Seounglee</h4>
+                            <p class="text-muted">Sexy</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="/camp/images/img/team/Soljy.png" alt="..." />
+                            <h4>Soljy</h4>
+                            <p class="text-muted">Schedule Master</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="/camp/images/img/team/10legsquid.png" alt="..." />
+                            <h4>10legsquid</h4>
+                            <p class="text-muted">PuPu</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="/camp/images/img/team/nagam1020.png" alt="..." />
+                            <h4>Nagam1020</h4>
+                            <p class="text-muted">Marketer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">대충빨리제대로.</p></div>
+                </div>
+            </div>
+        </section> -->
+        <!-- Clients-->
+        <!-- Contact-->
+        <!-- Portfolio Modals-->
+        <!-- Portfolio item 1 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="/camp/images/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="/camp/images/img/portfolio/1.jpg" alt="..." />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Threads
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Illustration
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 2 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="/camp/images/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="/camp/images/img/portfolio/2.jpg" alt="..." />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Explore
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Graphic Design
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 3 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="/camp/images/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="/camp/images/img/portfolio/3.jpg" alt="..." />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Finish
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Identity
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 4 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="/camp/images/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="/camp/images/img/portfolio/4.jpg" alt="..." />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Lines
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Branding
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 5 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="/camp/images/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="/camp/images/img/portfolio/5.jpg" alt="..." />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Southwest
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Website Design
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 6 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="/camp/images/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="/camp/images/img/portfolio/6.jpg" alt="..." />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Window
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Photography
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="/camp/common/js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 </html>

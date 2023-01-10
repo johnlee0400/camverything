@@ -1,6 +1,8 @@
 package com.multi.camp.camping;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +30,14 @@ public class campingDAOImpl implements campingDAO {
 	@Override
 	public List<campingDTO> search(String data) {
 		return sqlSession.selectList("com.multi.camp.camping.search", data);
+	}
+
+	@Override
+	public List<campingDTO> search2(String search, String local) {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("local", local);
+		map.put("search", "%"+search+"%");
+		return sqlSession.selectList("com.multi.camp.camping.search2" ,map);
 	}
 	
 	

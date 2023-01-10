@@ -17,11 +17,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="list-group">
-		<a href="#" class="list-group-item">상품문의</a> 
-		<a href="#"	class="list-group-item">예약문의</a> 
+	<div class="list-group" style="width:200px; height:100px; = floa:left; text-align: center;">
+		<a href="http://localhost:8080/camp/servicecenter/product_qna.do" class="list-group-item">상품문의</a> 
+		<a href="http://localhost:8080/camp/servicecenter/reservation_qna.do"	class="list-group-item">예약문의</a> 
 		<a href="#" class="list-group-item">자유질문</a>
-		<a href="#" class="list-group-item">공지사항</a>
+		<a href="http://localhost:8080/camp/test/notice" class="list-group-item">공지사항</a>
 	</div>
 </body>
 </html>

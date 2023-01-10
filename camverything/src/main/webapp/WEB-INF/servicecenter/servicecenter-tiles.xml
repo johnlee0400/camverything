@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+       
+       <definition name="mainTemplate" template="/WEB-INF/layout/mainLayout.jsp">
+		<put-attribute name="content" value="/WEB-INF/main/content.jsp"/>
+		<put-attribute name="top" value="/WEB-INF/include/top.jsp"/>
+		<put-attribute name="menu" value="/WEB-INF/menu/servicemenu.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/include/footer.jsp"/>
+	
+	</definition>
+      
+      <definition name="servicecenter/notice" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/servicecenter/notice.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/menu/servicemenu.jsp"/>
+	</definition>
+	
+	<definition name="servicecenter/reservation_qna" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/servicecenter/reservation_qna.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/menu/servicemenu.jsp"/>
+	</definition>
+	
+	
+	<definition name="servicecenter/product_qna" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/servicecenter/product_qna.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/menu/servicemenu.jsp"/>
+	</definition>
+	
+	<definition name="servicecenter/product_qna_write" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/servicecenter/product_qna_write.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/menu/servicemenu.jsp"/>
+	</definition>
+	
+		<definition name="servicecenter/reservation_qna_write" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/servicecenter/reservation_qna_write.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/menu/servicemenu.jsp"/>
+	</definition>
+	
+</tiles-definitions>
+	
+      
+      

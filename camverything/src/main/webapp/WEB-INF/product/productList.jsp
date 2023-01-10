@@ -10,16 +10,6 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <title>용품판매 페이지</title>
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style type="text/css">
 .imgs {
 	width: 100%;
@@ -69,34 +59,21 @@
 		</div>
 	</nav>
 	<div class="container">
+		<div class="row">
+		
 		<h3>캠핑용품</h3>
-		<div class="col-lg-6">
-			<div class="col-lg-6">
-
-				<div>
-					<img src="/camp/images/camplist.png" class="imgs"><br /> 가격
-					: <br /> 제품이름 :
+		<c:forEach var="productList" items="${productList }">
+				<div class="col-xs-2">
+				<img src="/camp/images/camp3.jpg" width="150" height="150">
+					<h3><a href="/camp/product/read.do?product_code=${productList.product_code }&state=READ">${productList.product_name }</a></h3>
+					<div id="product_code" style="display: none"></div>
+					가격 :${productList.product_price }
+					수량 : ${productList.quantity }
+					<hr/>
+					상품설명 : ${productList.product_content }<br />
+					분류 : ${productList.category }
 				</div>
-			</div>
-			<div class="col-lg-6">
-				<div>
-					<img src="/camp/images/camplist.png" class="imgs"><br /> 가격
-					: <br /> 제품이름 :
-				</div>
-			</div>
-			<div class="col-lg-6">
-				<div>
-					<img src="/camp/images/camplist.png" class="imgs"><br /> 가격
-					: <br /> 제품이름 :
-				</div>
-			</div>
-			<div class="col-lg-6">
-				<div>
-					<img src="/camp/images/camplist.png" class="imgs"><br /> 가격
-					: <br /> 제품이름 :
-				</div>
-			</div>
-			
+			</c:forEach>
 		</div>
 	</div>
 </body>

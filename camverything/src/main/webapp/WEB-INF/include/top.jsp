@@ -48,8 +48,8 @@
 			<div class="col-lg-2">
 				<nav>
 	                <ul class="nav navbar-nav" id="topendfont">                                                                                                                                     
-	                    <li><a href="/camp/test/servicecenter">고객센터</a></li>
-	                    <li><a href="/camp/test/login">로그인</a></li>
+	                    <li><a href="/camp/service.do">고객센터</a></li>
+	                    <li><a href="/camp/test/login.do">로그인</a></li>
 	                    <li><a href="/camp/main/insert.do">회원가입</a></li>
 	                </ul>
 	            </nav>
@@ -82,7 +82,7 @@
                                         <li><a href="/camp/board/list.do?category=all">커뮤니티</a></li>
                                         <li><a href="/camp/camping/list.do">캠핑장목록</a></li>
                                         <li><a href="/camp/test/product">용품구매</a></li>
-                                        <li><a href="/camp/test/servicecenter">고객센터</a></li>
+                                        <li><a href="/camp/service.do">고객센터</a></li>
                                     </ul>
                                 </nav>
                         </div>  

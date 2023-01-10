@@ -13,25 +13,39 @@
 <title>Insert title here</title>
 
 </head>
-<body>
+<body> 
+
 <h1 style="text-align: center;">고객센터</h1>
 
 <div class = "container" style="width:400px; height:100px; = float:right; text-align: center;">
-  <h2>최근공지사항</h2>        
+  <h2>자유질문</h2>        
   <table class="table table-hover" style="text-align: center;">
     <thead>
       <tr>
         <th scope="col" class="text-center">번호</th>
         <th scope="col" class="text-center">제목</th>
+        <th scope="col" class="text-center">작성일</th>
         <th scope="col" class="text-center">등록일</th>
-        
       </tr>
-      
     </thead>
     <tbody>
      
     </tbody>
   </table>
+  
+<form action="" style =text-align: center;>
+		<select name="tag">
+			<option value="title">작성자</option>
+			<option value="title">제목</option>
+			<option value="content">본문</option>
+			<option value="create_date">작성일</option>
+		</select>
+		 <input type="text" name="data" style = center;/><input type="submit" value="검색">
+	</form>
+	
+	<form action="" method="">
+	<button type="submit" class="btn btn-secondary mb-3">글쓰기</button>
+</form>
 </div>
 </body>
 </html>

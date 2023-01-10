@@ -23,7 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
 
-import com.multi.camp.member.MemberDTO;
+import com.multi.camp.login.LoginDTO;
 
 @Controller
 public class BoardController {
@@ -121,7 +121,7 @@ public class BoardController {
 	@RequestMapping("/board/delete.do")
 	public String delete(String board_no,HttpSession session) {
 		//로그인한 사용자를 찾는다.
-		MemberDTO user = (MemberDTO)session.getAttribute("user");
+		LoginDTO user = (LoginDTO)session.getAttribute("user");
 		String view = "";
 		if(user==null) {
 			view = "redirect:/emp/login.do";

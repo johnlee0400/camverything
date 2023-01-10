@@ -36,13 +36,17 @@
 		<put-attribute name="content"
 			value="/WEB-INF/camping/campingList.jsp" />
 	</definition>
-	<definition name="test/campread" extends="indexTemplate">
-		<put-attribute name="content"
-			value="/WEB-INF/test/camp_read.jsp" />
+
+	
+	<definition name="test/login" extends="indexTemplate">
+	<put-attribute name
+	="content" value="/WEB-INF/main/login.jsp"/>
 	</definition>
-	<definition name="login" extends="indexTemplate">
-		<put-attribute name="content"
-			value="/WEB-INF/main/login.jsp" />
+	
+	
+	<definition name="test/campread" extends="indexTemplate">
+	<put-attribute name
+	="content" value="/WEB-INF/test/camp_read.jsp"/>
 	</definition>
 	
 	

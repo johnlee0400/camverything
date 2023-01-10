@@ -1,8 +1,8 @@
-package com.multi.camp.member;
+package com.multi.camp.login;
 
 
 
-public interface MemberDAO {
+public interface LoginDAO {
 
-	public MemberDTO login(MemberDTO loginUser);
+	public LoginDTO login(LoginDTO loginUser);
 }

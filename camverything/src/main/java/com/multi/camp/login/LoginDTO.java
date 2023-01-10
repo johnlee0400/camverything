@@ -1,6 +1,6 @@
-package com.multi.camp.member;
+package com.multi.camp.login;
 
-public class MemberDTO {
+public class LoginDTO {
 
 	private String id;
 	private String pass;
@@ -12,12 +12,12 @@ public class MemberDTO {
 	private String email;
 	
 	
-	public MemberDTO() {
+	public LoginDTO() {
 		System.out.println("기본생성자");
 	}
 	
 	
-	public MemberDTO(String id, String pass, String name, String addr, int tel, String nickname, int birth,
+	public LoginDTO(String id, String pass, String name, String addr, int tel, String nickname, int birth,
 			String email) {
 		super();
 		this.id = id;

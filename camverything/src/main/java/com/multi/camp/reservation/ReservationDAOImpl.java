@@ -1,5 +1,7 @@
 package com.multi.camp.reservation;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -18,5 +20,12 @@ public class ReservationDAOImpl implements ReservationDAO{
 		
 		return sqlsession.insert("com.multi.camp.reservation.insert",dto);
 	}
+
+	@Override
+	public List<ReservationDTO> getcampDate(ReservationDTO dto) {
+		System.out.println("dao쪽 dto:"+dto);
+		return sqlsession.selectList("com.multi.camp.reservation.campdateselect",dto);
+	}
+
 
 }

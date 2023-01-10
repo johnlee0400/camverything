@@ -40,7 +40,7 @@
 	<div id="contentposi">
 		<tiles:insertAttribute name="content"></tiles:insertAttribute>
 	</div>
-	<div>
+	<div class="container-lg-fluid">
 		<!-- 이곳에 footer화면을 연결하세요" -->
 		<tiles:insertAttribute name="footer"></tiles:insertAttribute>
 	</div>

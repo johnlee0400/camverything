@@ -17,8 +17,6 @@ import org.springframework.web.servlet.ModelAndView;
 @SessionAttributes("user")
 public class LoginController {
 	LoginService service;
-
-
 	@Autowired
 	public LoginController(LoginService service) {
 		super();

@@ -24,10 +24,10 @@
 			
 			<c:forEach var="campingList" items="${campingList }">
 				<div class="col-xs-4">
-					<a href="#">
+					<a href="/camp/test/camp_read">
 					<h2>${campingList.camp_name }</h2>
 					</a>
-					<a href="#"> <img src="/camp/images/camp3.jpg" width="150"
+					<a href="/camp/test/camp_read"> <img src="/camp/images/camp3.jpg" width="150"
 						height="150">
 					</a>
 					<div id="business_no" style="display: none">캠핑장 번호 : ${campingList.business_no }

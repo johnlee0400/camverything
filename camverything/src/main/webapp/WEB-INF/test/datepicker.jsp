@@ -15,12 +15,27 @@
 <!--한국어  달력 쓰려면 추가 로드-->
 <script src="/camp/common/js/datepicker/bootstrap-datepicker.ko.js"></script> <!--min.  -->
 <style type="text/css">
-	/* .reserveSide {
-	    width: 33rem;
+	 .body{
+	 	margin:0;
+	 }
+	 
+	 .reserveSide {
+	    position:fixed;
+	    width: 340px;
+	    height: 500px;
 	    margin: 0 auto;
 	    border: 0.1rem solid #b6bdc7;
 	    border-radius: 1.5rem;
-	    } */
+	    top:200px;
+	    right:100px;
+	    } 
+	 .datepicker{
+	 	position:absolute;
+	 	width:240px;
+	 	height:240px;
+	 	margin:10px;
+	 	left:20px;
+	 }
 </style>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -40,13 +55,188 @@ $(document).ready(function() {
 <title>Insert title here</title>
 </head>
 <body>
-<div class="container">
-	<div class="reserveSide">
-		<div class="datepicker" >
+
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+		<div class="reserveSide">
+			<div class="datepicker">
+			</div>
 		</div>
-	</div>
-</div>
 	
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p><p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p><p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
+	<p>테스트</p>
 	
 	
 </body>

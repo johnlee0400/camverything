@@ -11,9 +11,11 @@
 		<typeAlias type="com.multi.camp.login.LoginDTO" alias="login"/>
 		<typeAlias type="com.multi.camp.camping.campingDTO" alias="campingList"/>
 		<typeAlias type="com.multi.camp.product.productDTO" alias="product"/>
+		<typeAlias type="com.multi.camp.servicecenter.ServiceCenterDTO" alias="service"/>		
 	</typeAliases>
 	
 	<mappers>
+		<mapper resource="com/multi/camp/mapper/servicecenter.xml"/>
 		<mapper resource="com/multi/camp/mapper/register.xml"/>
 		<mapper resource="com/multi/camp/mapper/board.xml"/>
 		<mapper resource="com/multi/camp/mapper/login.xml"/>

@@ -15,11 +15,8 @@
 <view-controller path="/test/board" view-name="board"/>
 <view-controller path="/test/notice" view-name="servicecenter/notice"/>
 
-<!-- 
-<view-controller path="/test/servicecenter" view-name="/main/servicecenter"/> -->
-<view-controller path="/test/servicecenter" view-name="servicecenter"/>
+<view-controller path="/test/notice" view-name="notice"/>
 	
 
-<view-controller path="/test/login" view-name="test/login"/>
 	
 </beans:beans>

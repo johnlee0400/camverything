@@ -9,4 +9,7 @@
 	<select id="search" resultType="campingList" parameterType="String">
 		select * from camping_list where camp_name like '%' || #{camp_name} ||'%'
 	</select>
+	<select id="search2" resultType="campingList" parameterType="Map">
+		select * from camping_List where camp_name like #{search} and business_no = ${local}
+	</select>
 </mapper>

@@ -8,45 +8,40 @@
 <title>Insert title here</title>
 <style type="text/css">
 .container {
-	border: 2px solid black;
 	padding-bottom: 15px;
 	margin: 20px;
-	border-radius: 5px;
-	box-shadow: 2px 2px 2px;
+	/* 	border-radius: 5px; */
+	/* 	box-shadow: 2px 2px 2px; */
 }
 </style>
 </head>
 <body>
-	<h1>캠핑리스트</h1>
-
+	<h1 style="text-align: center;">캠핑리스트</h1>
+	<div style="text-align: center;">
+		<form action="/camp/camping/search.do" method="POST">
+			<input type="text" name="search" placeholder="캠핑장을 입력해주세요." /> <input
+				type="submit" value="검색" />
+		</form>
+	</div>
 	<div class="container">
 		<div class="row">
-			
+
 			<c:forEach var="campingList" items="${campingList }">
 				<div class="col-xs-4">
-					<a href="#">
-					<h2>${campingList.camp_name }</h2>
-					</a>
-					<a href="#"> <img src="/camp/images/camp3.jpg" width="150"
-						height="150">
-					</a>
-					<div id="business_no" style="display: none">캠핑장 번호 : ${campingList.business_no }
-						
-					</div>
+					<h2><a href="/camp/camping/read.do?business_no=${campingList.business_no }">${campingList.camp_name }</a></h2>
+					<img src="/camp/images/camp3.jpg" width="150" height="150">
+
+					<div id="business_no" style="display: none">캠핑장 번호 :
+						${campingList.business_no }</div>
 					<div>
-						대표 : ${campingList.business_name } <br/>
-						전화번호 : ${campingList.camp_tel } <br/>
-						email : ${campingList.email } <br/>
-						<button type="button" class="btn btn-info">예약하기</button>
+						대표 : ${campingList.business_name } <br /> 전화번호 :
+						${campingList.camp_tel } <br /> email : ${campingList.email } <br />
+							<button type="button" class="btn btn-info" onclick="location.href='/camp/camping/read.do?business_no=${campingList.business_no }'">예약하기</button>
 					</div>
 				</div>
 			</c:forEach>
-			<form action="/camp/camping/search.do" method="POST">
-				<div>
-					<input type="text" name="search" /> <input type="submit" value="검색">
-					</div>
-			</form>
-			
+
+
 		</div>
 	</div>
 </body>

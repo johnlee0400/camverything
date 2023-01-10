@@ -23,11 +23,24 @@ public class campingController {
 		return mav;
 	}
 	
+	@RequestMapping("/camping/search2.do")
+	public ModelAndView search(String search, String local) {
+		System.out.println(search+local+"확인용");
+		ModelAndView mav = new ModelAndView("campingList");
+		List<campingDTO> campingList = service.search2(search, local);
+		mav.addObject("campingList", campingList);
+		return mav;
+	}
+	
+	
 	@RequestMapping("/camping/search.do")
-	public ModelAndView search(String search) {
+	public ModelAndView search2(String search) {
 		ModelAndView mav = new ModelAndView("campingList");
 		List<campingDTO> campingList = service.search(search);
 		mav.addObject("campingList", campingList);
 		return mav;
 	}
+	
+	
+
 }

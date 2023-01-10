@@ -13,7 +13,7 @@
 </head>
 <body></body>
 
-<form action="login.do" method="post">
+<form action="/camp/login.do" method="post">
 <section class="vh-100 gradient-custom">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -46,7 +46,7 @@
           <!-- Simple link -->
           <a href="#!">Forgot password?</a>
         </div>
-
+		
             <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
 
             <hr class="my-4">
@@ -57,6 +57,7 @@
               type="submit"><i class="fab fa-facebook-f me-2 " ></i>Sign in with naver</button>
 
           </div>
+          
           <div>
               <p class="mb-0">Don't have an account? <a href="#!" class="text-white-50 fw-bold">Sign Up</a>
               </p>

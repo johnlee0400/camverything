@@ -118,6 +118,12 @@ public class LoginDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+
+	public String getMenupath() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	

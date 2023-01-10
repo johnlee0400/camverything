@@ -10,15 +10,15 @@
 		<typeAlias type="com.multi.camp.board.BoardFileDTO" alias="boardfile"/>
 		<typeAlias type="com.multi.camp.login.LoginDTO" alias="login"/>
 		<typeAlias type="com.multi.camp.camping.campingDTO" alias="campingList"/>
-		<typeAlias type="com.multi.camp.product.productDTO" alias="product"/>
+		<typeAlias type="com.multi.camp.servicecenter.ServiceCenterDTO" alias="service"/>
 	</typeAliases>
 	
 	<mappers>
+		<mapper resource="com/multi/camp/mapper/servicecenter.xml"/>
 		<mapper resource="com/multi/camp/mapper/register.xml"/>
 		<mapper resource="com/multi/camp/mapper/board.xml"/>
 		<mapper resource="com/multi/camp/mapper/login.xml"/>
 		<mapper resource="com/multi/camp/mapper/campingList.xml"/>
-		<mapper resource="com/multi/camp/mapper/product.xml"/>
-		<mapper resource ="com/multi/camp/mapper/reservation.xml"/>
+		<mapper resource = "com/multi/camp/mapper/reservation.xml"/>
 	</mappers>
 </configuration>

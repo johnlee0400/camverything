@@ -11,7 +11,6 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	</script>
  </head>
 	
 <body>
@@ -118,7 +117,7 @@
 							<input type="text" id="tel" name="tel3" class="form-control" size="4" > -->
 						</div>
 					</div>
-													
+				</div>					
 					<div class="form-group">
 						<!-- 닉네임-->
 						<label class="control-label col-sm-3" for="nickname">닉네임</label>

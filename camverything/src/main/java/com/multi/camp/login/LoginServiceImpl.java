@@ -1,4 +1,4 @@
-package com.multi.camp.member;
+package com.multi.camp.login;
 
 
 
@@ -6,18 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MemberServiceImpl implements MemberService {
-	MemberDAO dao;
+public class LoginServiceImpl implements LoginService {
+	LoginDAO dao;
 	
 	@Autowired
-	public MemberServiceImpl(MemberDAO dao) {
+	public LoginServiceImpl(LoginDAO dao) {
 		super();
 		this.dao = dao;
 	}
 
 	@Override
-	public MemberDTO login(MemberDTO loginUser) {
-		MemberDTO user = dao.login(loginUser);
+	public LoginDTO login(LoginDTO loginUser) {
+		LoginDTO user = dao.login(loginUser);
 		System.out.println("service"+user);
 		if(user!=null) {
 			System.out.println("!!!로그인성공!!!");

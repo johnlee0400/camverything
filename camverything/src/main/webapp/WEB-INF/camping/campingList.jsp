@@ -28,11 +28,13 @@
 
 			<c:forEach var="campingList" items="${campingList }">
 				<div class="col-xs-4">
+
 					<h2><a href="/camp/camping/read.do?business_no=${campingList.business_no }">${campingList.camp_name }</a></h2>
 					<img src="/camp/images/camp3.jpg" width="150" height="150">
 
 					<div id="business_no" style="display: none">캠핑장 번호 :
 						${campingList.business_no }</div>
+
 					<div>
 						대표 : ${campingList.business_name } <br /> 전화번호 :
 						${campingList.camp_tel } <br /> email : ${campingList.email } <br />

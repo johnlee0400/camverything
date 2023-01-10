@@ -6,6 +6,9 @@
   
 <mapper namespace="com.multi.camp.reservation">
 	<insert id="insert" parameterType="reservation">
-		insert into reservation values (#{res_no},#{business_no},#{id},to_date(#{checkin},'mm-dd-yyyy hh24:mi:ss'),sysdate,#{name})
+		insert into reservation values (#{res_no},#{business_no},#{id},to_date(#{checkin},'yyyy-mm-dd'),sysdate,#{name})
 	</insert>
+	<select id="campdateselect" parameterType="reservation" resultType="reservation">
+		select camp_period,camp_loc,area_price from camping_list where business_no =#{business_no} and camp_date=#{camp_date} order by camp_period asc
+	</select>
 </mapper>

@@ -17,4 +17,9 @@
 
 <!-- 
 <view-controller path="/test/servicecenter" view-name="/main/servicecenter"/> -->
+<view-controller path="/test/servicecenter" view-name="servicecenter"/>
+	
+
+<view-controller path="/test/login" view-name="test/login"/>
+	
 </beans:beans>

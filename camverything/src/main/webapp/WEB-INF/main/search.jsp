@@ -7,46 +7,30 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<title>한글</title>
-
- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
- 
- <link rel="stylesheet" href="/resources/demos/style.css">
- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
- 
-
- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>
-	$(function() {
-		$(".datepicker").datepicker(
-				{
-					dateFormat : "yy-mm-dd",
-					changeMonth : true,
-					changeYear : true,
-					nextText : "다음 달",
-					prevText : "이전 달",
-					yearSuffix : "년",
-					dayNames : [ '월요일', '화요일', '수요일', '목요일', '금요일', '토요일',
-							'일요일' ],
-					dayNamesMin : [ '월', '화', '수', '목', '금', '토', '일' ],
-					monthNamesShort : [ '1월', '2월', '3월', '4월', '5월', '6월',
-							'7월', '8월', '9월', '10월', '11월', '12월' ],
-					monthNames : [ '1월', '2월', '3월', '4월', '5월', '6월', '7월',
-							'8월', '9월', '10월', '11월', '12월' ],
-					showOtherMonths : true,
-					selectOtherMonths : true,
-					changeMonth : true,
-					changeYear : true,
-					minDate : "1D",
-					maxDate : "7D",
-					showButtonPanel : true,
-					closeText : "닫기",
-					onSelect : function(dateString) {
-						console.log(dateString);
-					}
-				});
-	});
+<script type="text/javascript">
+	var category = "{$category}";
+	$(document).ready(function() {
+		$("#list1").hide();
+		$("#list2").hide();
+		$(".selectbox").change(function() {
+			var sel = $(".selectbox option:selected").val();
+			if (sel == "1") {
+				$("#list1").show();
+				$("#list2").hide();
+				$("#local").click(function() {
+					$("#local").val(category).attr("selected", "selected");
+					$("#local").change(function() {
+						alert("체인지확인");
+						location.href="/camp/camping/search2.do?search="+encodeURI($("#search").val())+"&local="+encodeURI($(this).val());
+					})
+				})
+			} else {
+				$("#list2").show();
+				$("#list1").hide();
+			}
+		})
+	})
+	
 </script>
 <style type="text/css">
 .search {
@@ -60,6 +44,7 @@
 	border-radius: 8px;
 	padding: 10px 12px;
 	font-size: 14px;
+	color: black;
 }
 
 .imgs {
@@ -81,51 +66,72 @@ button {
 	align-items: center;
 }
 
-#sub {
-	display: none;
-}
-
-input[type=text].datepicker {
-	padding: 4px 2px 5px 25px;
-	width: 160px;
-	border: 1px solid #CACACA;
-	font-size: 11px;
-	color: #666;
-	background: url('/camp/images/다운로드.png') no-repeat 2px 2px;
-	background-size: 15px;
-	background-color: white;
-}
-
-.select {
+.btn btn-default dropdown-toggle {
 	padding-top: 10px;
 }
 
-.datepicker {
-	border-radius: 10px;
+/* #sub { */
+/* 	display: none; */
+/* } */
+
+.dropdown {
+	margin-bottom: 15px;
+}
+
+.selectbox {
+	width: 250px;
+	color: black;
+	margin-bottom: 15px;
+}
+.select{
+	color: black;
 }
 </style>
 </head>
 <body>
+
 	<div class="container-fluid bg-2 text-center">
 		<div id="wrap">
-			<form class="search">
+			
+			<form>
+				<select class="selectbox" name="selectbox" >
+					<option selected disabled="disabled">검색할 종류를 선택해주세요.</option>
+					<option value="1">캠핑장 목록</option>
+					<option value="2">캠핑용품 목록</option>
+				</select>
+			<!-- </form>
+			<form class="search"> -->
 				<input class="search_bar" type="text" placeholder="검색할 키워드를 입력해 주세요"
-					name="search"> <img
+					name="search" id="search"> <img
 					src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png"
-					class="imgs"> <input type="submit" id="sub">
-			</form>
-			<div class="btn">
-				<form>
-					<input type="text" class="datepicker" value="예약날짜를 선택해주세요"
-						readonly="readonly" name="date1"> <strong>~</strong> <input
-						type="text" class="datepicker" value="예약날짜를 선택해주세요"
-						readonly="readonly" name="date2"> <input type="submit"
-						class="btn btn-info" value="조회하기">
-				</form>
-				<div class="select">
-					<input type="button" class="btn btn-success" value="지역선택">
+					class="imgs">
+					
+				<div class="btn">
+					<div class="select" id="list1">
+						<select name="local" id="local">
+							<optgroup label="지역선택">
+								<option value="10">서울</option>
+								<option value="20">경기도</option>
+								<option value="30">강원도</option>
+								<option value="40">충청도</option>
+								<option value="50">경상도</option>
+								<option value="60">전라도</option>
+								<option value="70">제주도</option>
+							</optgroup>
+						</select>
+					</div>
+					<div class="select" id="list2">
+						<select name="local">
+							<optgroup label="캠핑용품">
+								<option value="10">용품구매</option>
+								<option value="20">먹거리</option>
+							</optgroup>
+						</select>
+					</div>
 				</div>
-			</div>
+				<input type="submit" id="sub">
+			</form>
+			
 		</div>
 		<!-- //wrap -->
 

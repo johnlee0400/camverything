@@ -6,29 +6,32 @@
 <title>Bootstrap Theme Simply Me</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ 
+ 
 <style type="text/css">
 .festival-info:hover .festival-caption {
-  border: 1px solid #c4c4c4;
-  border-top: transparent;
+  border: 1px solid #c4c4c4  !important;;
+  border-top: transparent !important;
 }
 
 /* line 9, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
 .festival-info:hover .festival-img img {
-  transform: rotate(1deg) scale(1.1);
+  transform: rotate(1deg) scale(1.1) !important;
   /*그림확대비율*/
 }
 
 /* line 14, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
 .festival-info .festival-img {
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 /* line 16, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
 .festival-info .festival-img img {
-  width: 100%;
-  transform: rotate(0deg) scale(1);
-  -webkit-transition: all 0.6s ease-out 0s;
-  -moz-transition: all 0.6s ease-out 0s;
+  width: 100% !important;
+  transform: rotate(0deg) scale(1) !important;
+  -webkit-transition: all 0.6s ease-out 0s !important;
+  -moz-transition: all 0.6s ease-out 0s !important;
   -ms-transition: all 0.6s ease-out 0s;
   -o-transition: all 0.6s ease-out 0s;
   transition: all 0.6s ease-out 0s;
@@ -36,54 +39,54 @@
 
 /* line 22, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
 .festival-info .festival-caption {
-  padding: 33px 20px 33px 30px;
-  box-shadow: 1.395px 19.951px 38px 0px rgba(0, 0, 0, 0.05);
-  border: 1px solid transparent;
-  border-radius: 0 0 5px 5px;
-  border-top: 0;
-  -webkit-transition: all 0.3s ease-out 0s;
-  -moz-transition: all 0.3s ease-out 0s;
-  -ms-transition: all 0.3s ease-out 0s;
-  -o-transition: all 0.3s ease-out 0s;
-  transition: all 0.3s ease-out 0s;
+  padding: 33px 20px 33px 30px !important;
+  box-shadow: 1.395px 19.951px 38px 0px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid transparent !important;
+  border-radius: 0 0 5px 5px !important;
+  border-top: 0 !important;
+  -webkit-transition: all 0.3s ease-out 0s !important;
+  -moz-transition: all 0.3s ease-out 0s !important;
+  -ms-transition: all 0.3s ease-out 0s !important;
+  -o-transition: all 0.3s ease-out 0s !important;
+  transition: all 0.3s ease-out 0s !important;
 }
 
 /* line 31, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
 .festival-info .festival-caption:hover h3 a {
-  color: #dca73a;
+  color: #dca73a !important;
 }
 
 /* line 36, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
 .festival-info .festival-caption h3 {
-  color: #112e41;
-  font-size: 25px;
-  font-weight: 600;
-  margin-bottom: 19px;
+  color: #112e41  !important;
+  font-size: 25px !important;
+  font-weight: 600 !important;
+  margin-bottom: 19px !important;
   /*글자관련*/
 }
 .font-back-tittle {
-  position: relative;
-  text-align: center;
+  position: relative !important;
+  text-align: center !important;
 }
 
 /* line 79, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
 .font-back-tittle .archivment-front {
-  position: relative;
-  z-index: 9;
+  position: relative !important;
+  z-index: 9 !important;
 }
 
 /* line 83, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
 .font-back-tittle .archivment-front h3 {
-  color: #112e41;
-  font-size: 50px;
-  font-weight: 700;
-  font-family: 'Noto Serif', serif;
+  color: #112e41 !important;
+  font-size: 50px !important;
+  font-weight: 700 !important;
+  font-family: 'Noto Serif', serif !important;
 }
 
 @media (max-width: 767px) {
   /* line 83, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
   .font-back-tittle .archivment-front h3 {
-    font-size: 37px;
+    font-size: 37px  !important;
   }
 }
 
@@ -105,21 +108,21 @@
 @media (max-width: 767px) {
   /* line 92, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
   .font-back-tittle h3.archivment-back {
-    transform: translateY(-56%);
+    transform: translateY(-56%) !important;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   /* line 92, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
   .font-back-tittle h3.archivment-back {
-    font-size: 93px;
+    font-size: 93px !important;
   }
 }
 
 @media (max-width: 767px) {
   /* line 92, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_room.scss */
   .font-back-tittle h3.archivment-back {
-    font-size: 48px;
+    font-size: 48px !important;
   }
 }
 
@@ -149,6 +152,8 @@
 </style>
 </head>
 <body>
+
+<div class="container-lg-fluid">
 		<div class="col-xl-15">
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 				<!-- Indicators -->
@@ -200,7 +205,8 @@
 				</a>
 			</div>
 		</div>
-<div class="container text-center">
+</div>
+<div class="container-lg text-center">
 	<div class="col-sm-12">
 	<div class="text-center">
 		<p>공지사항란</p>
@@ -235,7 +241,7 @@
 	<section class="room-area">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-xl-8">
+				<div class="col-lg-12">
 					<!--font-back-tittle  -->
 					<div class="font-back-tittle mb-45">
 						<div class="archivment-front">
@@ -245,8 +251,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-xl-2 col-lg-3 col-md-3">
+			<div class="row col-lg-12">
+				<div class="col-lg-3">
 					<!-- Single Room -->
 					<div class="festival-info mb-50">
 						<div class="festival-img">

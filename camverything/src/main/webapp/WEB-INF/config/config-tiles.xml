@@ -2,10 +2,10 @@
 <!DOCTYPE tiles-definitions PUBLIC
        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
 <tiles-definitions>
 	<!-- 템플릿등록 -->
-	<definition name="indexTemplate"
-		template="/WEB-INF/layout/index.jsp">
+	<definition name="indexTemplate" template="/WEB-INF/layout/index.jsp">
 		<put-attribute name="content"
 			value="/WEB-INF/include/content.jsp" />
 		<put-attribute name="top"
@@ -42,16 +42,15 @@
 			value="/WEB-INF/camping/campingList.jsp" />
 	</definition>
 
-
-	<put-attribute name="content" value="/WEB-INF/main/servicecenter.jsp"/>
+	<definition name="test/campread" extends="indexTemplate">
+		<put-attribute name
+		="content" value="/WEB-INF/test/camp_read.jsp"/>
 	</definition>
 	
-	
-	<definition name="test/campread" extends="indexTemplate">
-	<put-attribute name
-	="content" value="/WEB-INF/test/camp_read.jsp"/>
-	
-	
+	<definition name="test/login" extends="indexTemplate">
+		<put-attribute name="content"
+			value="/WEB-INF/main/login.jsp" />
+	</definition>
 	
 	<!-- <definition name="test/datepicker" extends="indexTemplate">
 	<put-attribute name="content" value="/WEB-INF/test/datepicker.jsp"/>
@@ -62,4 +61,5 @@
 		<put-attribute name="content"
 			value="/WEB-INF/test/camp_read.jsp" />
 	</definition>
-</tiles-definitions>
+</tiles-definitions>	
+	

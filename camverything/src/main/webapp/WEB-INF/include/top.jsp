@@ -41,7 +41,7 @@
 				<nav>
 	                <ul class="nav navbar-nav" id="topendfont">                                                                                                                                     
 	                    <li><a href="/camp/test/servicecenter">고객센터</a></li>
-	                    <li><a href="#">로그인</a></li>
+	                    <li><a href="/camp/test/login">로그인</a></li>
 	                    <li><a href="/camp/main/insert.do">회원가입</a></li>
 	                </ul>
 	            </nav>

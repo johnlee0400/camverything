@@ -1,4 +1,4 @@
-package com.multi.camp.member;
+package com.multi.camp.login;
 
 import java.io.IOException;
 import java.net.http.HttpResponse;
@@ -15,7 +15,7 @@ public class LoginCheckInterceptor extends HandlerInterceptorAdapter {
 		
 		HttpSession session = request.getSession(false);
 		if(session!=null) {
-			MemberDTO user = (MemberDTO) session.getAttribute("user");
+			LoginDTO user = (LoginDTO) session.getAttribute("user");
 			System.out.println("!!!!!!!");
 		if(user==null) {
 			response.sendRedirect("/main/login");

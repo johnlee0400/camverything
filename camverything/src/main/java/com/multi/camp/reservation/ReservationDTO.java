@@ -5,6 +5,7 @@ import java.sql.Date;
 //@DateTimeFormat(pattern = "yyyy-MM-dd")
 //Date mydate;  Date형식으로 하고싶으면
 
+
 public class ReservationDTO {
 	private int res_no;
 	private int business_no;
@@ -12,6 +13,7 @@ public class ReservationDTO {
 	private String checkin;
 	private Date checkout;
 	private String name;
+	
 	
 	public ReservationDTO() {
 		
@@ -77,7 +79,6 @@ public class ReservationDTO {
 	public void setCheckout(Date checkout) {
 		this.checkout = checkout;
 	}
-
 
 	public String getName() {
 		return name;

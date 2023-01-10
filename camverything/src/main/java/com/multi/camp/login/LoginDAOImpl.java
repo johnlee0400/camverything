@@ -1,4 +1,4 @@
-package com.multi.camp.member;
+package com.multi.camp.login;
 
 
 import org.apache.ibatis.session.SqlSession;
@@ -6,20 +6,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class MemberDAOImpl implements MemberDAO {
+public class LoginDAOImpl implements LoginDAO {
 	SqlSession sqlSession;
 	
 	
 	@Autowired
-	public MemberDAOImpl(SqlSession sqlSession) {
+	public LoginDAOImpl(SqlSession sqlSession) {
 		super();
 		this.sqlSession = sqlSession;
 	}
 
 	@Override
-	public MemberDTO login(MemberDTO loginUser) {
+	public LoginDTO login(LoginDTO loginUser) {
 		System.out.println(loginUser + "----------dao------------");
-		MemberDTO user = sqlSession.selectOne("com.multi.camp.member.login", loginUser);
+		LoginDTO user = sqlSession.selectOne("com.multi.camp.login", loginUser);
 		System.out.println(user);
 		return user;
 	}

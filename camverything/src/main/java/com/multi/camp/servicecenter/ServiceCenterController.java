@@ -1,5 +1,5 @@
-package com.multi.camp.servicecenter;
 
+package com.multi.camp.servicecenter;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;

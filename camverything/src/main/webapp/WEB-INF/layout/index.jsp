@@ -20,14 +20,18 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="/camp/common/css/styles.css" rel="stylesheet" />
         <style type="text/css">
-        	#topposi{
-        		position: absolute;
-        		top: -50px;
-        		width: 600px; 
-        	}
-        	#contentposi{
-        		position: relative;
-        	}
+        	
+        #imageeee {
+			  padding-top: 10.5rem;
+			  padding-bottom: 15rem;
+			  text-align: center;
+			  color: #fff;
+			  background-image: url("/camp/images/img/bg/board.jpg");
+			  background-repeat: no-repeat;
+			  background-attachment: scroll;
+			  background-position: center center;
+			  background-size: cover;
+			}
         </style>
 </head>
 <body>

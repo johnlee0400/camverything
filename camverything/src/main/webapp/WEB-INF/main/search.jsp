@@ -7,6 +7,7 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script type="text/javascript">
 	var category = "{$category}";
 	$(document).ready(function() {
@@ -30,6 +31,7 @@
 			}
 		})
 	})
+	
 	
 </script>
 <style type="text/css">
@@ -89,6 +91,11 @@ button {
 </style>
 </head>
 <body>
+<div id="imageeee">
+	<div class="container">
+		<div class="masthead-subheading"><h1>커뮤니티</h1></div>
+	</div>
+</div>
 
 	<div class="container-fluid bg-2 text-center">
 		<div id="wrap">

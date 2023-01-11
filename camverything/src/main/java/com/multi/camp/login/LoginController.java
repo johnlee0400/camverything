@@ -25,6 +25,11 @@ public class LoginController {
 		this.service = service;
 	}
 	
+	@RequestMapping(value = "/loginpage", method = RequestMethod.GET)
+	public String loginpage() {
+		return "login";
+	}
+	
 	
 	@RequestMapping(value = "/login.do" , method = RequestMethod.POST)
 	public ModelAndView login(LoginDTO loginuserInfo, HttpServletRequest request) {
@@ -40,7 +45,7 @@ public class LoginController {
 			viewName = "index";
 //			viewName = user.getMenupath();
 		}else {
-			viewName = "main/login";
+			viewName = "redirect:/login.do";
 			System.out.println("로그인실패");
 		}
 		mav.setViewName(viewName);
@@ -60,7 +65,7 @@ public class LoginController {
 			model.addAttribute("user",user);
 			viewName = user.getMenupath();
 		} else { // 로그인실패
-			viewName = "main/login";
+			viewName = "";
 		}
 		return viewName;
 	}

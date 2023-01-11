@@ -8,7 +8,6 @@
 <title>Bootstrap Theme Simply Me</title>
 <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
-
 </head>
 <body id="page-top">
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -27,8 +26,8 @@
 					<li class="nav-item"><a class="nav-link" href="/camp/test/search">상세검색</a></li>
 					<li class="nav-item"><a class="nav-link" href="/camp/camping/list.do">캠핑장목록</a></li>
 					<li class="nav-item"><a class="nav-link" href="/camp/board/list.do?category=all">커뮤니티</a></li>
-					<li class="nav-item"><a class="nav-link" href="/camp/test/servicecenter">고객센터</a></li>
-					<li class="nav-item"><a class="nav-link" href="/camp/test/login">login</a></li>
+					<li class="nav-item"><a class="nav-link" href="/camp/service.do">고객센터</a></li>
+					<li class="nav-item"><a class="nav-link" href="/camp/loginpage">login</a></li>
 				</ul>
 			</div>
 		</div>

@@ -16,6 +16,11 @@
 </style>
 </head>
 <body>
+<div id="imageeee">
+	<div class="container">
+		<div class="masthead-subheading"><h1>커뮤니티</h1></div>
+	</div>
+</div>
 	<h1 style="text-align: center;">캠핑리스트</h1>
 	<div style="text-align: center;">
 		<form action="/camp/camping/search.do" method="POST">
@@ -29,7 +34,7 @@
 			<c:forEach var="campingList" items="${campingList }">
 				<div class="col-xs-4">
 
-					<h2><a href="/camp/camping/read.do?business_no=${campingList.business_no }">${campingList.camp_name }</a></h2>
+					<h2><a href="/camp/test/camp_read?business_no=${campingList.business_no }">${campingList.camp_name }</a></h2>
 					<img src="/camp/images/camp3.jpg" width="150" height="150">
 
 					<div id="business_no" style="display: none">캠핑장 번호 :
@@ -38,7 +43,7 @@
 					<div>
 						대표 : ${campingList.business_name } <br /> 전화번호 :
 						${campingList.camp_tel } <br /> email : ${campingList.email } <br />
-							<button type="button" class="btn btn-info" onclick="location.href='/camp/camping/read.do?business_no=${campingList.business_no }'">예약하기</button>
+							<button type="button" class="btn btn-info" onclick="location.href='/camp/test/camp_read?business_no=${campingList.business_no }'">예약하기</button>
 					</div>
 				</div>
 			</c:forEach>

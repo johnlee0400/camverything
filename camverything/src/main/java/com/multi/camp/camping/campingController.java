@@ -16,27 +16,21 @@ public class campingController {
 		this.service = service;
 	}
 	@RequestMapping("/camping/list.do")
-	public ModelAndView list() {
+	public ModelAndView list(String category) {
 		ModelAndView mav = new ModelAndView("campingList");
-		List<campingDTO> campingList = service.campingList();
+		List<campingDTO> campingList = service.findByCategory(category);
+		mav.addObject("category", category);
 		mav.addObject("campingList", campingList);
 		return mav;
 	}
 	
-	@RequestMapping("/camping/search2.do")
-	public ModelAndView search(String search, String local) {
-		System.out.println(search+local+"확인용");
-		ModelAndView mav = new ModelAndView("campingList");
-		List<campingDTO> campingList = service.search2(search, local);
-		mav.addObject("campingList", campingList);
-		return mav;
-	}
 	
 	
 	@RequestMapping("/camping/search.do")
 	public ModelAndView search2(String search) {
 		ModelAndView mav = new ModelAndView("campingList");
 		List<campingDTO> campingList = service.search(search);
+		System.out.println(search+"컨트롤러"+campingList);
 		mav.addObject("campingList", campingList);
 		return mav;
 	}

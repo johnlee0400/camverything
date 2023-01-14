@@ -17,7 +17,7 @@ public class ReservationDAOImpl implements ReservationDAO{
 
 	@Override
 	public int insert(ReservationDTO dto) {
-		
+		System.out.println("###DAO:"+dto+"###");
 		return sqlsession.insert("com.multi.camp.reservation.insert",dto);
 	}
 

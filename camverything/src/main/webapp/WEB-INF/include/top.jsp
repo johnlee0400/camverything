@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 <head>
@@ -25,9 +26,20 @@
 					<li class="nav-item"><a class="nav-link" href="/camp/test/index">Home</a></li>
 					<li class="nav-item"><a class="nav-link" href="/camp/test/search">상세검색</a></li>
 					<li class="nav-item"><a class="nav-link" href="/camp/camping/list.do">캠핑장목록</a></li>
-					<li class="nav-item"><a class="nav-link" href="/camp/board/list.do?category=all">커뮤니티</a></li>
-					<li class="nav-item"><a class="nav-link" href="/camp/service.do">고객센터</a></li>
-					<li class="nav-item"><a class="nav-link" href="/camp/loginpage">login</a></li>
+					<li class="nav-item"><a class="nav-link" href="/camp/board/list.do?category=정보공유">커뮤니티</a></li>
+					<li class="nav-item"><a class="nav-link" href="/camp/service/list.do?category=공지사항">고객센터</a></li>
+					<li class="nav-item">
+					<c:choose>
+						<c:when test="${user==null }">
+						<a class="nav-link" href="/camp/loginpage"><span class="glyphicon glyphicon-log-in">
+								</span>Login</a>
+						</c:when>
+						<c:otherwise>
+							<a class="nav-link" href="/camp/spring/logout"><span class="glyphicon glyphicon-log-out"></span>
+									Logout</a>
+						</c:otherwise>
+					</c:choose>
+				</li>
 				</ul>
 			</div>
 		</div>

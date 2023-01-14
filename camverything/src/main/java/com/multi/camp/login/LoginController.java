@@ -1,7 +1,9 @@
 package com.multi.camp.login;
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.swing.JOptionPane;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,38 +26,36 @@ public class LoginController {
 		super();
 		this.service = service;
 	}
-	
+
 	@RequestMapping(value = "/loginpage", method = RequestMethod.GET)
 	public String loginpage() {
 		return "login";
 	}
-	
-	
+
+
 	@RequestMapping(value = "/login.do" , method = RequestMethod.POST)
 	public ModelAndView login(LoginDTO loginuserInfo, HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
 		String viewName = "";
 		System.out.println("============================== 에러");
 		LoginDTO user = service.login(loginuserInfo);
+		HttpSession session = request.getSession();
 		if (user !=null) {
 //			System.out.println("로그인성공");
-			HttpSession session = request.getSession();
 			session.setAttribute("user", user);
 //			viewName =user.getId();
 			viewName = "index";
 //			viewName = user.getMenupath();
 		}else {
-			viewName = "redirect:/login.do";
-			System.out.println("로그인실패");
+			JOptionPane.showMessageDialog(null, "아이디와 비밀번호를 확인하세요", "로그인실패", JOptionPane.ERROR_MESSAGE);
+			viewName ="login";
 		}
 		mav.setViewName(viewName);
+		
 		return mav;
 	}
-	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
-	public String login() {
-		return "login";
-	}
-	
+
+
 	@RequestMapping("/main/login")
 	public String springlogin(LoginDTO loginUserInfo,Model model) {
 		System.out.println("스프링이 제공하는 @SessionAttributes를 이용해서 세션처리하기");
@@ -65,10 +65,12 @@ public class LoginController {
 			model.addAttribute("user",user);
 			viewName = user.getMenupath();
 		} else { // 로그인실패
-			viewName = "";
+			JOptionPane.showMessageDialog(null, "아이디와 비밀번호를 확인하세요", "로그인실패", JOptionPane.ERROR_MESSAGE);
+			viewName ="login";
 		}
 		return viewName;
 	}
+	
 	@RequestMapping(value = "/logout.do")
 	public String logout(HttpSession session) {
 		if(session!=null) {
@@ -82,7 +84,8 @@ public class LoginController {
 		status.setComplete();//세션에 있는 user객체를 제거하는 작업
 		return "redirect:/test/index";
 	}
-	
 }
+
+
 
 

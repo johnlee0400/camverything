@@ -9,4 +9,10 @@
 	<select id="read" resultType="product" parameterType="String">
 		select * from product where product_code = #{product_code}
 	</select>
+	<select id="categorySelect"	resultType="product" parameterType="String">
+		select * from product where category=#{category}
+	</select>
+	<select id="search" resultType="product" parameterType="String">
+		select * from product where product_name like '%' || #{product_name} ||'%'
+	</select>
 </mapper>

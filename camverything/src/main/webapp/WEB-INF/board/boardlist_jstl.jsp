@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html class="html2">
 <head>
@@ -78,10 +78,10 @@
 	.location {
 		position:relative;
 		width: 100%;
-		float: center;
-		background: #FFFFFF;
+		float: left;
+		background: #ffffff;
 		height: 50px;
-		border-bottom: #DDDDDD 1px solid;
+		border-bottom: #dddddd 1px solid;
 	}
 	.submenu{
 		position: absolute;
@@ -113,9 +113,11 @@
 </head>
 <body>
 	<div id="imageeee">
-	<div class="container">
-		<div class="masthead-subheading"><h1>커뮤니티</h1></div>
-	</div>
+		<div class="container">
+			<div class="masthead-subheading">
+				<h1>커뮤니티</h1>
+			</div>
+		</div>
 	</div>
 	<div class="location">
 		<div class="submenu">

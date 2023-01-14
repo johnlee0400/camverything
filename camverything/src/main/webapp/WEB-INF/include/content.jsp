@@ -7,13 +7,95 @@
 <title>Bootstrap Theme Simply Me</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".selectbox").change(function() {
+			var sel = $(".selectbox option:selected").val();
+			if (sel == "1") {
+				$("#search").keydown(function(key) {
+					if(key.keyCode == 13){
+						var data =  $("#search").val()
+						var sel = $(".selectbox option:selected").val();
+		 				location.href="/camp/camping/search.do?search="+encodeURI($("#search").val());
+					}else{
+						$("#sub").click(function() {
+							var data =  $("#search").val()
+							var sel = $(".selectbox option:selected").val();
+			 				location.href="/camp/camping/search.do?search="+encodeURI($("#search").val());
+						})
+					}
+				
+				})
+			} else {
+				$("#search").keydown(function(key) {
+					if(key.keyCode == 13){
+						var data =  $("#search").val()
+						var sel = $(".selectbox option:selected").val();
+		 				location.href="/camp/product/search.do?search="+encodeURI($("#search").val());
+					}else{
+						$("#sub").click(function() {
+							var data =  $("#search").val()
+							var sel = $(".selectbox option:selected").val();
+			 				location.href="/camp/product/search.do?search="+encodeURI($("#search").val());
+						})
+					}
+				})
+			}
+		})
+	})
+</script>
+<style type="text/css">
+.search {
+	position: relative;
+	width: 300px;
+}
+
+.search_bar {
+	width: 100%;
+	border: 1px solid #bbb;
+	border-radius: 8px;
+	padding: 10px 12px;
+	font-size: 14px;
+	color: black;
+}
+
+#wrap {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.selectbox {
+	width: 250px;
+	color: black;
+	margin-bottom: 15px;
+}
+
+#sub{
+	margin-top: 15px;
+}
+</style>
 </head>
 <body>
  <header class="masthead">
             <div class="container">
                 <div class="masthead-subheading">Welcome To Camverything!</div>
                 <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#search">Search</a>
+                	<div class="container-fluid bg-2 text-center">
+		<div id="wrap">
+			<div id="form">
+				<select class="selectbox" name="selectbox">
+					<option selected disabled="disabled">검색할 목록을 선택해주세요.</option>
+					<option value="1">캠핑장 목록</option>
+					<option value="2">캠핑용품 목록</option>
+				</select> <input class="search_bar" type="text"
+					placeholder="검색할 키워드를 입력해 주세요" name="search" id="search"> 
+				<input class="btn btn-primary btn-xl text-uppercase" type="submit" id="sub" value="search">
+			</div>
+		</div>
+	</div>
             </div>
         </header>
         <!-- Services-->

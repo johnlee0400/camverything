@@ -18,7 +18,7 @@ public class ReservationServiceImpl implements ReservationService{
 
 	@Override
 	public int insert(ReservationDTO dto) {
-		
+		System.out.println("###Service:"+dto+"###");
 		return dao.insert(dto);
 	}
 

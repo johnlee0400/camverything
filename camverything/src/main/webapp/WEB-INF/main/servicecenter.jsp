@@ -4,27 +4,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Theme Made By www.w3schools.com - No Copyright -->
+<!-- Theme Made By www.w3schools.com - No Copyright -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <title>Insert title here</title>
+
 <style type="text/css">
-#imageeee {
-  padding-top: 10.5rem;
-  padding-bottom: 15rem;
-  text-align: center;
-  color: #fff;
-  background-image: url("/camp/images/img/bg/board.jpg");
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
-  background-size: cover; 
-}
-/*===여기서 부터 submenu ====  */
 	.main {
 		width: 1200px;
 		margin: auto;
@@ -53,10 +40,10 @@
 	.location {
 		position:relative;
 		width: 100%;
-		float: center;
-		background: #FFFFFF;
+		float: left;
+		background: #ffffff;
 		height: 50px;
-		border-bottom: #DDDDDD 1px solid;
+		border-bottom: #dddddd 1px solid;
 	}
 	.submenu{
 		position: absolute;
@@ -116,7 +103,7 @@
 					$(this).children().css("color","white");
 				})
 				$(".selectbox").on("mouseout", function() {
-					/* alert("out"); */
+					/* alert("out"); */ 
 					$(this).css("background-color","white");
 					$(this).children().css("color","black");
 				})

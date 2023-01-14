@@ -5,17 +5,20 @@
 <html class="no-js" lang="zxx">
 <head>
 <title>Bootstrap Theme Simply Me</title>
+<!-- campread에서만 수정되는 css  -->
+<link href="/camp/common/css/styles_for_campread.css" rel="stylesheet" />
 <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <style type="text/css">
  	
  </style>
+ 
 </head>
 <body id="page-top">
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 		<div class="container">
 			<a class="navbar-brand" href="#page-top"><img
-				src="/camp/images/logo1.png" alt="..." class="logo"/></a>
+				src="/camp/images/logo1.png" alt="..." /></a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false"
@@ -27,23 +30,17 @@
 					<li class="nav-item"><a class="nav-link" href="/camp/test/index">Home</a></li>
 					<li class="nav-item"><a class="nav-link" href="/camp/test/search">상세검색</a></li>
 					<li class="nav-item"><a class="nav-link" href="/camp/camping/list.do">캠핑장목록</a></li>
-					<li class="nav-item"><a class="nav-link" href="/camp/board/list.do?category=정보공유">커뮤니티</a></li>
-					<li class="nav-item"><a class="nav-link" href="/camp/service/list.do?category=공지사항">고객센터</a></li>
-					<li class="nav-item">
-					<c:choose>
-						<c:when test="${user==null }">
-						<a class="nav-link" href="/camp/loginpage"><span class="glyphicon glyphicon-log-in">
-								</span>Login</a>
-						</c:when>
-						<c:otherwise>
-							<a class="nav-link" href="/camp/spring/logout"><span class="glyphicon glyphicon-log-out"></span>
-									Logout</a>
-						</c:otherwise>
-					</c:choose>
-				</li>
+					<li class="nav-item"><a class="nav-link" href="/camp/board/list.do?category=all">커뮤니티</a></li>
+					<li class="nav-item"><a class="nav-link" href="/camp/service.do">고객센터</a></li>
+					<li class="nav-item"><a class="nav-link" href="/camp/loginpage">login</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
+	<div id="imageeee">
+		<div class="container">
+			<div class="masthead-subheading"><h1>커뮤니티</h1></div>
+		</div>
+	</div>
 </body>
 </html>

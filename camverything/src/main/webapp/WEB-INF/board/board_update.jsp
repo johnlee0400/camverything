@@ -5,11 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="/camp/common/css/font-awesome.css" rel="stylesheet" />
 <!-- Custom styles for this template -->
 
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
@@ -47,9 +44,9 @@
 						</div>
 						<div class="col-md-3">
 							<select name="category" class="form-control" id="category">
-								<option value="경조사">경조사</option>
-								<option value="사내소식">사내소식</option>
-								<option value="게시판">게시판</option>
+								<option value="상품" >상품</option>
+								<option value="여행지">여행지</option>
+								<option value="정보공유">정보공유</option>
 							</select>
 						</div>
 					</div>

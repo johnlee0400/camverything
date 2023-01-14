@@ -1,6 +1,9 @@
 package com.multi.camp.servicecenter;
 
 import java.sql.Date;
+import java.util.List;
+
+import org.springframework.web.multipart.MultipartFile;
 
 public class ServiceCenterDTO {
 	private int service_no;
@@ -9,13 +12,14 @@ public class ServiceCenterDTO {
 	private String service_content;
 	private Date create_date;
 	private String category;
+	private List<MultipartFile> files;
 	
 	public ServiceCenterDTO() {
 		
 	}
 
 	public ServiceCenterDTO(int service_no, String id, String service_title, String service_content, Date create_date,
-			String category) {
+			String category, List<MultipartFile> files) {
 		super();
 		this.service_no = service_no;
 		this.id = id;
@@ -23,14 +27,14 @@ public class ServiceCenterDTO {
 		this.service_content = service_content;
 		this.create_date = create_date;
 		this.category = category;
+		this.files = files;
 	}
-	
-	
+
 	@Override
 	public String toString() {
 		return "ServiceCenterDTO [service_no=" + service_no + ", id=" + id + ", service_title=" + service_title
 				+ ", service_content=" + service_content + ", create_date=" + create_date + ", category=" + category
-				+ "]";
+				+ ", files=" + files + "]";
 	}
 
 	public int getService_no() {
@@ -79,6 +83,14 @@ public class ServiceCenterDTO {
 
 	public void setCategory(String category) {
 		this.category = category;
+	}
+
+	public List<MultipartFile> getFiles() {
+		return files;
+	}
+
+	public void setFiles(List<MultipartFile> files) {
+		this.files = files;
 	}
 	
 	

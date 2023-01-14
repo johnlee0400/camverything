@@ -5,17 +5,20 @@
 <html class="no-js" lang="zxx">
 <head>
 <title>Bootstrap Theme Simply Me</title>
+<!-- campread에서만 수정되는 css  -->
+<link href="/camp/common/css/styles_for_campread.css" rel="stylesheet" />
 <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <style type="text/css">
  	
  </style>
+ 
 </head>
 <body id="page-top">
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 		<div class="container">
 			<a class="navbar-brand" href="#page-top"><img
-				src="/camp/images/logo1.png" alt="..." class="logo"/></a>
+				src="/camp/images/logo1.png" alt="..." /></a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false"
@@ -34,5 +37,10 @@
 			</div>
 		</div>
 	</nav>
+	<div id="imageeee">
+		<div class="container">
+			<div class="masthead-subheading"><h1>커뮤니티</h1></div>
+		</div>
+	</div>
 </body>
 </html>

@@ -13,8 +13,7 @@ public class campingDTO {
 	private String camp_fac;
 	private String camp_nature;
 	private String camp_thema;
-	private String area_code;
-	
+	private String category;
 	
 	public campingDTO() {
 		super();
@@ -22,7 +21,7 @@ public class campingDTO {
 
 	public campingDTO(int business_no, String id, String manager_id, String camp_name, String business_name,
 			int camp_tel, String email, String camp_acc, String camp_fac, String camp_nature, String camp_thema,
-			String area_code) {
+			String category) {
 		super();
 		this.business_no = business_no;
 		this.id = id;
@@ -35,7 +34,7 @@ public class campingDTO {
 		this.camp_fac = camp_fac;
 		this.camp_nature = camp_nature;
 		this.camp_thema = camp_thema;
-		this.area_code = area_code;
+		this.category = category;
 	}
 
 	@Override
@@ -43,7 +42,7 @@ public class campingDTO {
 		return "campingDTO [business_no=" + business_no + ", id=" + id + ", manager_id=" + manager_id + ", camp_name="
 				+ camp_name + ", business_name=" + business_name + ", camp_tel=" + camp_tel + ", email=" + email
 				+ ", camp_acc=" + camp_acc + ", camp_fac=" + camp_fac + ", camp_nature=" + camp_nature + ", camp_thema="
-				+ camp_thema + ", area_code=" + area_code + "]";
+				+ camp_thema + ", category=" + category + "]";
 	}
 
 	public int getBusiness_no() {
@@ -134,13 +133,16 @@ public class campingDTO {
 		this.camp_thema = camp_thema;
 	}
 
-	public String getArea_code() {
-		return area_code;
+	public String getCategory() {
+		return category;
 	}
 
-	public void setArea_code(String area_code) {
-		this.area_code = area_code;
+	public void setCategory(String category) {
+		this.category = category;
 	}
+	
+	
+	
 	
 	
 	

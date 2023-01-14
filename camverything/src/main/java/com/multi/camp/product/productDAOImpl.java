@@ -31,4 +31,14 @@ public class productDAOImpl implements productDAO {
 		return sqlSession.selectOne("com.multi.camp.product.read", product_code);
 	}
 
+	@Override
+	public List<productDTO> findByCategory(String category) {
+		return sqlSession.selectList("com.multi.camp.product.categorySelect", category);
+	}
+
+	@Override
+	public List<productDTO> search(String data) {
+		return sqlSession.selectList("com.multi.camp.product.search", data);
+	}
+
 }

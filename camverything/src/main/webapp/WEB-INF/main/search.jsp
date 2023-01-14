@@ -9,30 +9,30 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script type="text/javascript">
-	var category = "{$category}";
 	$(document).ready(function() {
-		$("#list1").hide();
-		$("#list2").hide();
+// 		$("#list1").hide();
+// 		$("#list2").hide();
 		$(".selectbox").change(function() {
 			var sel = $(".selectbox option:selected").val();
 			if (sel == "1") {
-				$("#list1").show();
-				$("#list2").hide();
-				$("#local").click(function() {
-					$("#local").val(category).attr("selected", "selected");
-					$("#local").change(function() {
-						alert("체인지확인");
-						location.href="/camp/camping/search2.do?search="+encodeURI($("#search").val())+"&local="+encodeURI($(this).val());
-					})
+				$("#search").keydown(function(key) {
+					if(key.keyCode == 13){
+				var data =  $("#search").val()
+				var sel = $(".selectbox option:selected").val();
+ 					location.href="/camp/camping/search.do?search="+encodeURI($("#search").val());
+				}
 				})
-			} else {
-				$("#list2").show();
-				$("#list1").hide();
+			} else if(sel == "2"){
+				$("#search").keydown(function(key) {
+					if(key.keyCode == 13){
+				var data =  $("#search").val()
+				var sel = $(".selectbox option:selected").val();
+ 				location.href="/camp/product/search.do?search="+encodeURI($("#search").val());
+					}
+				})
 			}
 		})
 	})
-	
-	
 </script>
 <style type="text/css">
 .search {
@@ -49,18 +49,6 @@
 	color: black;
 }
 
-.imgs {
-	position: absolute;
-	width: 17px;
-	top: 10px;
-	right: 12px;
-	margin: 0;
-}
-
-button {
-	size: 100px;
-}
-
 #wrap {
 	display: flex;
 	flex-direction: column;
@@ -68,80 +56,35 @@ button {
 	align-items: center;
 }
 
-.btn btn-default dropdown-toggle {
-	padding-top: 10px;
-}
-
-/* #sub { */
-/* 	display: none; */
-/* } */
-
-.dropdown {
-	margin-bottom: 15px;
-}
-
 .selectbox {
 	width: 250px;
 	color: black;
 	margin-bottom: 15px;
 }
-.select{
-	color: black;
-}
+
 </style>
 </head>
 <body>
-<div id="imageeee">
-	<div class="container">
-		<div class="masthead-subheading"><h1>커뮤니티</h1></div>
+	<div id="imageeee">
+		<div class="container">
+			<div class="masthead-subheading">
+				<h1>커뮤니티</h1>
+			</div>
+		</div>
 	</div>
-</div>
 
 	<div class="container-fluid bg-2 text-center">
 		<div id="wrap">
-			
-			<form>
-				<select class="selectbox" name="selectbox" >
-					<option selected disabled="disabled">검색할 종류를 선택해주세요.</option>
+			<div id="form">
+				<select class="selectbox" name="selectbox">
+					<option selected disabled="disabled">검색할 목록을 선택해주세요.</option>
 					<option value="1">캠핑장 목록</option>
 					<option value="2">캠핑용품 목록</option>
-				</select>
-			<!-- </form>
-			<form class="search"> -->
-				<input class="search_bar" type="text" placeholder="검색할 키워드를 입력해 주세요"
-					name="search" id="search"> <img
-					src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png"
-					class="imgs">
-					
-				<div class="btn">
-					<div class="select" id="list1">
-						<select name="local" id="local">
-							<optgroup label="지역선택">
-								<option value="10">서울</option>
-								<option value="20">경기도</option>
-								<option value="30">강원도</option>
-								<option value="40">충청도</option>
-								<option value="50">경상도</option>
-								<option value="60">전라도</option>
-								<option value="70">제주도</option>
-							</optgroup>
-						</select>
-					</div>
-					<div class="select" id="list2">
-						<select name="local">
-							<optgroup label="캠핑용품">
-								<option value="10">용품구매</option>
-								<option value="20">먹거리</option>
-							</optgroup>
-						</select>
-					</div>
-				</div>
+				</select> <input class="search_bar" type="text"
+					placeholder="검색할 키워드를 입력해 주세요" name="search" id="search"> 
 				<input type="submit" id="sub">
-			</form>
-			
+			</div>
 		</div>
-		<!-- //wrap -->
-
 	</div>
 </body>
 </html>

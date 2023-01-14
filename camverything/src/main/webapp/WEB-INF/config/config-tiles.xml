@@ -35,7 +35,7 @@
 
 	<definition name="product" extends="indexTemplate">
 		<put-attribute name="content"
-			value="/WEB-INF/product/productpage.jsp" />
+			value="/WEB-INF/product/productList.jsp" />
 	</definition>
 	<definition name="campingList" extends="indexTemplate">
 		<put-attribute name="content"

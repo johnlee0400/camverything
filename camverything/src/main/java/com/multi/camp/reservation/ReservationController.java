@@ -28,9 +28,9 @@ public class ReservationController {
 	
 	@RequestMapping("/res/insert.do")
 	public String insert(ReservationDTO dto) {
-		System.out.println("re########d");
+		System.out.println("=====res/insert.do쪽 dto=======");
+		System.out.println(dto);
 		
-		System.out.println("체크~^^^^^~~~~"+dto);
 		int reservation = service.insert(dto);
 		System.out.println("결과는 =>"+reservation);
 		

@@ -13,12 +13,7 @@
 		<put-attribute name="footer"
 			value="/WEB-INF/include/footer.jsp" />
 	</definition>
-	<definition name="mainTemplate" template="/WEB-INF/layout/mainLayout.jsp">
-		<put-attribute name="content" value="/WEB-INF/main/content.jsp"/>
-		<put-attribute name="top" value="/WEB-INF/include/top.jsp"/>
-		<put-attribute name="menu" value="/WEB-INF/menu/servicemenu.jsp"/>
 	
-	</definition>
 	
 
 	<!-- 뷰등록 -->
@@ -46,14 +41,7 @@
 	<definition name="login" extends="indexTemplate">
 		<put-attribute name="content" value="/WEB-INF/main/login.jsp"/>
 	</definition>
-	<definition name="servicecenter" extends="mainTemplate">
-		<put-attribute name="content" value="/WEB-INF/main/servicecenter.jsp"/>
-		<put-attribute name="menu" value="/WEB-INF/menu/servicemenu.jsp"/>
-	</definition>
-	<definition name="notice" extends="mainTemplate">
-		<put-attribute name="content" value="/WEB-INF/service/notice.jsp"/>
-		<put-attribute name="menu" value="/WEB-INF/menu/servicemenu.jsp"/>		
-	</definition>
+	
 	
 	
 	<definition name="test/campread" extends="indexTemplate">

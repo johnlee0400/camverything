@@ -4,9 +4,8 @@
 <!DOCTYPE>
 <html>
 <head>
-<title>인사관리시스템</title>
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<title></title>
+<link rel="stylesheet" href="/camp/common/css/board/css.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script
@@ -21,87 +20,57 @@
 </script>
 </head>
 <body>
+<div id="imageeee">
+	<div class="container">
+		<div class="masthead-subheading"><h1>커뮤니티</h1></div>
+	</div>
+	</div>
 
 	<form class="form-horizontal" 
 		action="/camp/board/read.do?state=UPDATE&board_no=${board.board_no }" 
 		method="post" >
-
-		
-		<div class="form-group">
-			<div class="col-md-2 text-right">
-				<label for="id" class="control-label">번호</label>
-			</div>
-			<div class="col-md-8">${board.board_no}</div>
-		</div>
-		<div class="form-group">
-			<div class="col-md-2 text-right">
-				<label for="id" class="control-label">게시글종류</label>
-			</div>
-			<div class="col-md-3">
-				<select name="category" class="form-control" 
-							id="category">
-					<option value="상품" >상품</option>
-					<option value="여행지">여행지</option>
-					<option value="정보공유">정보공유</option>
-				</select>
-			</div>
-		</div>
-		<div class="form-group">
-			<div class="col-md-2 text-right">
-				<label for="id" class="control-label">작성자</label>
-			</div>
-			<div class="col-md-8">${board.id}</div>
-		</div>
-		<div class="form-group">
-			<div class="col-md-2 text-right">
-				<label for="title" class="control-label">제목</label>
-			</div>
-			<div class="col-md-8">${board.title }</div>
-		</div>
-		<div class="form-group">
-			<div class="col-md-2 text-right">
-				<label for="title" class="control-label">첨부파일</label>
-			</div>
-			<div class="col-md-8">
-			<!-- 디비에 저장된 파일명을 출력(클라이언트가 선택한 파일명) : JSTL -->
-				<c:forEach var="file" items="${boardfiledtolist}">
-					<h5><a href="/camp/board/download/${board.id}/${board.board_no}/${file.boardFileno}">${file.originalFilename}</a></h5>
-				</c:forEach>
-			</div>
-		</div>
-		
-		
-		<div class="form-group">
-			<div class="col-md-2 text-right">
-				<label for="title" class="control-label">작성날짜</label>
-			</div>
-			<div class="col-md-8">${board.create_date }</div>
-		</div>
-		<div class="form-group">
-			<div class="col-md-2 text-right">
-				<label for="text" class="control-label">내용</label>
-			</div>
-			<div class="col-md-8"
-				style="width: 500px; height: 400px; border: solid 1px;">
-				${board.content }
-				</div>
-		</div>
-
-		<div class="form-group">
-			<div class="col-md-10 text-center">
-				<input type="submit" class="btn btn-lg btn-primary" 
-				value="수정">
-
-				<button type="button" class="btn btn-danger btn-lg"
-					onclick="location.href='/stswebTest/board/list.do'">
-					<i class="fa fa-fw fa-close"></i> 목록
-				</button>
-				<button type="button" class="btn btn-danger btn-lg"
-					id="deletebtn">
-					<i class="fa fa-fw fa-close"></i> 삭제
-				</button>
-			</div>
-		</div>
+		<div class="board_wrap">
+	        <div class="board_title">
+	            <strong>${category }</strong>
+	        </div>
+	        <div class="board_view_wrap">
+	            <div class="board_view">
+	                <div class="title">
+	                    ${board.title }
+	                </div>
+	                <div class="info">
+	                    <dl>
+	                        <dt>번호</dt>
+	                        <dd>${board.board_no }</dd>
+	                    </dl>
+	                    <dl>
+	                        <dt>글쓴이</dt>
+	                        <dd>${board.id }</dd>
+	                    </dl>
+	                    <dl>
+	                        <dt>작성일</dt>
+	                        <dd>${board.create_date }</dd>
+	                    </dl>
+	                    <dl>
+	                        <dt>조회</dt>
+	                        <dd>${board.view_cnt }</dd>
+	                    </dl>
+	                </div>
+	                <div>
+	                	<c:forEach var="file" items="${boardfiledtolist}">
+							<h5><a href="/camp/board/download/${board.id}/${board.board_no}/${file.boardFileno}">${file.originalFilename}</a></h5>
+						</c:forEach>
+	                </div>
+	                <div class="cont">
+	                    ${board.content }
+	                </div>
+	            </div>
+	            <div class="bt_wrap">
+	                <a href="/camp/board/list.do?category=all" class="on">목록</a>
+	                <a href="/camp/board/update.do">수정</a>
+	            </div>
+	        </div>
+	    </div>
 	</form>
 
 </body>

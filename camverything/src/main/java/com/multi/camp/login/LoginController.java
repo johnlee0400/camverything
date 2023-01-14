@@ -51,24 +51,24 @@ public class LoginController {
 		mav.setViewName(viewName);
 		return mav;
 	}
-	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
-	public String login() {
-		return "login";
-	}
+//	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
+//	public String login() {
+//		return "login";
+//	}
 	
-	@RequestMapping("/main/login")
-	public String springlogin(LoginDTO loginUserInfo,Model model) {
-		System.out.println("스프링이 제공하는 @SessionAttributes를 이용해서 세션처리하기");
-		LoginDTO user = service.login(loginUserInfo);
-		String viewName = "";
-		if (user != null) {
-			model.addAttribute("user",user);
-			viewName = user.getMenupath();
-		} else { // 로그인실패
-			viewName = "";
-		}
-		return viewName;
-	}
+//	@RequestMapping("/main/login")
+//	public String springlogin(LoginDTO loginUserInfo,Model model) {
+//		System.out.println("스프링이 제공하는 @SessionAttributes를 이용해서 세션처리하기");
+//		LoginDTO user = service.login(loginUserInfo);
+//		String viewName = "";
+//		if (user != null) {
+//			model.addAttribute("user",user);
+//			viewName = user.getMenupath();
+//		} else { // 로그인실패
+//			viewName = "";
+//		}
+//		return viewName;
+//	}
 	@RequestMapping(value = "/logout.do")
 	public String logout(HttpSession session) {
 		if(session!=null) {

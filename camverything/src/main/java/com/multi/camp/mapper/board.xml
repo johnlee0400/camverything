@@ -18,7 +18,7 @@
 	</insert>
 	<insert id="write" parameterType="board">
 		insert into board 
-		values(board_seq.nextval,#{id},#{nickname},#{title},#{content},sysdate,#{view_cnt},#{category})
+		values(board_seq.nextval,#{id},null,#{title},#{content},sysdate,null,#{category})
 	</insert>
 	<select id="selectall" resultType="board">
 		select * from board

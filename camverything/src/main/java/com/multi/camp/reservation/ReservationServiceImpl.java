@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.multi.camp.manager.GoCampingDTO;
 @Service
 public class ReservationServiceImpl implements ReservationService{
 	
@@ -27,6 +29,19 @@ public class ReservationServiceImpl implements ReservationService{
 	public List<ReservationDTO> getcampDate(ReservationDTO dto) {
 		System.out.println("service쪽 dto:"+dto);
 		return dao.getcampDate(dto);
+	}
+
+
+	@Override
+	public int cancel() {
+		return dao.cancel();
+	}
+
+
+	@Override
+	public GoCampingDTO getGoCampingDataByfacltNm(String facltNm) {
+		
+		return dao.getGoCampingDataByfacltNm(facltNm);
 	}
 
 }

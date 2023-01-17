@@ -1,5 +1,8 @@
 package com.multi.camp.register;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +25,11 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public int insert(MemberDTO member) {
 		return dao.insert(member);
+	}
+	@Override
+	public int insert(MemberDTO member, HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

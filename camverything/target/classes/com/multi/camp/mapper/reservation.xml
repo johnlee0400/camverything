@@ -13,4 +13,10 @@
 	<select id="campdateselect" parameterType="reservation" resultType="reservation">
 		select camp_period,camp_loc,area_price from camping_list where business_no =#{business_no} and camp_date=#{camp_date} order by camp_period asc
 	</select>
+	<delete id="cancel" parameterType="String">
+		delete reservation where id= 'hihi'
+	</delete>
+	<select id="gocampingdata" parameterType="String" resultType="gocamping">
+		select * from gocamping where facltNm =#{facltNm}
+	</select>
 </mapper>

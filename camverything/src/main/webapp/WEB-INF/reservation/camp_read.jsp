@@ -216,9 +216,57 @@
 	function chk_form() {
 		document.getElementById('frm').submit();
 	}
+	
 
 	//jquery작동부분
 	$(document).ready(function() {
+		//kakao페이 요청 (submit하고 왔는데 check값 1을 가져왔으면 작동)
+		if($("#check").val()==1){
+			$.ajax({
+				url:"/camp/res/kakaopay",
+				dataType:"json", //받을 데이터 형식
+				success:function(data){
+					console.log("성공");
+					console.log(data.next_redirect_pc_url);
+					window.location.replace(data.next_redirect_pc_url);
+				},
+				error:function(error){
+					console.log(error);
+				}
+			})
+		}
+		
+		//=========결제처리부분============
+		//URL파라미터값(쿼리스트링) 얻기
+		const urlStr = window.location.href; //현재페이지의 URL얻기
+		const url = new URL(urlStr);
+
+		const urlParams = url.searchParams;
+
+		const paramValue = urlParams.get('reservation');
+		//console.log(paramValue);
+		
+		//키의 값에 따라 결제팝업창띄우기 
+		if(paramValue == "cancel"){
+			let popOption = "width = 400px, height =200px, top=600px, left=700px, directoryies=no, location=no, status=no, toolbar=no, scrollbars=no";
+			let openUrl = '/camp/res/fail'
+			window.open(openUrl,'pop',popOption);
+			$.ajax({
+				url:"/camp/res/cancel",
+				success:function(data){
+					console.log("예약삭제됨");
+				},
+				error:function(error){
+					console.log(error);
+				}
+			})
+		}
+		else if(paramValue == "success"){
+			let popOption = "width = 400px, height =280px, top=600px, left=700px, directoryies=no, location=no, status=no, toolbar=no, scrollbars=no";
+			let openUrl = '/camp/res/success'
+			window.open(openUrl,'pop',popOption);
+		}
+		
 		//httpsession에서 id값 가져와서 저장하기
 		$("#hiddenid").val("hihi"); //임시처리중
 		//sessionStorage.getItem(id); 로그인되면  <-- javascript로 session정보 받는 함수
@@ -264,11 +312,11 @@
 			    				}
 			    				
 			    				//=====페이지 처음 들어왔을때 초기값 가격=====
-			    				$("#periodtotal").text(0);
+			    				$("#periodmultiple").text(1); //초기가 1박2일임
 			    				$("#loctotal").text(price[0]);
-			    				//bbq는 초기값 0이라 여기선 고려안함
+			    				$("#bbqtotal").text(0); //초기가 선택안함이어서
 
-			    				result = parseInt($("#periodtotal").text())+parseInt($("#loctotal").text());
+			    				result = parseInt($("#periodmultiple").text())*parseInt($("#loctotal").text());
 			    				$("#total").text(result);
 			    				
 			    				//======submit용 pay_price 저장========
@@ -310,10 +358,10 @@
 			    				
 			    				
 			    				//=====초기값때 가격 =====
-			    				$("#periodtotal").text(0);
+			    				$("#periodmultiple").text(1);
 			    				$("#loctotal").text(price[0]);
 			    				
-			    				result = parseInt($("#periodtotal").text())+parseInt($("#loctotal").text());
+			    				result = parseInt($("#periodmultiple").text())*parseInt($("#loctotal").text());
 			    				$("#total").text(result);
 			    				
 			    				//=====camp_date 바뀔때 저장된거 바뀌게 =====
@@ -338,44 +386,69 @@
 			$.ajax({
     			url:"/camp/res/campdatelist",
     			type:"get",
-    			data:{"business_no":"121212","camp_date":new Date().getFullYear()+"-"+(new Date().getMonth()+1)+"-"+new Date().getDate()},
+    			data:{"business_no":"121212","camp_date":$("#hiddendate").val()},
     			success:function(list){
     				//alert(list); 
     				
     				var period = list[0].camp_period.split(','); //list 배열 한개뿐
 					var location = list[0].camp_loc.split(',');
 					var price = list[0].area_price.split(',');
-    				
+					//console.log("select=>"+select);
+    				console.log("period[0] =>"+period[0]+"period[1] =>"+period[1]+"period[2] =>"+period[2]);
 						/* $("#total").text(price[0]);//선택했을때 계속 더해지지 않고 다시 초기값으로 */
 					for(var i=0;i<period.length;i++){
+						//console.log("select=>"+select);
+						console.log("period i=>"+period[i]);
+						//console.log("periodlength"+period.length);
     					if(select==period[i]){//selectbox에서 선택하면 그선택에따른 가격으로 변동
-    						console.log("i값은 => "+i);
-    						var j=i;
-    						if(i>location.length){       //date_price따로 만들기
-    							j=i-1;
-    						} 
-    						console.log("j값은 => "+j);
-    						$("#periodtotal").text((parseInt(price[j])*i));
+    						$("#periodmultiple").text(i+1);  //캠핑장가격에 곱할값 예:강변A(10만에) 2박3일이면 => 2를 10만에 곱하면됨
+    						//console.log("i=>"+i);
+    						//console.log("multiple은=>"+$("#periodmultiple").text());
     					}
     				}
 					for(var i=0;i<location.length;i++){
     					if(select==location[i]){
     						$("#loctotal").text(price[i]);
+    						console.log("areaprice=>"+$("#loctotal").text());
     					}
     				}
 					
-					result = parseInt($("#periodtotal").text())+parseInt($("#loctotal").text());
+					//##########bbq옵션 처리##############
+					for(var i=0;i<2;i++){
+    					if(select=="바비큐 사용안함"){
+    						$("#bbqtotal").text(0);
+    						console.log("bbqtotal=>"+$("#bbqtotal").text());
+    					}
+    					else if(select=="바비큐(+20000)"){
+    						$("#bbqtotal").text(20000);
+    						console.log("bbqtotal=>"+$("#bbqtotal").text());
+    					}
+    				}
+					
+					//console.log("select=>"+select);
+					//##########bbq옵션 처리##############
+					//var bbq = $("#bbq option:selected").attr("id");
+					console.log("multi=>"+$("#periodmultiple").text());
+					console.log("loctotal=>"+$("#loctotal").text());
+					
+					//날짜랑 캠프가격 곱하기
+					result =parseInt($("#periodmultiple").text())*parseInt($("#loctotal").text())
+						+parseInt($("#bbqtotal").text());
+					console.log("result=>"+result);
+					//합계에 곱한결과 넣기
 					$("#total").text(result);
+					console.log("total=>"+$("#total").text());
+					
+					
+					//$("#total").text(parseInt($("#total").text())+parseInt(bbqtotal));
+					//합산
+					$("#total").text()+parseInt($("#bbqtotal").text());
+					console.log("total=>"+$("#total").text());
 					
 					//total값들 체크용
 					/* alert($("#periodtotal").text());
 					alert($("#loctotal").text()); */
 					
-					//##########bbq옵션 처리##############
-					var bbq = $("#bbq option:selected").attr("id");
-					if(bbq == "yesbbq"){
-						$("#total").text(parseInt($("#total").text())+20000);
-					}
 					
 					//$$$$$$$$ 전송용 total처리 $$$$$$$
 					$("#hiddentotal").val(parseInt($("#total").text()));
@@ -391,6 +464,9 @@
 </script>
 </head>
 <body>
+<!--카카오페이용 submit check하기 -->
+<input style="display:none" id="check" value="${check}"/>
+<!--#########숨겨짐###############  -->
 <div id="imageeee">
 		<div class="container">
 			<div class="masthead-subheading"><h1>커뮤니티</h1></div>
@@ -399,10 +475,10 @@
 
 <div class="subcontainer">
 	<form action="/camp/res/insert.do" method="post"
-					enctype="multipart/form-data" id="frm">
+					enctype="multipart/form-data" id="frm" onsubmit="return false;">
 	<div class="mainWrapper"> <!-- 그림, 설명포함 -->
 		<div class="camptitle">
-				캠핑장소개
+				캠핑장소개<br/>
 		</div>
 		<div class="main">
 			<div class="picture">
@@ -458,7 +534,7 @@
 		</div>
 		<div class="sideBottom">
 		<!-- ##################################################숨겨진total값들 -->
-		<div id="periodtotal" style="display:none"></div>
+		<div id="periodmultiple" style="display:none"></div>
 		<div id="loctotal" style="display:none"></div>
 		<div id="bbqtotal" style="display:none"></div>
 		<!-- ####################################################  -->		
@@ -476,7 +552,7 @@
 				<li class="selectCamp">
 					<div class="sideTitle">캠핑장</div>
 					<div class="selectedData">
-						<select id="locselect" class="onselect" name="camp_loc">
+						<select id="locselect" class="onselect" name="camp_loc" >
 						</select>
 					</div>
 				</li>
@@ -505,8 +581,8 @@
 			<input style="display:none" id="hiddenid" name="id"/>
 			<!-- $$$$$$$$$$$$$$$$$$$$$$ -->
 		</div>
-		<a href="#" onclick="return chk_form()" class="reserveBtn"> <!--a태그로 submit작동하기  -->
-			<span>예매하기</span>
+		<a href="#" onclick="return chk_form()" class="reserveBtn" id="reserveBtn"> <!--a태그로 submit작동하기  -->
+			<span>예약하기</span>
 		</a>
 	</div>
 	<div class="review">

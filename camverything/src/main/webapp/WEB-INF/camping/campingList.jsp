@@ -52,7 +52,7 @@
 				<div class="col-xs-4">
 						<h2>
 							<a
-								href="/camp/test/camp_read?business_no=${campingList.business_no }">${campingList.camp_name }</a>
+								href="/camp/res/camp_read?business_no=${campingList.business_no }">${campingList.camp_name }</a>
 						</h2>
 						<img src="/camp/images/camp3.jpg" width="150" height="150">
 
@@ -63,7 +63,7 @@
 							대표 : ${campingList.business_name } <br /> 전화번호 :
 							${campingList.camp_tel } <br /> email : ${campingList.email } <br />
 							<button type="button" class="btn btn-info"
-								onclick="location.href='/camp/test/camp_read?business_no=${campingList.business_no }'">예약하기</button>
+								onclick="location.href='/camp/res/camp_read?business_no=${campingList.business_no }'">예약하기</button>
 						</div>
 					</div>
 				</c:forEach>

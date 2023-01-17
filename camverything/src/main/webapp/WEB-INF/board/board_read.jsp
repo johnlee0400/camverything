@@ -58,7 +58,7 @@
 	                </div>
 	                <div>
 	                	<c:forEach var="file" items="${boardfiledtolist}">
-							<h5><a href="/camp/board/download/${board.id}/${board.board_no}/${file.boardFileno}">${file.originalFilename}</a></h5>
+							<h5><img src="/camp/board/download/${board.id}/${board.board_no}/${file.boardFileno}"></h5>
 						</c:forEach>
 	                </div>
 	                <div class="cont">
@@ -66,8 +66,8 @@
 	                </div>
 	            </div>
 	            <div class="bt_wrap">
-	                <a href="/camp/board/list.do?category=all" class="on">목록</a>
-	                <a href="/camp/board/update.do">수정</a>
+	                <a href="/camp/board/list.do?category=${board.category }" class="on">목록</a>
+	                <input type="submit" class="btn btn-lg btn-primary" value="수정">
 	            </div>
 	        </div>
 	    </div>

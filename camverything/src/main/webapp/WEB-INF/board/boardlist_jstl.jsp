@@ -148,7 +148,7 @@
                 <div>
 				<c:forEach var="board" items="${boardlist }" >
 					<div class="selectbox">
-						<div class="num">${board.board_no }</div>
+						<div class="num">(${category})</div>
 						<div class="title"><a href="/camp/board/read.do?board_no=${board.board_no }&state=READ">${board.title }</a></div>
 						<div class="writer">${board.id }</div>
 						<div class="date">${board.create_date }</div>

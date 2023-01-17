@@ -66,8 +66,12 @@ public class BoardServiceImpl implements BoardService{
 	//dao클래스에 정의된 두 개의 메소드를 호출
 	@Override
 	public int insert(BoardDTO board, List<BoardFileDTO>boardfiledtolist) {
-		dao.insert(board);
-		dao.insertFile(boardfiledtolist);
+		if(boardfiledtolist.size()!=0) {
+			dao.insert(board);
+			dao.insertFile(boardfiledtolist);
+		}else {
+			dao.insert(board);
+		}
 		return 0;
 		
 	}

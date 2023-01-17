@@ -10,13 +10,5 @@
 <view-controller path="/test/index" view-name="index"/>
 <view-controller path="/test/search" view-name="search"/>
 <view-controller path="/test/product" view-name="product"/>
-
 <view-controller path="/test/camp_read" view-name="test/campread"/>
-<view-controller path="/test/board" view-name="board"/>
-<view-controller path="/test/notice" view-name="servicecenter/notice"/>
-
-<view-controller path="/test/notice" view-name="notice"/>
-	
-
-	
 </beans:beans>

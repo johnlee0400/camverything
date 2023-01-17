@@ -71,6 +71,8 @@
 	width: 250px;
 	color: black;
 	margin-bottom: 15px;
+	padding: 5px 20px 5px 5px;
+	border-radius: 4px;
 }
 
 #sub{
@@ -90,7 +92,8 @@
 					<option selected disabled="disabled">검색할 목록을 선택해주세요.</option>
 					<option value="1">캠핑장 목록</option>
 					<option value="2">캠핑용품 목록</option>
-				</select> <input class="search_bar" type="text"
+				</select> 
+				<input class="search_bar" type="text"
 					placeholder="검색할 키워드를 입력해 주세요" name="search" id="search"> 
 				<input class="btn btn-primary btn-xl text-uppercase" type="submit" id="sub" value="search">
 			</div>

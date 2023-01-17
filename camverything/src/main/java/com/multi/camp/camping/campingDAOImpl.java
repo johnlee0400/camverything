@@ -39,6 +39,11 @@ public class campingDAOImpl implements campingDAO {
 		map.put("search", "%"+search+"%");
 		return sqlSession.selectList("com.multi.camp.camping.search2" ,map);
 	}
+
+	@Override
+	public List<campingDTO> findByCategory(String category) {
+		return sqlSession.selectList("com.multi.camp.camping.categorySelect" ,category);
+	}
 	
 	
 

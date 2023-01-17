@@ -24,7 +24,6 @@ $(document).ready(function() {
 $(document).ready(function() {
 	$('#num').on('keyup', function() {
 		var num = (${product.product_price }*$('#num').val());
-		console.log(num);
 		$('#total').val(num);
 	})
 })

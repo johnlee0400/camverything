@@ -26,5 +26,23 @@ public class productServiceImpl implements productService {
 	public productDTO getProductInfo(String product_code) {
 		return dao.read(product_code);
 	}
+	@Override
+	public List<productDTO> findByCategory(String category) {
+		List<productDTO> list = null;
+		if(category!=null) {
+			if(category!=null) {
+				if(category.equals("1")) {
+					list = dao.productList();
+				}else {
+					list = dao.findByCategory(category);
+				}
+			}
+		}
+		return list;
+	}
+	@Override
+	public List<productDTO> search(String data) {
+		return dao.search(data);
+	}
 
 }

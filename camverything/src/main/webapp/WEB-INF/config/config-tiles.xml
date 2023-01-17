@@ -13,12 +13,6 @@
 		<put-attribute name="footer"
 			value="/WEB-INF/include/footer.jsp" />
 	</definition>
-	<definition name="mainTemplate" template="/WEB-INF/layout/mainLayout.jsp">
-		<put-attribute name="content" value="/WEB-INF/main/content.jsp"/>
-		<put-attribute name="top" value="/WEB-INF/include/top.jsp"/>
-		<put-attribute name="menu" value="/WEB-INF/menu/servicemenu.jsp"/>
-	
-	</definition>
 	
 
 	<!-- 뷰등록 -->
@@ -37,7 +31,7 @@
 
 	<definition name="product" extends="indexTemplate">
 		<put-attribute name="content"
-			value="/WEB-INF/product/productpage.jsp" />
+			value="/WEB-INF/product/productList.jsp" />
 	</definition>
 	<definition name="campingList" extends="indexTemplate">
 		<put-attribute name="content"
@@ -61,19 +55,6 @@
 	
 	<definition name="test/campread" extends="indexTemplate">
 	<put-attribute name
-	="content" value="/WEB-INF/test/camp_read.jsp"/>
+	="content" value="/WEB-INF/reservation/camp_read.jsp"/>
 	</definition>
-	
-	<!-- <definition name="test/datepicker" extends="indexTemplate">
-	<put-attribute name="content" value="/WEB-INF/test/datepicker.jsp"/>
-	</definition> -->
-	
-
-	<definition name="test/campread" extends="indexTemplate">
-		<put-attribute name="content"
-			value="/WEB-INF/test/camp_read.jsp" />
-	</definition>
-	
-	
-	
 </tiles-definitions>

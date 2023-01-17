@@ -124,7 +124,7 @@ public class BoardController {
 		LoginDTO user = (LoginDTO)session.getAttribute("user");
 		String view = "";
 		if(user==null) {
-			view = "redirect:/emp/login.do";
+			view = "redirect:/camp/login.do";
 		}else {
 			int result = service.delete(board_no);
 			view = "redirect:/board/list.do?category=all";

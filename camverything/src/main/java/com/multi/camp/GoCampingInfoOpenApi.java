@@ -22,7 +22,7 @@ public class GoCampingInfoOpenApi {
 		
 		String gocampingurl ="http://apis.data.go.kr/B551011/GoCamping/basedList"; //End Point + API목록중하나
 		String key="UBakkE%2FihnBG11v4sgIy99%2BDpgzf5M%2FgWkAx7%2FxJj0cW1Et4rkrddRT0Yrln%2FqWDJR4db9SSTo%2FHxnNRqeDkiQ%3D%3D"; //일반 인증키(Encoding)
-		String numOfRows = "5" ;
+		String numOfRows = "2" ;
 		String PageNo = "1" ;
 		String MobileOS = "WIN";
 		String MobileApp = "testtest";
@@ -42,10 +42,15 @@ public class GoCampingInfoOpenApi {
 				NodeList itemchildnodelist = itemnode.getChildNodes();
 				for (int j = 0; j < itemchildnodelist.getLength(); j++) {
 					Node itemChildNode=itemchildnodelist.item(j);
-					System.out.print(itemChildNode.getNodeName()+":");
-					System.out.println(itemChildNode.getTextContent());
+					
+					String nodename = itemChildNode.getNodeName();
+					 if(!nodename.equals("#text")) { 
+						 System.out.print(nodename+":");
+						 System.out.println(itemChildNode.getTextContent()); 
+					  }
+					
 					}
-				System.out.println("=============================================");
+				System.out.println("=======================================================================================");
 				}
 			
 		} catch (MalformedURLException e) {

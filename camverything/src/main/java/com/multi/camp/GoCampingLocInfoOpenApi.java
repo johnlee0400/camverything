@@ -15,18 +15,22 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class GoCampingInfoOpenApi {
+public class GoCampingLocInfoOpenApi {
 	public static void main(String[] args) {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder xmlparser;
 		
-		String gocampingurl ="http://apis.data.go.kr/B551011/GoCamping/basedList"; //End Point + API목록중하나
+		String gocampingurl ="http://apis.data.go.kr/B551011/GoCamping/locationBasedList"; //End Point + API목록중하나
 		String key="UBakkE%2FihnBG11v4sgIy99%2BDpgzf5M%2FgWkAx7%2FxJj0cW1Et4rkrddRT0Yrln%2FqWDJR4db9SSTo%2FHxnNRqeDkiQ%3D%3D"; //일반 인증키(Encoding)
-		String numOfRows = "2" ;
+		String numOfRows = "1" ;
 		String PageNo = "1" ;
 		String MobileOS = "WIN";
 		String MobileApp = "testtest";
-		String realUrl = gocampingurl+"?ServiceKey="+key+"&pageNo="+PageNo+"&MobileOS="+MobileOS+"&MobileApp="+MobileApp+"&numOfRows="+numOfRows;
+		String mapX = "128.6142847";
+		String mapY = "36.0345423";
+		String radius = "2000";
+		String realUrl = gocampingurl+"?ServiceKey="+key+"&pageNo="+PageNo+"&MobileOS="+MobileOS+"&MobileApp="+MobileApp+"&numOfRows="+numOfRows
+				+"&mapX="+mapX+"&mapY="+mapY+"&radius="+radius;
 		
 		try {
 			URL url = new URL(realUrl);
@@ -50,7 +54,7 @@ public class GoCampingInfoOpenApi {
 					  }
 					
 					}
-				System.out.println("=======================================================================================");
+				System.out.println("=============================================");
 				}
 			
 		} catch (MalformedURLException e) {

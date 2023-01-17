@@ -27,14 +27,14 @@ public class MemberController {
 	}
 	@RequestMapping(value = "/main/insert.do", method = RequestMethod.POST)
 	public String insert(MemberDTO member) {
-//		System.out.println("Member=>"+member);
+		System.out.println("Member=>"+member);
 //		service.insert(member);
 //		return "main/login";
 		int result = service.insert(member);
 		if(result==1) {
-			return "redirect : main/login";
+			return "index";
 		}
-		return "redirect : main/register";
+		return "redirect:/main/register";
 	}
 	//아이디 중복체크
 	@RequestMapping(value = "/ajax",produces = "application/text;charset=utf-8")

@@ -5,7 +5,7 @@
 <mapper namespace="com.multi.camp">
 	<insert id="register" parameterType="member">
 		insert into member
-		values(#{id},#{pass},#{name},
-		#{addr},#{tel},#{nickname},#{birth},#{email})
+		values(#{id},#{pass},#{name},#{zonecode},
+		#{addr},#{detailaddr},#{tel},#{nickname},#{birth},#{email})
 	</insert>
 </mapper>

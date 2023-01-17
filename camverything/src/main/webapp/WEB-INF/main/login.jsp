@@ -43,7 +43,7 @@
            </div>
           <!-- resgister botton -->
           <div>
-              <p class="mb-0">Don't have an account? <a href="main/insert.do" class="text-white-50 fw-bold">Sign Up</a>
+              <p class="mb-0">Don't have an account? <a href="/camp/main/insert.do" class="text-white-50 fw-bold">Sign Up</a>
               </p>
             </div>
             </div>

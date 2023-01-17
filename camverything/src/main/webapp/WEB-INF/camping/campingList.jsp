@@ -11,19 +11,84 @@
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-	category = "${category}"
+	doNm = "${doNm}"
 	$(document).ready(function() {
-		$("#category").val(category).attr("selected","selected");
-		$("#category").change(function() {
-			location.href="/camp/camping/list.do?category="+encodeURI($(this).val())
+		$("#doNm").val(doNm).attr("selected","selected");
+		$("#doNm").change(function() {
+			location.href="/camp/camping/list.do?doNm="+encodeURI($(this).val())
 		});
 	});
 </script>
 <style type="text/css">
-	.main {
-		width: 1200px;
-		margin: auto;
-	}
+
+.glyphicon { margin-right:5px; }
+.thumbnail
+{
+    margin-bottom: 20px;
+    padding: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.item.list-group-item
+{
+    float: none;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover
+{
+    background: #428bca;
+}
+
+.item.list-group-item .list-group-image
+{
+    margin-right: 10px;
+}
+.item.list-group-item .thumbnail
+{
+    margin-bottom: 0px;
+}
+.item.list-group-item .caption
+{
+    padding: 9px 9px 0px 9px;
+}
+.item.list-group-item:nth-of-type(odd)
+{
+    background: #eeeeee;
+}
+
+.item.list-group-item:before, .item.list-group-item:after
+{
+    display: table;
+    content: " ";
+}
+
+.item.list-group-item img
+{
+    float: left;
+    margin-right: 10px;
+}
+.item.list-group-item:after
+{
+    clear: both;
+}
+.list-group-item-text
+{
+    margin: 0 0 11px;
+}
+.container{
+	margin-top: 15px;
+}
+form{
+	margin-bottom: 15px;
+}
+#category{
+	float: right;
+	margin-top: 50px;
+}
 </style>
 </head>
 <body>
@@ -33,11 +98,10 @@
 		<div class="masthead-subheading"><h1>커뮤니티</h1></div>
 	</div>
 </div>
-	<h1 style="text-align: center;">캠핑리스트</h1>
-	<div class="container">
-		<div class="row">
-					지역선택: <form action="">
-						<select name="category" id="category">
+<div class="container">
+			
+						<form action="">
+						<select name="doNm" id="doNm">
 								<option value="1" selected="selected">전체</option>
 								<option value="서울">서울</option>
 								<option value="경기도">경기도</option>
@@ -48,29 +112,42 @@
 								<option value="제주도">제주도</option>
 						</select>
 						</form>
-			<c:forEach var="campingList" items="${campingList }">
-				<div class="col-xs-4">
-						<h2>
-							<a
-								href="/camp/test/camp_read?business_no=${campingList.business_no }">${campingList.camp_name }</a>
-						</h2>
-						<img src="/camp/images/camp3.jpg" width="150" height="150">
-
-						<div id="business_no" style="display: none">캠핑장 번호 :
-							${campingList.business_no }</div>
-
-						<div>
-							대표 : ${campingList.business_name } <br /> 전화번호 :
-							${campingList.camp_tel } <br /> email : ${campingList.email } <br />
-							<button type="button" class="btn btn-info"
-								onclick="location.href='/camp/test/camp_read?business_no=${campingList.business_no }'">예약하기</button>
 						</div>
-					</div>
-				</c:forEach>
+					<section class="page-section bg-light" id="portfolio">
+	
+			
+            <div class="container">
+					<div class="text-center">
+               
+                    <h2 class="section-heading text-uppercase">캠핑장</h2>
+                    <h3 class="section-subheading text-muted">당신의 선택을 응원합니다.</h3>
+                    
+                </div>
+    <div id="products" class="row list-group">
+     <c:forEach var="campingList" items="${campingList }">
+        <div class="item  col-xs-4 col-lg-4 list-group-item">
+            <div class="thumbnail">
+                <img src="/camp/images/camp3.jpg">
+                <div class="caption">
+                    <h5 class="group inner list-group-item-heading">
+                       ${campingList.facltNm }</h5>
+                       <hr/>
+                    <p class="group inner list-group-item-text">
+                       간단한 캠핑장 소개</p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                           <button type="button" class="btn btn-success" onclick="location.href='/camp/test/camp_read?facltNm=${campingList.facltNm }'">예약/상세보기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </c:forEach>
+    </div>
+</div>
+</section>
 
-
-			</div>
-		</div>
-	</div>
 </body>
 </html>

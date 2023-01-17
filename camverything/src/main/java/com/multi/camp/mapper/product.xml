@@ -15,4 +15,7 @@
 	<select id="search" resultType="product" parameterType="String">
 		select * from product where product_name like '%' || #{product_name} ||'%'
 	</select>
+	<select id="ajax_read" resultType="product" parameterType="String">
+		select * from product where product_code = #{product_code}
+	</select>
 </mapper>

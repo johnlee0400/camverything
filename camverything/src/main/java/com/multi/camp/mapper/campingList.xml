@@ -4,15 +4,12 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.multi.camp.camping">
 	<select id="selectall" resultType="campingList">
-		select * from camping_list
+		select * from gocamping
 	</select>
 	<select id="search" resultType="campingList" parameterType="String">
-		select * from camping_list where camp_name like '%' || #{camp_name} ||'%'
-	</select>
-	<select id="search2" resultType="campingList" parameterType="Map">
-		select * from camping_List where camp_name like #{search} and business_no = ${local}
+		select * from gocamping where facltNm like '%' || #{facltNm} ||'%'
 	</select>
 	<select id="categorySelect"	resultType="campingList" parameterType="String">
-		select * from camping_list where category=#{category}
+		select * from gocamping where doNm=#{doNm}
 	</select>
 </mapper>

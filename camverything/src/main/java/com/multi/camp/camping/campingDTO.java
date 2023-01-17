@@ -1,64 +1,61 @@
 package com.multi.camp.camping;
 
 public class campingDTO {
-	
-	private int business_no;
-	private String id;
+
 	private String manager_id;
-	private String camp_name;
-	private String business_name;
-	private int camp_tel;
-	private String email;
-	private String camp_acc;
-	private String camp_fac;
-	private String camp_nature;
-	private String camp_thema;
-	private String category;
+	private String facltNm;
+	private String lineIntro;
+	private String intro;
+	private String bizrno;
+	private String facltDivNm;
+	private String featureNm;
+	private String induty;
+	private String lctCl;
+	private String doNm;
+	private String addr1;
+	private String mapX;
+	private String mapY;
+	private String tel;
+	private String homepage;
+	private String operPdCl;
+	private String operDeCl;
+	private String sbrsCl;
 	
 	public campingDTO() {
 		super();
 	}
 
-	public campingDTO(int business_no, String id, String manager_id, String camp_name, String business_name,
-			int camp_tel, String email, String camp_acc, String camp_fac, String camp_nature, String camp_thema,
-			String category) {
+	public campingDTO(String manager_id, String facltNm, String lineIntro, String intro, String bizrno,
+			String facltDivNm, String featureNm, String induty, String lctCl, String doNm, String addr1, String mapX,
+			String mapY, String tel, String homepage, String operPdCl, String operDeCl, String sbrsCl) {
 		super();
-		this.business_no = business_no;
-		this.id = id;
 		this.manager_id = manager_id;
-		this.camp_name = camp_name;
-		this.business_name = business_name;
-		this.camp_tel = camp_tel;
-		this.email = email;
-		this.camp_acc = camp_acc;
-		this.camp_fac = camp_fac;
-		this.camp_nature = camp_nature;
-		this.camp_thema = camp_thema;
-		this.category = category;
+		this.facltNm = facltNm;
+		this.lineIntro = lineIntro;
+		this.intro = intro;
+		this.bizrno = bizrno;
+		this.facltDivNm = facltDivNm;
+		this.featureNm = featureNm;
+		this.induty = induty;
+		this.lctCl = lctCl;
+		this.doNm = doNm;
+		this.addr1 = addr1;
+		this.mapX = mapX;
+		this.mapY = mapY;
+		this.tel = tel;
+		this.homepage = homepage;
+		this.operPdCl = operPdCl;
+		this.operDeCl = operDeCl;
+		this.sbrsCl = sbrsCl;
 	}
 
 	@Override
 	public String toString() {
-		return "campingDTO [business_no=" + business_no + ", id=" + id + ", manager_id=" + manager_id + ", camp_name="
-				+ camp_name + ", business_name=" + business_name + ", camp_tel=" + camp_tel + ", email=" + email
-				+ ", camp_acc=" + camp_acc + ", camp_fac=" + camp_fac + ", camp_nature=" + camp_nature + ", camp_thema="
-				+ camp_thema + ", category=" + category + "]";
-	}
-
-	public int getBusiness_no() {
-		return business_no;
-	}
-
-	public void setBusiness_no(int business_no) {
-		this.business_no = business_no;
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
+		return "campingDTO [manager_id=" + manager_id + ", facltNm=" + facltNm + ", lineIntro=" + lineIntro + ", intro="
+				+ intro + ", bizrno=" + bizrno + ", facltDivNm=" + facltDivNm + ", featureNm=" + featureNm + ", induty="
+				+ induty + ", lctCl=" + lctCl + ", doNm=" + doNm + ", addr1=" + addr1 + ", mapX=" + mapX + ", mapY="
+				+ mapY + ", tel=" + tel + ", homepage=" + homepage + ", operPdCl=" + operPdCl + ", operDeCl=" + operDeCl
+				+ ", sbrsCl=" + sbrsCl + "]";
 	}
 
 	public String getManager_id() {
@@ -69,81 +66,140 @@ public class campingDTO {
 		this.manager_id = manager_id;
 	}
 
-	public String getCamp_name() {
-		return camp_name;
+	public String getFacltNm() {
+		return facltNm;
 	}
 
-	public void setCamp_name(String camp_name) {
-		this.camp_name = camp_name;
+	public void setFacltNm(String facltNm) {
+		this.facltNm = facltNm;
 	}
 
-	public String getBusiness_name() {
-		return business_name;
+	public String getLineIntro() {
+		return lineIntro;
 	}
 
-	public void setBusiness_name(String business_name) {
-		this.business_name = business_name;
+	public void setLineIntro(String lineIntro) {
+		this.lineIntro = lineIntro;
 	}
 
-	public int getCamp_tel() {
-		return camp_tel;
+	public String getIntro() {
+		return intro;
 	}
 
-	public void setCamp_tel(int camp_tel) {
-		this.camp_tel = camp_tel;
+	public void setIntro(String intro) {
+		this.intro = intro;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getBizrno() {
+		return bizrno;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setBizrno(String bizrno) {
+		this.bizrno = bizrno;
 	}
 
-	public String getCamp_acc() {
-		return camp_acc;
+	public String getFacltDivNm() {
+		return facltDivNm;
 	}
 
-	public void setCamp_acc(String camp_acc) {
-		this.camp_acc = camp_acc;
+	public void setFacltDivNm(String facltDivNm) {
+		this.facltDivNm = facltDivNm;
 	}
 
-	public String getCamp_fac() {
-		return camp_fac;
+	public String getFeatureNm() {
+		return featureNm;
 	}
 
-	public void setCamp_fac(String camp_fac) {
-		this.camp_fac = camp_fac;
+	public void setFeatureNm(String featureNm) {
+		this.featureNm = featureNm;
 	}
 
-	public String getCamp_nature() {
-		return camp_nature;
+	public String getInduty() {
+		return induty;
 	}
 
-	public void setCamp_nature(String camp_nature) {
-		this.camp_nature = camp_nature;
+	public void setInduty(String induty) {
+		this.induty = induty;
 	}
 
-	public String getCamp_thema() {
-		return camp_thema;
+	public String getLctCl() {
+		return lctCl;
 	}
 
-	public void setCamp_thema(String camp_thema) {
-		this.camp_thema = camp_thema;
+	public void setLctCl(String lctCl) {
+		this.lctCl = lctCl;
 	}
 
-	public String getCategory() {
-		return category;
+	public String getDoNm() {
+		return doNm;
 	}
 
-	public void setCategory(String category) {
-		this.category = category;
+	public void setDoNm(String doNm) {
+		this.doNm = doNm;
 	}
-	
-	
-	
-	
-	
+
+	public String getAddr1() {
+		return addr1;
+	}
+
+	public void setAddr1(String addr1) {
+		this.addr1 = addr1;
+	}
+
+	public String getMapX() {
+		return mapX;
+	}
+
+	public void setMapX(String mapX) {
+		this.mapX = mapX;
+	}
+
+	public String getMapY() {
+		return mapY;
+	}
+
+	public void setMapY(String mapY) {
+		this.mapY = mapY;
+	}
+
+	public String getTel() {
+		return tel;
+	}
+
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+
+	public String getHomepage() {
+		return homepage;
+	}
+
+	public void setHomepage(String homepage) {
+		this.homepage = homepage;
+	}
+
+	public String getOperPdCl() {
+		return operPdCl;
+	}
+
+	public void setOperPdCl(String operPdCl) {
+		this.operPdCl = operPdCl;
+	}
+
+	public String getOperDeCl() {
+		return operDeCl;
+	}
+
+	public void setOperDeCl(String operDeCl) {
+		this.operDeCl = operDeCl;
+	}
+
+	public String getSbrsCl() {
+		return sbrsCl;
+	}
+
+	public void setSbrsCl(String sbrsCl) {
+		this.sbrsCl = sbrsCl;
+	}
 	
 }

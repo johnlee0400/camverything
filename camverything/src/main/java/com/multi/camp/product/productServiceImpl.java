@@ -44,5 +44,4 @@ public class productServiceImpl implements productService {
 	public List<productDTO> search(String data) {
 		return dao.search(data);
 	}
-
 }

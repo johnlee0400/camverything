@@ -51,6 +51,10 @@
 		<put-attribute name="content" value="/WEB-INF/service/notice.jsp"/>
 	</definition>
 	
+	<definition name="product/product_read" extends="indexTemplate">
+		<put-attribute name
+		="content" value="/WEB-INF/product/product_read.jsp"/>
+	</definition>
 	
 	<definition name="test/campread" extends="indexTemplate">
 		<!-- <put-attribute name="top"

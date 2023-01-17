@@ -2,8 +2,6 @@ package com.multi.camp.product;
 
 public class productDTO {
 	private int product_code;
-	private String id;
-	private String manager_id;
 	private String product_name;
 	private int product_price;
 	private String product_content;
@@ -14,12 +12,10 @@ public class productDTO {
 		super();
 	}
 
-	public productDTO(int product_code, String id, String manager_id, String product_name, int product_price,
-			String product_content, String quantity, String category) {
+	public productDTO(int product_code, String product_name, int product_price, String product_content, String quantity,
+			String category) {
 		super();
 		this.product_code = product_code;
-		this.id = id;
-		this.manager_id = manager_id;
 		this.product_name = product_name;
 		this.product_price = product_price;
 		this.product_content = product_content;
@@ -29,9 +25,9 @@ public class productDTO {
 
 	@Override
 	public String toString() {
-		return "productDTO [product_code=" + product_code + ", id=" + id + ", manager_id=" + manager_id
-				+ ", product_name=" + product_name + ", product_price=" + product_price + ", product_content="
-				+ product_content + ", quantity=" + quantity + ", category=" + category + "]";
+		return "productDTO [product_code=" + product_code + ", product_name=" + product_name + ", product_price="
+				+ product_price + ", product_content=" + product_content + ", quantity=" + quantity + ", category="
+				+ category + "]";
 	}
 
 	public int getProduct_code() {
@@ -40,22 +36,6 @@ public class productDTO {
 
 	public void setProduct_code(int product_code) {
 		this.product_code = product_code;
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getManager_id() {
-		return manager_id;
-	}
-
-	public void setManager_id(String manager_id) {
-		this.manager_id = manager_id;
 	}
 
 	public String getProduct_name() {

@@ -48,11 +48,5 @@ public class productController {
 		mav.addObject("productList", productList);
 		return mav;
 	}
-	@RequestMapping(value = "/product/ajax/list.do", produces = "application/json;charset=utf-8")
-	@ResponseBody
-	public List<productDTO> ajaxlist(String category){
-		List<productDTO> productList = service.findByCategory(category);
-		return productList;
-	}
 	
 }

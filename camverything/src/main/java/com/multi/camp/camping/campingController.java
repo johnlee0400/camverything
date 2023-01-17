@@ -16,10 +16,11 @@ public class campingController {
 		this.service = service;
 	}
 	@RequestMapping("/camping/list.do")
-	public ModelAndView list(String category) {
+	public ModelAndView list(String doNm) {
 		ModelAndView mav = new ModelAndView("campingList");
-		List<campingDTO> campingList = service.findByCategory(category);
-		mav.addObject("category", category);
+		List<campingDTO> campingList = service.findByCategory(doNm);
+		System.out.println(doNm+"오류체크");
+		mav.addObject("doNm", doNm);
 		mav.addObject("campingList", campingList);
 		return mav;
 	}

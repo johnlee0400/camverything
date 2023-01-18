@@ -112,23 +112,6 @@ form{
 								<option value="제주도">제주도</option>
 						</select>
 						</form>
-
-			<c:forEach var="campingList" items="${campingList }">
-				<div class="col-xs-4">
-						<h2>
-							<a
-								href="/camp/res/camp_read?business_no=${campingList.business_no }">${campingList.camp_name }</a>
-						</h2>
-						<img src="/camp/images/camp3.jpg" width="150" height="150">
-
-						<div id="business_no" style="display: none">캠핑장 번호 :
-							${campingList.business_no }</div>
-
-						<div>
-							대표 : ${campingList.business_name } <br /> 전화번호 :
-							${campingList.camp_tel } <br /> email : ${campingList.email } <br />
-							<button type="button" class="btn btn-info"
-								onclick="location.href='/camp/res/camp_read?business_no=${campingList.business_no }'">예약하기</button>
 						</div>
 					<section class="page-section bg-light" id="portfolio">
 	
@@ -155,7 +138,7 @@ form{
                         <div class="col-xs-12 col-md-6">
                         </div>
                         <div class="col-xs-12 col-md-6">
-                           <button type="button" class="btn btn-success" onclick="location.href='/camp/test/camp_read?facltNm=${campingList.facltNm }'">예약/상세보기</button>
+                           <button type="button" class="btn btn-success" onclick="location.href='/camp/res/camp_read?facltNm=${campingList.facltNm }'">예약/상세보기</button>
                         </div>
                     </div>
                 </div>

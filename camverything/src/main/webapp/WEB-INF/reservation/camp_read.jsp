@@ -40,27 +40,45 @@
 		text-decoration: none;
 	}
 	
+	#imageeee{
+		padding-top:200px;
+		padding-bottom:150px;
+		background-image: url("/camp/images/campread_banner.jpg");
+	}
 	
 	.subcontainer{
 	
 		margin-top:100px;
 		position:relative;
 		margin-left: 200px;
+		margin-bottom:100px;
 		/* margin:auto; /*  중앙절렬 */ */
 	}
 	
 	.mainWrapper{
-		width:1000px;
+		width:1200px;
 		float:left;
 		
 	}
 	.main{
-		width:1000px;
-		height:600px;
+		font-family:'Nanum Gothic';
+		width:1200px;
 		float:left;
+		padding-bottom:30px;
+		margin-bottom:50px;
+		/* border-bottom: #ccc 0.1rem solid; */
+	}
+	.intro{
+		width:1200px;
+		clear:both;
+		border-top:  #39517A 2px solid;
+		border-bottom:  #ccc 0.1rem solid;
+		padding-top: 20px;
+		padding-bottom: 20px;
 	}
 	
 	.camptitle{
+		font-family:'GimpoTitle00';
 	    font-size: 28px;
 	    color: #000;
 	    line-height: 35px;
@@ -69,12 +87,12 @@
 	    font-weight: bold;
 	    word-break: keep-all;
 	    margin-bottom: 30px;
-	    font-family: sans-serif;
+	    /* font-family: sans-serif; */
 	}
 	
 	.picture{
 		width:600px;
-		height:600px;
+		height:550px;
 		float:left;
 		padding-right: 20px;
 	}
@@ -90,8 +108,8 @@
 	}
 	
 	.content{
-		width:400px;
-		height:600px;
+		width:600px;
+		height:550px;
 		float:left;
 	}
 	
@@ -186,8 +204,9 @@
 	}
 	
 	.review{
-		width:1000px;
+		width:1200px;
 		height:300px;
+		/* padding-top:100px; */
 		clear:both;
 	}
 	.well{
@@ -205,11 +224,48 @@
 	}
 	
 	.mapAPI{
-		padding-top:100px;
-		width:1000px;
+		clear:both;
+		width:1200px;
 		height:1000px;
 	}
+	.masthead-subheading{
+		/* position:absolute;
+		top:300px; */
+		padding-top:100px;
+	}
+	#contentTable{
+		height:530px;
+	}
 	
+	.tbody tr:nth-child(1) th {
+    	border-top: 2px solid #e55450;
+    	
+	}
+	.tbody tr:nth-child(1) td {
+ 	 	border-top: 2px solid #39517A;
+	}
+	
+	/*bootstrap에 이부분 설정돼있어서 덮어씌우기용  */
+	.table > tbody > tr > th{
+		background-color:#ADD8E6;
+		vertical-align: middle;
+	}
+	.table > tbody > tr > td{
+		vertical-align: middle;
+	}
+	
+	/* 쓸만한 font적용 */
+	@font-face {
+	    font-family: 'GimpoTitle00';
+	    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/GimpoTitle00.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+	@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+	.nanumgothic * {
+ 		font-family: 'Nanum Gothic', sans-serif;
+	}
 </style>
 <script type="text/javascript">
 	//a태그로 form submit하기 function
@@ -221,9 +277,11 @@
 	//jquery작동부분
 	$(document).ready(function() {
 		//kakao페이 요청 (submit하고 왔는데 check값 1을 가져왔으면 작동)
-		if($("#check").val()==1){
+		//alert($("#check").val());
+		if($("#check").val()=="1"){
 			$.ajax({
 				url:"/camp/res/kakaopay",
+				data:{"facltNm":"${dto.facltNm}"},
 				dataType:"json", //받을 데이터 형식
 				success:function(data){
 					console.log("성공");
@@ -268,13 +326,13 @@
 		}
 		
 		//httpsession에서 id값 가져와서 저장하기
-		$("#hiddenid").val("hihi"); //임시처리중
+		$("#hiddenid").val("${user.id}"); //임시처리중
 		//sessionStorage.getItem(id); 로그인되면  <-- javascript로 session정보 받는 함수
 		
 		//======사진바뀌게하는 jquery======
 		$("#pic1").on("click", function() {
 			/*  alert("hihih"); */
-			$("#result").attr("src", "/camp/images/camp1.jpg");
+			$("#result").attr("src", "${dto.firstImageUrl}");
 		})
 		$("#pic2").on("click", function() {
 			/*  alert("hihih"); */
@@ -296,7 +354,7 @@
 		///처음 로드될때 선택된 오늘날짜로 뿌리기
 		$.ajax({
 			    			url:"/camp/res/campdatelist",
-			    			type:"get",
+			    			type:"get",   //밑에 data는 임의데이터 처리하는부분이라 비지니스 넘버도 임의로
 			    			data:{"business_no":"121212","camp_date":new Date().getFullYear()+"-"+(new Date().getMonth()+1)+"-"+new Date().getDate()},
 			    			success:function(list){
 			    				//alert(list); 
@@ -469,28 +527,30 @@
 <!--#########숨겨짐###############  -->
 <div id="imageeee">
 		<div class="container">
-			<div class="masthead-subheading"><h1>커뮤니티</h1></div>
+			<div class="masthead-subheading">
+				<h1>상세페이지</h1>
+			</div>
 		</div>
 	</div>
 
 <div class="subcontainer">
-	<form action="/camp/res/insert.do" method="post"
+	<form action="/camp/res/insert.do?facltNm=${dto.facltNm}" method="post"
 					enctype="multipart/form-data" id="frm" onsubmit="return false;">
 	<div class="mainWrapper"> <!-- 그림, 설명포함 -->
 		<div class="camptitle">
-				캠핑장소개<br/>
+				${dto.facltNm}<br/>
 		</div>
 		<div class="main">
 			<div class="picture">
 				<div class="pictop">
 					<div class="thumbnail">
-						<img src="/camp/images/camp1.jpg" alt="Lights" style="width: 100%"
+						<img src="${dto.firstImageUrl}" alt="Lights" style="width: 100%"
 							id="result">
 					</div>
 				</div>
 				<div class="picbottom">
 					<div class="thumbnail"> 
-						<img src="/camp/images/camp1.jpg" id="pic1">
+						<img src="${dto.firstImageUrl}" id="pic1">
 					</div>
 					<div class="thumbnail"> 
 						<img src="/camp/images/camp2.jpg" id="pic2">
@@ -500,31 +560,53 @@
 					</div>
 				</div>
 			</div>
-			<div class="content">
-				<p>청라국제도시의 해변공원 내에 위치한 도심 캠핑장 캠핑을 위해 이동하는 거리가 아까운 이들에게 최적인 도심지
-					캠핑장이다.</p>
-				<p>인천 서구 첨단서로 190 (청라동)</p>
-				<p>일반야영장</p>
-				<h2>캠핑장 안내</h2>
-						<table class="table table-bordered">
-							<thead>
-								<tr class="active">
-									<th>캠핑장 종류</th>
-									<th>캠핑장 요금</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>A</td>
-									<td>100000만원</td>
-								</tr>
-								<tr>
-									<td>B</td>
-									<td>200000만원</td>
-								</tr>
-							</tbody>
-						</table>
+			<div class="content">	
+			<table class="table" id="contentTable">
+				<colgroup>
+					<col style="width: 30%;">
+					<col style="width: 70%;">
+				</colgroup>
+				<tbody class="tbody">
+					<tr>
+						<th scope="col">주소</th>
+						<td>${dto.addr1}</td>
+					</tr>
+					<tr>
+						<th scope="col">문의처</th>
+						<td>${dto.tel}</td>
+					</tr>
+					<tr>
+						<th scope="col">캠핑장 환경</th>
+						<td>${dto.lctCl} / ${dto.facltDivNm}</td>
+					</tr>
+					<tr>
+						<th scope="col">캠핑장 유형</th>
+						<td>${dto.induty}</td>
+					</tr>
+					<tr>
+						<th scope="col">운영기간</th>
+						<td>${dto.operPdCl}</td>
+					</tr>
+					<tr>
+						<th scope="col">운영일</th>
+						<td>${dto.operDeCl}</td>
+					</tr>
+					<tr>
+						<th scope="col">홈페이지</th>
+						<td>
+							<a href="${dto.homepage}" target="_BLANK" title="새창열림">홈페이지 바로가기</a>
+						</td>
+					</tr>						
+					<tr>
+						<th scope="col">주변이용가능시설</th>
+						<td>${dto.sbrsCl}</td>
+					</tr>
+				</tbody>
+			</table>
 			</div>
+			<div class="intro">
+				${dto.intro}
+		</div>
 		</div>
 	</div>
 	<div class="reserveSide">
@@ -585,7 +667,7 @@
 			<span>예약하기</span>
 		</a>
 	</div>
-	<div class="review">
+	<!-- <div class="review">
 		<div class="camptitle">
 				리뷰
 		</div>
@@ -597,18 +679,18 @@
 				좋은 캠핑장이었다
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<div class="mapAPI">
 		<div class="camptitle">
 				오시는길
 		</div>
-		<div id="map" style="width: 500px; height: 400px;"></div>
+		<div id="map" style="width: 1200px; height: 800px;"></div>
 			<script type="text/javascript"
 				src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2eab02a4a684e29b601c8b338c17388f"></script>
 			<script>
 				var container = document.getElementById('map');
 				var options = {
-					center : new kakao.maps.LatLng(35.2714369, 126.9609528), //y, x
+					center : new kakao.maps.LatLng(${dto.mapY}, ${dto.mapX}), //y, x
 					level : 3
 				};
 				

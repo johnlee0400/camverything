@@ -26,7 +26,7 @@
 				<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
 					<li class="nav-item"><a class="nav-link" href="/camp/test/index">Home</a></li>
 
-					<li class="nav-item"><a class="nav-link" href="/camp/camping/list.do">캠핑장목록</a></li>
+					<li class="nav-item"><a class="nav-link" href="/camp/camping/list.do?category=1">캠핑장목록</a></li>
 					<li class="nav-item"><a class="nav-link" href="/camp/board/list.do?category=정보공유">커뮤니티</a></li>
 					<li class="nav-item"><a class="nav-link" href="/camp/product/list.do?category=1">캠핑물품</a></li>
 					<li class="nav-item"><a class="nav-link" href="/camp/service/list.do?category=공지사항">고객센터</a></li>
@@ -39,6 +39,8 @@
 						<c:otherwise>
 							<a class="nav-link" href="/camp/spring/logout"><span class="glyphicon glyphicon-log-out"></span>
 									Logout</a>
+							<a class="nav-link" href="main/mypage"><span class="glyphicon glyphicon-log-out"></span>
+									Mypage</a>
 						</c:otherwise>
 					</c:choose>
 				</li>

@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <title>login</title>
+<link rel="stylesheet" href="/camp/common/css/login.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
@@ -12,48 +13,34 @@
 
 <div id="imageeee">
 	<div class="container">
-		<div class="masthead-subheading"><h1>Sign in</h1></div>
+		<div class="masthead-subheading"><h1>Login</h1></div>
 	</div>
 </div>
 <form action="login.do" method="post">
-<section class="vh-100 gradient-custom">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div class="card bg-dark text-white" style="border-radius: 1rem">
-          <div class="card-body p-5 text-center">
-            <h3 class="mb-5">Sign in</h3> 
-            <div class="form-outline mb-4">
-              <input type="text" id="typeEmailX-2" class="form-control form-control-lg" placeholder="아이디" name="id" />
-            </div>
-
-            <div class="form-outline mb-4">
-              <input type="password" id="typePasswordX-2" class="form-control form-control-lg" placeholder="패스워드" name="pass"/>
-             </div>
-          <!-- Checkbox -->
-          <div class="form">
-            <input class="form-check-input" type="checkbox" value="" name="member_id_save" checked />
-            <label class="form-check-label" for="member_id_save"> Remember me </label>
-          </div>
-
-          
-          <!-- login button -->
-          <div>
-            <button class="btn btn-primary btn-block" type="submit" >Login</button>
-           </div>
-          <!-- resgister botton -->
-          <div>
-              <p class="mb-0">Don't have an account? <a href="/camp/main/insert.do" class="text-white-50 fw-bold">Sign Up</a>
-              </p>
-            </div>
-            </div>
-            </div>
-            </div>
-               </div>
-          	  </div>
-            </section>
+<p class="tip"></p>
+<div class="cont">
+  <div class="form sign-in">
+    <h2>Login</h2>
+    <label>
+      <span>Id</span>
+      <input type="text" name="id" />
+    </label>
+    <label>
+      <span>Password</span>
+      <input type="password" name="pass"/>
+    </label>
+    <button type="submit" class="submit" >Login</button>
+    <button type="button" class="fb-btn" onclick ="location.href='/camp/main/insert.do'">Sign up</button>
+  </div>
+  <div class="sub-cont">
+    <div class="img">
+      <div class="img__text m--in">
+        <h2>One of us?</h2>
+        <p>If you already has an account, just sign in. We've missed you!</p>
+      </div>
+      </div>
+      </div>
+	</div>
             </form>
-            
-
 </body>
 </html>

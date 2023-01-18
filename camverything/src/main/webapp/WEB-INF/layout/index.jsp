@@ -22,8 +22,10 @@
         <style type="text/css">
         	
         #imageeee {
-			  padding-top: 10.5rem;
-			  padding-bottom: 15rem;
+			  /* padding-top: 10.5rem;
+			  padding-bottom: 15rem; */
+			  padding-top:200px;
+			  padding-bottom:150px;
 			  text-align: center;
 			  color: #fff;
 			  background-image: url("/camp/images/img/bg/board.jpg");

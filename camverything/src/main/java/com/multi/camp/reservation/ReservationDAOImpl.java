@@ -19,24 +19,24 @@ public class ReservationDAOImpl implements ReservationDAO{
 
 	@Override
 	public int insert(ReservationDTO dto) {
-		System.out.println("###DAO:"+dto+"###");
+		//System.out.println("###DAO:"+dto+"###");
 		return sqlsession.insert("com.multi.camp.reservation.insert",dto);
 	}
 
 	@Override
 	public List<ReservationDTO> getcampDate(ReservationDTO dto) {
-		System.out.println("dao쪽 dto:"+dto);
+		//System.out.println("dao쪽 dto:"+dto);
 		return sqlsession.selectList("com.multi.camp.reservation.campdateselect",dto);
 	}
 
 	@Override
-	public int cancel() {
-		return sqlsession.delete("com.multi.camp.reservation.cancel");
+	public int cancel(String id) {
+		return sqlsession.delete("com.multi.camp.reservation.cancel",id);
 	}
 
 	@Override
 	public GoCampingDTO getGoCampingDataByfacltNm(String facltNm) {
-		return sqlsession.selectOne("com.multi.camp.reservation.selectgocampingdata",facltNm);
+		return sqlsession.selectOne("com.multi.camp.reservation.gocampingdata",facltNm);
 	}
 
 

@@ -33,8 +33,8 @@ public class ReservationServiceImpl implements ReservationService{
 
 
 	@Override
-	public int cancel() {
-		return dao.cancel();
+	public int cancel(String id) {
+		return dao.cancel(id);
 	}
 
 

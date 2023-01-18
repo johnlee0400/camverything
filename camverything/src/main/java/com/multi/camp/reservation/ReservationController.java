@@ -6,19 +6,23 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.multi.camp.login.LoginDTO;
 import com.multi.camp.manager.GoCampingDTO;
 @Controller
 public class ReservationController {
@@ -48,28 +52,36 @@ public class ReservationController {
 	}
 	
 	@RequestMapping("/res/insert.do")
-	public ModelAndView insert(ReservationDTO dto) {
+	public String insert(ReservationDTO dto,String facltNm,HttpSession session) throws UnsupportedEncodingException {
 		System.out.println("=====res/insert.do쪽 dto=======");
 		System.out.println(dto);
-		
+		System.out.println("facltNm1=>"+facltNm);
 		int reservation = service.insert(dto);
 		System.out.println("결과는 =>"+reservation);
 		//addObject("변수명","값"); => ?key=value값으로 넘겨줌 addAttribute와 다르게
+//		HashMap<String,String> map = new HashMap<String, String>();
+//		map.put("check", "1");
+//		map.put("facltNm", facltNm);
+		
 		if(reservation == 1) {
-			return new ModelAndView("res/campread","check",1); //insert되면 check값 1 return
+			return "redirect:/res/camp_read?check=1&facltNm="+URLEncoder.encode(facltNm,"UTF-8"); //insert되면 check값 1 return
 		}else {
-			return new ModelAndView("res/campread","check",0);
+			return "redirect:/res/camp_read?check=0&facltNm="+URLEncoder.encode(facltNm,"UTF-8"); 
 		}
+		//"redirect:/res/camp_read?check=1&facltNm="+facltNm
 	}
 	
 	@RequestMapping("/res/camp_read")
-	public ModelAndView gocampingdatapage(String facltNm,HttpSession session) {
-		
+	public ModelAndView gocampingdatapage(String facltNm,String check,HttpSession session) {
+		System.out.println("캠핑장 이름 encode 확인=>"+facltNm);
+		System.out.println("check확인 => "+check);
 		ModelAndView mav = new ModelAndView("res/campread");
 		GoCampingDTO dto = service.getGoCampingDataByfacltNm(facltNm);
-		System.out.println(dto);
-		mav.addObject("dto",dto); 
-		
+		//System.out.println("gocampingdata확인=>"+dto);
+	   // mav.addObject("dto",dto); 
+	    mav.addObject("check",check);
+	    session.setAttribute("dto", dto);
+		System.out.println("세션에 저장한 dto값=>"+session.getAttribute("dto"));
 		return mav;
 	}
 	
@@ -78,26 +90,40 @@ public class ReservationController {
 	@RequestMapping(value="/res/campdatelist",produces = "application/json;charset=utf-8")
 	@ResponseBody
 	public List<ReservationDTO> campdatelist(ReservationDTO dto){
-		System.out.println("campdatelist들어옴");
-		System.out.println(dto);
+		//System.out.println("campdatelist들어옴");
+		//System.out.println(dto);
 		List<ReservationDTO> campdatelist = service.getcampDate(dto);
-		System.out.println("db에서select한값은:"+campdatelist);
+		//System.out.println("db에서select한값은:"+campdatelist);
 		return campdatelist;
 	}
 	
 	//카카오페이 결제 취소할시 db에 들어있는 데이터 지움
 	@RequestMapping("/res/cancel")
 	@ResponseBody
-	public List<ReservationDTO> cancelreservation(){
+	public List<ReservationDTO> cancelreservation(HttpSession session){
 		System.out.println("cancelreserv들어옴");
-		int cancel = service.cancel();
+		LoginDTO user = (LoginDTO) session.getAttribute("user"); //세션 유저정보꺼내서 저장
+		System.out.println("id체크"+user.getId());
+		int cancel = service.cancel(user.getId());
 		System.out.println("예약취소결과는=>"+cancel);
 		return null;
+	}
+	//카카오 결제페이지갔을때 facltNm(캠핑장명)은 이미 세션으로 처리된상태여서 
+	//다시 위쪽에 db에서 select하는 곳으로 갈필요가 없음 지금또가면 오류남
+	//그래서 여기에 새로 매핑해서 db처리안하고 바로 이전 뷰로 가게 만듬.
+	//갈때 kakao redirect url에 붙어있는 파라미터값들도 전달해줌
+	@RequestMapping("/res/kakaoredirect")
+	public String test(String reservation,Model model) {
+		
+		model.addAttribute("reservation",reservation );
+		
+		return "res/campread";
 	}
 	
 	@RequestMapping("/res/kakaopay")   //ajax로 가져와서 캠브리띵캠핑예약에 추가하기
 	@ResponseBody
-	public String kakaopay() {
+	public String kakaopay(String facltNm) {
+		System.out.println("facltNm2=>"+facltNm);
 		try {
 			URL url = new URL("https://kapi.kakao.com/v1/payment/ready");
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();//서버연결
@@ -106,7 +132,7 @@ public class ReservationController {
 			conn.setRequestProperty("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
 			conn.setDoOutput(true);
 			String parameter = "cid=TC0ONETIME&partner_order_id=partner_order_id&partner_user_id=partner_user_id&item_name=초코파이&quantity=1"
-					+ "&total_amount=2200&vat_amount=200&tax_free_amount=0&approval_url=http://localhost:8088/camp/res/camp_read?reservation=success&fail_url=http://localhost:8088/camp/res/camp_read&cancel_url=http://localhost:8088/camp/res/camp_read?reservation=cancel";
+					+ "&total_amount=2200&vat_amount=200&tax_free_amount=0&approval_url=http://localhost:8088/camp/res/kakaoredirect?reservation=success&fail_url=http://localhost:8088/camp/res/camp_read&cancel_url=http://localhost:8088/camp/res/kakaoredirect?reservation=cancel";
 			OutputStream out = conn.getOutputStream();//주는애
 			DataOutputStream  dataout = new DataOutputStream(out);//데이터주는애
 			dataout.writeBytes(parameter);//바이트를 사용함 문자열

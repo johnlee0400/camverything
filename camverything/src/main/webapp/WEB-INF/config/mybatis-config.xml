@@ -24,5 +24,8 @@
 		<mapper resource="com/multi/camp/mapper/product.xml"/>
 		<mapper resource ="com/multi/camp/mapper/reservation.xml"/>
 		<mapper resource ="com/multi/camp/mapper/manager.xml"/>
+		
+		
+		
 	</mappers>
 </configuration>

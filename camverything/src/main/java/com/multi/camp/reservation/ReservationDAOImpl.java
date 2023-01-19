@@ -36,7 +36,7 @@ public class ReservationDAOImpl implements ReservationDAO{
 
 	@Override
 	public GoCampingDTO getGoCampingDataByfacltNm(String facltNm) {
-		return sqlsession.selectOne("com.multi.camp.reservation.selectgocampingdata",facltNm);
+		return sqlsession.selectOne("com.multi.camp.reservation.gocampingdata",facltNm);
 	}
 
 

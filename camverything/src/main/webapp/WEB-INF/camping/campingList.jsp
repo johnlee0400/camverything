@@ -69,7 +69,9 @@
 .item.list-group-item img
 {
     float: left;
-    margin-right: 10px;
+    margin-right: 20px;
+    width: 25%;
+	height: 25%;
 }
 .item.list-group-item:after
 {
@@ -89,6 +91,7 @@ form{
 	float: right;
 	margin-top: 50px;
 }
+
 </style>
 </head>
 <body>
@@ -106,29 +109,15 @@ form{
 								<option value="서울">서울</option>
 								<option value="경기도">경기도</option>
 								<option value="강원도">강원도</option>
-								<option value="충청도">충청도</option>
-								<option value="경상도">경상도</option>
-								<option value="전라도">전라도</option>
+								<option value="충청북도">충청북도</option>
+								<option value="충청남도">충청남도</option>
+								<option value="경상북도">경상북도</option>
+								<option value="경상남도">경상남도</option>
+								<option value="전라북도">전라북도</option>
+								<option value="전라남도">전라남도</option>
 								<option value="제주도">제주도</option>
 						</select>
 						</form>
-
-			<c:forEach var="campingList" items="${campingList }">
-				<div class="col-xs-4">
-						<h2>
-							<a
-								href="/camp/res/camp_read?business_no=${campingList.business_no }">${campingList.camp_name }</a>
-						</h2>
-						<img src="/camp/images/camp3.jpg" width="150" height="150">
-
-						<div id="business_no" style="display: none">캠핑장 번호 :
-							${campingList.business_no }</div>
-
-						<div>
-							대표 : ${campingList.business_name } <br /> 전화번호 :
-							${campingList.camp_tel } <br /> email : ${campingList.email } <br />
-							<button type="button" class="btn btn-info"
-								onclick="location.href='/camp/res/camp_read?business_no=${campingList.business_no }'">예약하기</button>
 						</div>
 					<section class="page-section bg-light" id="portfolio">
 	
@@ -144,23 +133,26 @@ form{
      <c:forEach var="campingList" items="${campingList }">
         <div class="item  col-xs-4 col-lg-4 list-group-item">
             <div class="thumbnail">
-                <img src="/camp/images/camp3.jpg">
+         		<img src="${campingList.firstImageUrl }"> 
                 <div class="caption">
                     <h5 class="group inner list-group-item-heading">
                        ${campingList.facltNm }</h5>
                        <hr/>
                     <p class="group inner list-group-item-text">
-                       간단한 캠핑장 소개</p>
+                       ${campingList.lineIntro }</p>
+                      입지 : ${campingList.lctCl }<br/>
+                       <p>지역 : ${campingList.doNm }</p>
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
                         </div>
                         <div class="col-xs-12 col-md-6">
-                           <button type="button" class="btn btn-success" onclick="location.href='/camp/test/camp_read?facltNm=${campingList.facltNm }'">예약/상세보기</button>
+                           <button type="button" class="btn btn-success" onclick="location.href='/camp/res/camp_read?facltNm=${campingList.facltNm }'">예약/상세보기</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         </c:forEach>
     </div>
 </div>

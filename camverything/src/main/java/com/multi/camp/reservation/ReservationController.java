@@ -64,7 +64,7 @@ public class ReservationController {
 	
 	@RequestMapping("/res/camp_read")
 	public ModelAndView gocampingdatapage(String facltNm,HttpSession session) {
-		
+		System.out.println(facltNm+"+++++++++++++++++++++++++++++++++++++++++++++++++");
 		ModelAndView mav = new ModelAndView("res/campread");
 		GoCampingDTO dto = service.getGoCampingDataByfacltNm(facltNm);
 		System.out.println(dto);

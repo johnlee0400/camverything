@@ -20,6 +20,7 @@ public class campingDTO {
 	private String operPdCl;
 	private String operDeCl;
 	private String sbrsCl;
+	private String firstImageUrl;
 	
 	public campingDTO() {
 		super();
@@ -27,7 +28,8 @@ public class campingDTO {
 
 	public campingDTO(String manager_id, String facltNm, String lineIntro, String intro, String bizrno,
 			String facltDivNm, String featureNm, String induty, String lctCl, String doNm, String addr1, String mapX,
-			String mapY, String tel, String homepage, String operPdCl, String operDeCl, String sbrsCl) {
+			String mapY, String tel, String homepage, String operPdCl, String operDeCl, String sbrsCl,
+			String firstImageUrl) {
 		super();
 		this.manager_id = manager_id;
 		this.facltNm = facltNm;
@@ -47,6 +49,7 @@ public class campingDTO {
 		this.operPdCl = operPdCl;
 		this.operDeCl = operDeCl;
 		this.sbrsCl = sbrsCl;
+		this.firstImageUrl = firstImageUrl;
 	}
 
 	@Override
@@ -55,7 +58,7 @@ public class campingDTO {
 				+ intro + ", bizrno=" + bizrno + ", facltDivNm=" + facltDivNm + ", featureNm=" + featureNm + ", induty="
 				+ induty + ", lctCl=" + lctCl + ", doNm=" + doNm + ", addr1=" + addr1 + ", mapX=" + mapX + ", mapY="
 				+ mapY + ", tel=" + tel + ", homepage=" + homepage + ", operPdCl=" + operPdCl + ", operDeCl=" + operDeCl
-				+ ", sbrsCl=" + sbrsCl + "]";
+				+ ", sbrsCl=" + sbrsCl + ", firstImageUrl=" + firstImageUrl + "]";
 	}
 
 	public String getManager_id() {
@@ -201,5 +204,15 @@ public class campingDTO {
 	public void setSbrsCl(String sbrsCl) {
 		this.sbrsCl = sbrsCl;
 	}
+
+	public String getFirstImageUrl() {
+		return firstImageUrl;
+	}
+
+	public void setFirstImageUrl(String firstImageUrl) {
+		this.firstImageUrl = firstImageUrl;
+	}
+
+	
 	
 }

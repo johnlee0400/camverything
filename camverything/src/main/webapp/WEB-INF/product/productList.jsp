@@ -28,6 +28,18 @@
 	float: right;
 	margin-top: 50px;
 }
+
+.imgs{
+	width: 100%;
+	height: 100%;
+}
+
+.portfolio-item{
+	width: 80%;
+	height: 70%;
+}
+
+
 </style>
 </head>
 <body>
@@ -42,10 +54,10 @@
 								<optgroup label="용품목록"></optgroup>
 								<option value="1" selected="selected">전체</option>
 								<option value="텐트">텐트</option>
-								<option value="테이블">테이블,의자</option>
-								<option value="화로">화로,버너</option>
-								<option value="랜턴">랜턴,조명</option>
-								<option value="취사">취사,수납</option>
+								<option value="테이블">테이블</option>
+								<option value="화로">화로</option>
+								<option value="랜턴">랜턴</option>
+								<option value="취사">취사</option>
 								<option value="차박">차박</option>
 								<option value="소품">소품/기타</option>
 								<optgroup label="먹거리"></optgroup>
@@ -69,8 +81,9 @@
                 <c:forEach var="productList" items="${productList }">
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <!-- Portfolio item 1-->                      
-                        <div class="portfolio-item">           
-                                <img class="img-fluid" src="/camp/images/img/portfolio/1.jpg" alt="..." />
+                        <div class="portfolio-item">  
+                        		         <img src="${productList.product_img }" class="imgs">
+<!--                                 <img class="img-fluid" src="/camp/images/img/portfolio/1.jpg" alt="..." /> -->
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading"><a href="/camp/product/read.do?product_code=${productList.product_code }&state=READ">${productList.product_name }</a></div>
                                 <div class="portfolio-caption-subheading text-muted">${productList.category }</div>

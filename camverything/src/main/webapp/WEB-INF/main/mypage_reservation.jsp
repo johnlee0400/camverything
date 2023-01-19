@@ -81,7 +81,8 @@
 			padding-top:120px;
 			margin:auto;
 			width:1200px;
-			height:600px;
+			height:auto;
+			padding-bottom:200px;
 		}
 		
 		
@@ -111,6 +112,31 @@
 			border-left:  #39517A 0.1rem solid;
 		}
 		
+		#contentTable{
+			border-top:  0;
+			border-bottom:  0;
+			border-left: 0;
+			border-right:  #39517A 0.1rem solid;
+		}
+		
+		#contentTable > tbody > tr > th{
+			border: #ddd 0.1rem solid;
+			background-color: white;
+			padding:0;
+		}
+		
+		#contentTable tr:nth-child(1) th {
+    	border-top: 2px solid #e55450;
+    	
+		}
+		#contentTable tr:nth-child(1) td {
+	 	 	border-top: 2px solid #39517A;
+		}
+		
+		#contentTable> :not(:first-child){
+			border: #39517A 0.1rem solid;
+		}
+		
 		.camptitle{
 		font-family:'GimpoTitle00';
 	    font-size: 28px;
@@ -122,6 +148,13 @@
 	    word-break: keep-all;
 	    margin-bottom: 30px;
 	    /* font-family: sans-serif; */
+	}
+	
+	.btn {
+		background-color: #39517A;
+		color: white;
+		width:100px;
+		text-align:center;
 	}
 	</style>
          
@@ -146,6 +179,25 @@
 						$(this).css("background-color","white");
 						$(this).children().css("color","black");
 					})
+					
+					//예약취소부분
+					$(".btn").on("click", function() {
+						let popOption = "width = 400px, height =200px, top=600px, left=700px, directoryies=no, location=no, status=no, toolbar=no, scrollbars=no";
+						let openUrl = '/camp/main/mypagecancelpopup'
+						window.open(openUrl,'pop',popOption);
+						$.ajax({
+							url:"/camp/main/mypagecancel",
+							data:{"res_no":$(this).val()},
+							success:function(data){
+								console.log("예약삭제됨");
+								location.reload();
+							},
+							error:function(error){
+								console.log(error);
+							}
+					})
+					
+			})
 				});
 	    
     </script>
@@ -159,23 +211,23 @@
 	<div class="location">
 		<div class="submenu">
 			<ul>
-				<li id="active"><a href="/camp/main/mypage" class="link">내 정보</a></li>
-				<li class="selectbox"><a href="/camp/main/mypagereservation" class="link">캠핑예약</a></li>
+				<li class="selectbox"><a href="/camp/main/mypage" class="link">내 정보</a></li>
+				<li id="active"><a href="/camp/main/mypagereservation" class="link">캠핑예약</a></li>
 				<li class="selectbox"><a href="/camp/main/mypageproduct" class="link">구매용품</a></li>
 			</ul>
 		</div>
 	</div>
 	<div class="mainWrapper">
 		<div class="camptitle">
-				나의 정보<br/>
+				나의 캠핑장예약 신청현황<br/>
 		</div>
 		<table class="table" id="resTable">
 				<colgroup>
+					<col style="width: 7%;">
 					<col style="width: 10%;">
-					<col style="width: 10%;">
-					<col style="width: 60%;">
-					<col style="width: 10%;">
-					<col style="width: 10%;">
+					<col style="width: 40%;">
+					<col style="width: 20%;">
+					<col style="width: 20%;">
 				</colgroup>
 				<tbody class="tbody">
 					<tr>
@@ -189,9 +241,9 @@
 					<tr class="content">
 						<td scope="col">${res.res_no}</td>
 						<td scope="col">${res.appli_date}</td>
-						<td scope="col">${res.res_no}</td>
-						<td scope="col">${res.res_no}</td>
-						<td scope="col">${res.res_no}</td>
+						<td scope="col">${res.facltNm}<br/>${res.camp_loc} / ${res.bbq_option}<br/>${res.camp_date} / ${res.camp_period}</td>
+						<td scope="col">${res.pay_price}원</td>
+						<td scope="col"><button class="btn" value="${res.res_no}">예약취소</button>
 					</tr>
 				</c:forEach>
 				</tbody>

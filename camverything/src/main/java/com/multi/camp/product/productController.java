@@ -2,14 +2,14 @@ package com.multi.camp.product;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.multi.camp.camping.campingDTO;
 
 @Controller
 public class productController {
@@ -31,13 +31,16 @@ public class productController {
 	}
 	
 	@RequestMapping("/product/read.do")
-	public String read(String product_code, String state, Model model) {
+	public String read(String product_code, String state, Model model, HttpSession session) {
 		productDTO product = service.getProductInfo(product_code);
+		session.setAttribute("product", product);
 		String view = "";
 		if(state.equals("READ")) {
 			view = "product/product_read";
+		}else {
+			view = "product/product_read";
 		}
-		model.addAttribute("product", product);
+//		model.addAttribute("product", product);
 		return view;
 		
 	}

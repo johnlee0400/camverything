@@ -1,23 +1,79 @@
 package com.multi.camp.login;
 
-import java.lang.annotation.Repeatable;
+import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.multi.camp.reservation.ReservationDTO;
+import com.multi.camp.reservation.ReservationService;
 
 @Controller
 public class mypageController {
-	
-	
+	ReservationService res_service;
 
 	public mypageController(){
 		
 	}
 	
-	@RequestMapping("/main/mypage")
-	public String mypage() {
-		return "main/mypage_main";
+	@Autowired
+	public mypageController(ReservationService res_service) {
+		super();
+		this.res_service = res_service;
 	}
+
+	@RequestMapping("/main/mypage")
+	public ModelAndView mypage(HttpSession session) {
+		ModelAndView mav = new ModelAndView("main/mypage_main");
+		
+		LoginDTO user = (LoginDTO) session.getAttribute("user");
+		List <ReservationDTO> reslist = res_service.getResDataById(user.getId());
+		System.out.println("reslist체크"+reslist);
+		mav.addObject("reslist",reslist);
+		return mav;
+	}
+	
+	@RequestMapping("/main/mypagereservation")
+	public ModelAndView mypagereservation(HttpSession session) {
+		ModelAndView mav = new ModelAndView("main/mypage_reservation");
+		
+		LoginDTO user = (LoginDTO) session.getAttribute("user");
+		List <ReservationDTO> reslist = res_service.getResDataById(user.getId());
+		System.out.println("reslist체크"+reslist);
+		mav.addObject("reslist",reslist);
+		return mav;
+	}
+	
+	@RequestMapping("/main/mypageproduct")
+	public ModelAndView mypageproduct(HttpSession session) {
+		ModelAndView mav = new ModelAndView("main/mypage_product");
+		
+		LoginDTO user = (LoginDTO) session.getAttribute("user");
+		List <ReservationDTO> reslist = res_service.getResDataById(user.getId());
+		System.out.println("reslist체크"+reslist);
+		mav.addObject("reslist",reslist);
+		return mav;
+	}
+	
+	@RequestMapping("/main/mypagecancelpopup")
+	public String mypagerescancelpopup() {
+		return "reservation/mypage_reservationcancel";
+	}
+	
+	@RequestMapping("/main/mypagecancel")
+	@ResponseBody
+	public String mypagecancel(int res_no) {
+		System.out.println("넘어온 res_no=>"+res_no);
+		int cancel = res_service.mypageCancel(res_no);
+		System.out.println("마이페이지예약취소결과는=>"+cancel);
+		return null;
+	}
+	
 	
 	
 }

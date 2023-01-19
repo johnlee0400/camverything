@@ -33,8 +33,13 @@ public class ReservationServiceImpl implements ReservationService{
 
 
 	@Override
-	public int cancel(String id) {
-		return dao.cancel(id);
+	public int cancel(String camp_date) {
+		return dao.cancel(camp_date);
+	}
+
+	@Override
+	public int mypageCancel(int res_no) {
+		return dao.mypageCancel(res_no);
 	}
 
 
@@ -44,4 +49,11 @@ public class ReservationServiceImpl implements ReservationService{
 		return dao.getGoCampingDataByfacltNm(facltNm);
 	}
 
+
+	@Override
+	public List<ReservationDTO> getResDataById(String id) {
+		return dao.getResDataById(id);
+	}
+
+	
 }

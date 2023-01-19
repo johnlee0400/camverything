@@ -30,8 +30,14 @@ public class ReservationDAOImpl implements ReservationDAO{
 	}
 
 	@Override
-	public int cancel(String id) {
-		return sqlsession.delete("com.multi.camp.reservation.cancel",id);
+	public int cancel(String camp_date) {
+		return sqlsession.delete("com.multi.camp.reservation.cancel",camp_date);
+	}
+	
+	@Override
+	public int mypageCancel(int res_no) {
+		// TODO Auto-generated method stub
+		return sqlsession.delete("com.multi.camp.reservation.mypagecancel",res_no);
 	}
 
 	@Override
@@ -39,5 +45,10 @@ public class ReservationDAOImpl implements ReservationDAO{
 		return sqlsession.selectOne("com.multi.camp.reservation.gocampingdata",facltNm);
 	}
 
+	@Override
+	public List<ReservationDTO> getResDataById(String id) {
+		return sqlsession.selectList("com.multi.camp.reservation.getresdata",id);
+	}
 
+	
 }

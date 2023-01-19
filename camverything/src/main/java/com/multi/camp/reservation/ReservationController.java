@@ -57,6 +57,8 @@ public class ReservationController {
 		System.out.println(dto);
 		System.out.println("facltNm1=>"+facltNm);
 		int reservation = service.insert(dto);
+		session.setAttribute("resdto", dto); //reservationDTO 세션에저장 (예약취소용)
+		System.out.println("세션에 저장한 resdto값=>"+session.getAttribute("resdto"));
 		System.out.println("결과는 =>"+reservation);
 		//addObject("변수명","값"); => ?key=value값으로 넘겨줌 addAttribute와 다르게
 //		HashMap<String,String> map = new HashMap<String, String>();
@@ -102,9 +104,9 @@ public class ReservationController {
 	@ResponseBody
 	public List<ReservationDTO> cancelreservation(HttpSession session){
 		System.out.println("cancelreserv들어옴");
-		LoginDTO user = (LoginDTO) session.getAttribute("user"); //세션 유저정보꺼내서 저장
-		System.out.println("id체크"+user.getId());
-		int cancel = service.cancel(user.getId());
+		ReservationDTO dto = (ReservationDTO) session.getAttribute("resdto"); //세션 예약dto정보꺼내서 저장
+		System.out.println("camp_date체크"+dto.getCamp_date());
+		int cancel = service.cancel(dto.getCamp_date());
 		System.out.println("예약취소결과는=>"+cancel);
 		return null;
 	}

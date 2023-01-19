@@ -33,14 +33,23 @@
 					<li class="nav-item">
 					<c:choose>
 						<c:when test="${user==null }">
-						<a class="nav-link" href="/camp/loginpage"><span class="glyphicon glyphicon-log-in">
+						<li class="nav-item">
+							<a class="nav-link" href="/camp/loginpage">
+								<span class="glyphicon glyphicon-log-in">
 								</span>Login</a>
+						</li>
 						</c:when>
 						<c:otherwise>
-							<a class="nav-link" href="/camp/spring/logout"><span class="glyphicon glyphicon-log-out"></span>
-									Logout</a>
-							<a class="nav-link" href="main/mypage"><span class="glyphicon glyphicon-log-out"></span>
-									Mypage</a>
+							<li class="nav-item">
+								<a class="nav-link" href="/camp/spring/logout">
+								<span class="glyphicon glyphicon-log-out">
+								</span>Logout</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/camp/main/mypage">
+								<span class="glyphicon glyphicon-log-out">
+								</span>Mypage</a>
+							</li>
 						</c:otherwise>
 					</c:choose>
 				</li>

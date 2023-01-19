@@ -29,7 +29,7 @@
 <body>
 	<div class="top">
 		<div class="box">
-			<h3>결제를 취소했습니다.</h3>
+			<h3>예약을 취소했습니다.</h3>
 			<button class="btn" id="btn" onclick="window.close();">닫기</button>
 		</div>
 	</div>

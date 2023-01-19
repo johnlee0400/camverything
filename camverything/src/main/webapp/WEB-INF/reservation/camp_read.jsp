@@ -355,12 +355,12 @@
 		$.ajax({
 			    			url:"/camp/res/campdatelist",
 			    			type:"get",   //밑에 data는 임의데이터 처리하는부분이라 비지니스 넘버도 임의로
-			    			data:{"business_no":"121212","camp_date":new Date().getFullYear()+"-"+(new Date().getMonth()+1)+"-"+new Date().getDate()},
+			    			data:{"camp_date":new Date().getFullYear()+"-"+(new Date().getMonth()+1)+"-"+new Date().getDate()},
 			    			success:function(list){
 			    				//alert(list); 
-			    				var period = list[0].camp_period.split(','); //list 배열 한개뿐
-		    					var location = list[0].camp_loc.split(',');
-		    					var price = list[0].area_price.split(',');
+			    				var period = list[0].camp_period.split('/'); //list 배열 한개뿐
+		    					var location = list[0].camp_loc.split('/');
+		    					var price = list[0].area_price.split('/');
 		    					
 			    				for(var i=0;i<period.length;i++){
 			    					$("#periodselect").append("<option>"+period[i]+"</option>");
@@ -375,6 +375,8 @@
 			    				$("#bbqtotal").text(0); //초기가 선택안함이어서
 
 			    				result = parseInt($("#periodmultiple").text())*parseInt($("#loctotal").text());
+			    				$("#total").text(result);
+			    				result = $("#total").text().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 			    				$("#total").text(result);
 			    				
 			    				//======submit용 pay_price 저장========
@@ -397,16 +399,16 @@
 			    		$.ajax({
 			    			url:"/camp/res/campdatelist",
 			    			type:"get",
-			    			data:{"business_no":"121212","camp_date":date},
+			    			data:{"camp_date":date},
 			    			success:function(list){
 			    				//alert(list); 
 			    					$("#periodselect").empty(); //append삭제관리
 			    					$("#locselect").empty(); //append삭제관리
 			    					$("#priceselect").empty(); //append삭제관리
 			    					
-			    					var period = list[0].camp_period.split(','); //list 배열 한개뿐
-			    					var location = list[0].camp_loc.split(',');
-			    					var price = list[0].area_price.split(',');
+			    					var period = list[0].camp_period.split('/'); //list 배열 한개뿐
+			    					var location = list[0].camp_loc.split('/');
+			    					var price = list[0].area_price.split('/');
 			    				for(var i=0;i<period.length;i++){
 			    					$("#periodselect").append("<option>"+period[i]+"</option>");
 			    				}
@@ -420,6 +422,8 @@
 			    				$("#loctotal").text(price[0]);
 			    				
 			    				result = parseInt($("#periodmultiple").text())*parseInt($("#loctotal").text());
+			    				$("#total").text(result);
+			    				result =$("#total").text().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); // 3자리마다 콤마
 			    				$("#total").text(result);
 			    				
 			    				//=====camp_date 바뀔때 저장된거 바뀌게 =====
@@ -444,13 +448,13 @@
 			$.ajax({
     			url:"/camp/res/campdatelist",
     			type:"get",
-    			data:{"business_no":"121212","camp_date":$("#hiddendate").val()},
+    			data:{"camp_date":$("#hiddendate").val()},
     			success:function(list){
     				//alert(list); 
     				
-    				var period = list[0].camp_period.split(','); //list 배열 한개뿐
-					var location = list[0].camp_loc.split(',');
-					var price = list[0].area_price.split(',');
+    				var period = list[0].camp_period.split('/'); //list 배열 한개뿐
+					var location = list[0].camp_loc.split('/');
+					var price = list[0].area_price.split('/');
 					//console.log("select=>"+select);
     				console.log("period[0] =>"+period[0]+"period[1] =>"+period[1]+"period[2] =>"+period[2]);
 						/* $("#total").text(price[0]);//선택했을때 계속 더해지지 않고 다시 초기값으로 */
@@ -501,7 +505,11 @@
 					//$("#total").text(parseInt($("#total").text())+parseInt(bbqtotal));
 					//합산
 					$("#total").text()+parseInt($("#bbqtotal").text());
-					console.log("total=>"+$("#total").text());
+					result = $("#total").text().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+					$("#total").text(result);
+					
+					//세자리마다 콤마넣기
+					
 					
 					//total값들 체크용
 					/* alert($("#periodtotal").text());
@@ -654,6 +662,7 @@
 				<div class="totalTitle">가격: <span id="total"></span>원</div>
 			</div>
 			<!--$$$$$ total값 전송용 input -->
+			<input style="display:none" id="hiddenfacltNm" value="${dto.facltNm}" name="facltNm"/>
 			<input style="display:none" id="hiddentotal" name="pay_price"/>
 			<!-- $$$$$$$$$$$$$$$$$$$$$$ -->
 			<!--$$$$$ camp_date값 전송용 input -->

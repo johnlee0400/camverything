@@ -136,8 +136,6 @@
 					/* 다른 게시판 박스 선택시  */
 					$(".selectbox").on("mouseover", function() {
 						/*  alert("in");  */
-					/* 	$("#active").css("background-color","white");
-						$("#active").children().css("color","black"); */
 						$(this).css("background-color","#39517A");
 						$(this).children().css("color","white");
 					})
@@ -159,15 +157,15 @@
 	<div class="location">
 		<div class="submenu">
 			<ul>
-				<li id="active"><a href="/camp/main/mypage" class="link">내 정보</a></li>
+				<li class="selectbox" ><a href="/camp/main/mypage" class="link">내 정보</a></li>
 				<li class="selectbox"><a href="/camp/main/mypagereservation" class="link">캠핑예약</a></li>
-				<li class="selectbox"><a href="/camp/main/mypageproduct" class="link">구매용품</a></li>
+				<li id="active"><a href="/camp/main/mypageproduct" class="link">구매용품</a></li>
 			</ul>
 		</div>
 	</div>
 	<div class="mainWrapper">
 		<div class="camptitle">
-				나의 정보<br/>
+				나의 캠핑용품 구매현황<br/>
 		</div>
 		<table class="table" id="resTable">
 				<colgroup>

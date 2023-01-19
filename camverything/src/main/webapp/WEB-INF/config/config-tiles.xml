@@ -57,6 +57,21 @@
 		="content" value="/WEB-INF/product/product_read.jsp"/>
 	</definition>
 	
+	<definition name="main/mypage_main" extends="indexTemplate">
+		<put-attribute name
+		="content" value="/WEB-INF/main/mypage_main.jsp"/>
+	</definition>
+	<definition name="main/mypage_reservation" extends="indexTemplate">
+		<put-attribute name
+		="content" value="/WEB-INF/main/mypage_reservation.jsp"/>
+	</definition>
+	<definition name="main/mypage_product" extends="indexTemplate">
+		<put-attribute name
+		="content" value="/WEB-INF/main/mypage_product.jsp"/>
+	</definition>
+	
+	
+	
 	<definition name="res/campread" extends="indexTemplate">
 	<put-attribute name
 	="content" value="/WEB-INF/reservation/camp_read.jsp"/>

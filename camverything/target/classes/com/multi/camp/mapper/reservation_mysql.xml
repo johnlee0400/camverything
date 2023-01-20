@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.multi.camp.reservation">
+	<insert id="insert" parameterType="reservation">
+		<!--#{area_price, jdbcType=VARCHAR} null값일때 처리 -->
+		<!-- id는 jsp에서 hihi로 임시처리중 -->
+		insert into reservation values (res_noseq.nextval,#{facltNm},sysdate,#{id},to_date(#{camp_date},'yyyy-mm-dd'),#{camp_period},#{camp_loc},#{bbq_option},#{area_price, jdbcType=VARCHAR},#{pay_price})
+	</insert>
+	<select id="campdateselect" parameterType="reservation" resultType="reservation">
+		select camp_period,camp_loc,area_price from camping_list where camp_date=#{camp_date} order by camp_period asc
+	</select>
+	<delete id="cancel" parameterType="String">
+		delete reservation where camp_date= #{camp_date}
+	</delete>
+	<delete id="mypagecancel" parameterType="Integer">
+		delete reservation where res_no= #{res_no}
+	</delete>
+	<select id="gocampingdata" parameterType="String" resultType="gocamping">
+		select * from gocamping where facltNm =#{facltNm}
+	</select>
+	
+	<select id="getresdata" parameterType="String" resultType="reservation">
+		select res_no,facltNm,appli_date,to_char(camp_date,'yyyy-mm-dd') as camp_date,camp_period,camp_loc,bbq_option,pay_price from reservation where id=#{id} order by res_no asc
+	</select>
+</mapper>

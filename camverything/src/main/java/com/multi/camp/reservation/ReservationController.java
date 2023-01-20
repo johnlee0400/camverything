@@ -42,6 +42,19 @@ public class ReservationController {
 //		return "res/campread";
 //	}
 	
+	@RequestMapping("/main/popup1") //결제성공팝업
+	public String mainpopup1() {
+		return "main/popup1";
+	}
+	@RequestMapping("/main/popup2") //결제성공팝업
+	public String mainpopup2() {
+		return "main/popup2";
+	}
+	@RequestMapping("/main/popup3") //결제성공팝업
+	public String mainpopup3() {
+		return "main/popup3";
+	}
+	
 	@RequestMapping("/res/success") //결제성공팝업
 	public String reservationsuccess() {
 		return "reservation/reservationsuccess";
@@ -55,7 +68,7 @@ public class ReservationController {
 	public String insert(ReservationDTO dto,String facltNm,HttpSession session) throws UnsupportedEncodingException {
 		System.out.println("=====res/insert.do쪽 dto=======");
 		System.out.println(dto);
-		System.out.println("facltNm1=>"+facltNm);
+		//System.out.println("facltNm1=>"+facltNm);
 		int reservation = service.insert(dto);
 		session.setAttribute("resdto", dto); //reservationDTO 세션에저장 (예약취소용)
 		System.out.println("세션에 저장한 resdto값=>"+session.getAttribute("resdto"));

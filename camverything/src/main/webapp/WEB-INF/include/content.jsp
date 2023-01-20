@@ -10,6 +10,21 @@
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
+		//팝업창
+		//1
+		let popOption1 = "width = 450px, height =491px, top=200px, left=200px, directoryies=no, location=no, status=no, toolbar=no, scrollbars=no, resizable=no";
+			let openUrl1 = '/camp/main/popup1'
+			window.open(openUrl1,'pop1',popOption1);
+		//2
+		let popOption2 = "width = 450px, height =491px, top=200px, left=700px, directoryies=no, location=no, status=no, toolbar=no, scrollbars=no, resizable=no";
+			let openUrl2 = '/camp/main/popup2'
+			window.open(openUrl2,'pop2',popOption2);
+		//3
+		let popOption3 = "width = 550px, height =591px, top=200px, left=1200px, directoryies=no, location=no, status=no, toolbar=no, scrollbars=no, resizable=no";
+			let openUrl3 = '/camp/main/popup3'
+			window.open(openUrl3,'pop3',popOption3);
+		
+		//
 		$(".selectbox").change(function() {
 			var sel = $(".selectbox option:selected").val();
 			if (sel == "1") {

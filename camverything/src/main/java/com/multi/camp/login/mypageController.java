@@ -10,21 +10,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.multi.camp.product_Buy.product_BuyDTO;
+import com.multi.camp.product_Buy.product_BuyService;
 import com.multi.camp.reservation.ReservationDTO;
 import com.multi.camp.reservation.ReservationService;
 
 @Controller
 public class mypageController {
 	ReservationService res_service;
+	product_BuyService pro_service;
 
 	public mypageController(){
 		
 	}
 	
 	@Autowired
-	public mypageController(ReservationService res_service) {
+	public mypageController(ReservationService res_service, product_BuyService pro_service) {
 		super();
 		this.res_service = res_service;
+		this.pro_service = pro_service;
 	}
 
 	@RequestMapping("/main/mypage")
@@ -54,9 +58,8 @@ public class mypageController {
 		ModelAndView mav = new ModelAndView("main/mypage_product");
 		
 		LoginDTO user = (LoginDTO) session.getAttribute("user");
-		List <ReservationDTO> reslist = res_service.getResDataById(user.getId());
-		System.out.println("reslist체크"+reslist);
-		mav.addObject("reslist",reslist);
+		List <product_BuyDTO> BuyList = pro_service.BuyList(user.getId());
+		mav.addObject("BuyList", BuyList);
 		return mav;
 	}
 	
@@ -74,6 +77,15 @@ public class mypageController {
 		return null;
 	}
 	
+	@RequestMapping("/main/mypageBuycancelpopup")
+	public String mypageproductBuycancel() {
+		return "product/mypage_productBuycancel";
+	}
 	
-	
+	@RequestMapping("/main/myprocancel")
+	@ResponseBody
+	public String mypageproductcancel(int pay_no) {
+		int cancel = pro_service.mypageCancel(pay_no);
+		return null;
+	}
 }

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.multi.camp.service">
+	<insert id="write" parameterType="service">
+		insert into servicecenter 
+		values(service_seq.nextval,#{id},#{service_title},#{service_content},sysdate,#{category})
+	</insert>
+	<select id="selectall" resultType="service">
+		select * from servicecenter
+	</select>
+	<select id="categorySelect" resultType="service"
+	 parameterType="String">
+		select * from servicecenter where category=#{category}
+	</select>
+	<select id="read" resultType="service" parameterType="String">
+		select * from servicecenter where service_no = #{service_no}
+	</select>
+	<delete id="delete" parameterType="String">
+		delete from servicecenter where service_no = #{service_no}
+	</delete>
+	<update id="update" parameterType="service">
+		update servicecenter
+		set service_title=#{service_title},service_content=#{service_content}, category=#{category}
+		where service_no=#{service_no}
+	</update>
+	<select id="search" resultType="service" parameterType="String" >
+		select * from servicecenter where service_title like  '%' || #{service_title} || '%'
+	</select>
+	<select id="dynamicSearch" resultType="service" parameterType="Map">
+		select * from servicecenter
+		<where>
+			<if test="tag=='title' and data!=''" >
+				service_title like '%' || #{data} || '%'
+			</if>
+			<if test="tag=='id' and data!=''" >
+				id like '%' || #{data} || '%'
+			</if>
+			<if test="tag=='content' and data!=''" >
+				service_content like '%' || #{data} || '%'
+			</if>
+			<if test="tag=='create_date' and data!=''" >
+				<![CDATA[
+					create_date <= #{data}
+				]]>
+			</if>
+		</where>
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

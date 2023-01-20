@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@charset "UTF-8";
 *, *:before, *:after {
   box-sizing: border-box;
   margin: 0;
@@ -7,7 +8,7 @@
 
 body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  background: #ededed;
+  background: #E2F1FF;
 }
 
 input, button {
@@ -83,7 +84,7 @@ button {
   top: 0;
   width: 900px;
   height: 100%;
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/sections-3.jpg");
+  background-image: url(login.jpg);
   background-size: cover;
   transition: transform 1.2s ease-in-out;
 }
@@ -210,7 +211,7 @@ input {
 .submit {
   margin-top: 40px;
   margin-bottom: 20px;
-  background: #d4af7a;
+  background: #D8A31A;
   text-transform: uppercase;
 }
 

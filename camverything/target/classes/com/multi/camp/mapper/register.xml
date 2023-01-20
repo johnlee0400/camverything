@@ -8,4 +8,4 @@
 		values(#{id},#{pass},#{name},#{zonecode},
 		#{addr},#{detailaddr},#{tel},#{nickname},#{birth},#{email})
 	</insert>
-</mapper>
+</mapper> 

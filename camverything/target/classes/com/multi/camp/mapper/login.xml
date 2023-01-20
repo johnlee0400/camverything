@@ -5,12 +5,12 @@
 <mapper namespace="com.multi.camp">
 	<select id="login" resultType="login" parameterType="login">
 		select * from member
-		where id=#{id} and pass=#{pass}
+		where id=#{loginid} and pass=#{loginpass}
 	</select>
 	
 	<select id ="mypage" resultType="login" parameterType="login">
 		select * from member
-		where id=#{id}
+		where id=#{loginid}
 	</select>
 	
 </mapper>

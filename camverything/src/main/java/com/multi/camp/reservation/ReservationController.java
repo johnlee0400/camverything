@@ -103,8 +103,8 @@ public class ReservationController {
 	public List<ReservationDTO> cancelreservation(HttpSession session){
 		System.out.println("cancelreserv들어옴");
 		LoginDTO user = (LoginDTO) session.getAttribute("user"); //세션 유저정보꺼내서 저장
-		System.out.println("id체크"+user.getId());
-		int cancel = service.cancel(user.getId());
+		System.out.println("id체크"+user.getLoginid());
+		int cancel = service.cancel(user.getLoginid());
 		System.out.println("예약취소결과는=>"+cancel);
 		return null;
 	}

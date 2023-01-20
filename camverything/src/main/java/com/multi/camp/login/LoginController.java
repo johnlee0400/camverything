@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @SessionAttributes("user")
 public class LoginController {
+	
 	LoginService service;
 
 
@@ -37,6 +38,7 @@ public class LoginController {
 	public ModelAndView login(LoginDTO loginuserInfo, HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
 		String viewName = "";
+		System.out.println(loginuserInfo);
 		System.out.println("============================== 에러");
 		LoginDTO user = service.login(loginuserInfo);
 		HttpSession session = request.getSession();
@@ -47,7 +49,7 @@ public class LoginController {
 			viewName = "index";
 //			viewName = user.getMenupath();
 		}else {
-			JOptionPane.showMessageDialog(null, "아이디와 비밀번호를 확인하세요", "로그인실패", JOptionPane.ERROR_MESSAGE);
+			///JOptionPane.showMessageDialog(null, "아이디와 비밀번호를 확인하세요", "로그인실패", JOptionPane.ERROR_MESSAGE);
 			viewName ="login";
 		}
 		mav.setViewName(viewName);
@@ -58,6 +60,8 @@ public class LoginController {
 
 	@RequestMapping("/main/login")
 	public String springlogin(LoginDTO loginUserInfo,Model model) {
+		
+		
 		System.out.println("스프링이 제공하는 @SessionAttributes를 이용해서 세션처리하기");
 		LoginDTO user = service.login(loginUserInfo);
 		String viewName = "";
@@ -65,7 +69,7 @@ public class LoginController {
 			model.addAttribute("user",user);
 			viewName = user.getMenupath();
 		} else { // 로그인실패
-			JOptionPane.showMessageDialog(null, "아이디와 비밀번호를 확인하세요", "로그인실패", JOptionPane.ERROR_MESSAGE);
+			//JOptionPane.showMessageDialog(null, "아이디와 비밀번호를 확인하세요", "로그인실패", JOptionPane.ERROR_MESSAGE);
 			viewName ="login";
 		}
 		return viewName;

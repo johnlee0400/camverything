@@ -23,7 +23,7 @@ public class MemberController {
 	
 	@RequestMapping(value = "/main/insert.do", method = RequestMethod.GET)
 	public String showView() {
-		return "main/register";
+		return "login";
 	}
 	@RequestMapping(value = "/main/insert.do", method = RequestMethod.POST)
 	public String insert(MemberDTO member) {
@@ -32,9 +32,12 @@ public class MemberController {
 //		return "main/login";
 		int result = service.insert(member);
 		if(result==1) {
+			
+			System.out.println("test=========");
 			return "index";
 		}
-		return "redirect:/main/register";
+		System.out.println("test2222=========");
+		return "redirect:/loginpage";
 	}
 	//아이디 중복체크
 	@RequestMapping(value = "/ajax",produces = "application/text;charset=utf-8")

@@ -2,26 +2,25 @@ package com.multi.camp.login;
 
 public class LoginDTO {
 
-	private String id;
-	private String pass;
+	private String loginid;
+	private String loginpass;
 	private String Name;
 	private String addr;
-	private int tel;
+	private Integer tel;
 	private String nickname;
-	private int birth;
+	private Integer birth;
 	private String email;
 	
 	
 	public LoginDTO() {
-		System.out.println("기본생성자");
+		//System.out.println("기본생성자");
 	}
-	
-	
-	public LoginDTO(String id, String pass, String name, String addr, int tel, String nickname, int birth,
-			String email) {
+
+	public LoginDTO(String loginid, String loginpass, String name, String addr, Integer tel, String nickname,
+			Integer birth, String email) {
 		super();
-		this.id = id;
-		this.pass = pass;
+		this.loginid = loginid;
+		this.loginpass = loginpass;
 		Name = name;
 		this.addr = addr;
 		this.tel = tel;
@@ -33,30 +32,27 @@ public class LoginDTO {
 
 	@Override
 	public String toString() {
-		return "MemberDTO [id=" + id + ", pass=" + pass + ", Name=" + Name + ", addr=" + addr + ", tel=" + tel
-				+ ", nickname=" + nickname + ", birth=" + birth + ", email=" + email + "]";
+		return "LoginDTO [loginid=" + loginid + ", loginpass=" + loginpass + ", Name=" + Name + ", addr=" + addr
+				+ ", tel=" + tel + ", nickname=" + nickname + ", birth=" + birth + ", email=" + email + "]";
+	}
+
+	public String getLoginid() {
+		return loginid;
 	}
 
 
-	public String getId() {
-		System.out.println("++++++++");
-		return id;
+	public void setLoginid(String loginid) {
+		this.loginid = loginid;
 	}
 
 
-	public void setId(String id) {
-		System.out.println("--------");
-		this.id = id;
+	public String getLoginpass() {
+		return loginpass;
 	}
 
 
-	public String getPass() {
-		return pass;
-	}
-
-
-	public void setPass(String pass) {
-		this.pass = pass;
+	public void setLoginpass(String loginpass) {
+		this.loginpass = loginpass;
 	}
 
 
@@ -80,12 +76,12 @@ public class LoginDTO {
 	}
 
 
-	public int getTel() {
+	public Integer getTel() {
 		return tel;
 	}
 
 
-	public void setTel(int tel) {
+	public void setTel(Integer tel) {
 		this.tel = tel;
 	}
 
@@ -100,12 +96,12 @@ public class LoginDTO {
 	}
 
 
-	public int getBirth() {
+	public Integer getBirth() {
 		return birth;
 	}
 
 
-	public void setBirth(int birth) {
+	public void setBirth(Integer birth) {
 		this.birth = birth;
 	}
 

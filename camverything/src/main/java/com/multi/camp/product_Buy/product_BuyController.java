@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -39,6 +40,7 @@ public class product_BuyController {
 	@RequestMapping("/product_Buy/insert.do")
 	public String insert(product_BuyDTO dto, HttpSession session) {
 		int product_Buy = service.insert(dto);
+		session.setAttribute("prodto", dto);
 		//addObject("변수명","값"); => ?key=value값으로 넘겨줌 addAttribute와 다르게
 		if(product_Buy == 1) {
 			return "redirect:/product/buyRead?check=1"; //insert되면 check값 1 return
@@ -54,10 +56,21 @@ public class product_BuyController {
 		return mav;
 	}
 	@RequestMapping("/product/cancel")
-	public List<product_BuyDTO> cancelBuy(){
-		int cancel = service.cancel();
+	public List<product_BuyDTO> cancelBuy(HttpSession session){
+		product_BuyDTO dto = (product_BuyDTO) session.getAttribute("prodto");
+		int cancel = service.cancel(dto.getPay_date());
+		System.out.println("주문취소날짜"+cancel);
 		return null;
 	}
+	
+	@RequestMapping("/product/kakaoredirect")
+	public String test(String reservation,Model model) {
+		
+		model.addAttribute("reservation",reservation );
+		
+		return "product/product_read";
+	}
+	
 	@RequestMapping("/product_Buy/kakaopay")
 	@ResponseBody
 	public String kakaopay() {
@@ -69,7 +82,7 @@ public class product_BuyController {
 			conn.setRequestProperty("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
 			conn.setDoOutput(true);
 			String parameter = "cid=TC0ONETIME&partner_order_id=partner_order_id&partner_user_id=partner_user_id&item_name=초코파이&quantity=1"
-					+ "&total_amount=2200&vat_amount=200&tax_free_amount=0&approval_url=http://localhost:8088/camp/product/buyRead?reservation=success&fail_url=http://localhost:8088/camp/proaduct/buyRead&cancel_url=http://localhost:8088/camp/product/buyRead?reservation=cancel";
+					+ "&total_amount=2200&vat_amount=200&tax_free_amount=0&approval_url=http://localhost:8088/camp/product/buyRead?reservation=success&fail_url=http://localhost:8088/camp/proaduct/buyRead&cancel_url=http://localhost:8088/camp/product/kakaoredirect?reservation=cancel";
 			OutputStream out = conn.getOutputStream();
 			DataOutputStream  dataout = new DataOutputStream(out);
 			dataout.writeBytes(parameter);

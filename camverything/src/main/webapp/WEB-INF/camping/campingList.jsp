@@ -144,8 +144,6 @@ form{
                        <p>지역 : ${campingList.doNm }</p>
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
-                        </div>
-                        <div class="col-xs-12 col-md-6">
                            <button type="button" class="btn btn-success" onclick="location.href='/camp/res/camp_read?facltNm=${campingList.facltNm }'">예약/상세보기</button>
                         </div>
                     </div>

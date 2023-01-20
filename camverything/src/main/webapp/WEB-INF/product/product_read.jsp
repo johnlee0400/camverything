@@ -156,6 +156,7 @@ $(document).ready(function() {
 					<h5>
 						${product.product_name }
 					</h5>
+					<input type="hidden" name="product_name" value="${product.product_name }">
 					<hr/>
 					<p>${product.product_content }</p>
 					<hr/>

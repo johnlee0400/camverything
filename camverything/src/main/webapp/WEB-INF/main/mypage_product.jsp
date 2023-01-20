@@ -79,9 +79,10 @@
 		
 		.mainWrapper{
 			padding-top:120px;
+			padding-bottom:200px;
 			margin:auto;
 			width:1200px;
-			height:600px;
+			height:auto;
 		}
 		
 		
@@ -106,8 +107,8 @@
 		.table > tbody > tr > td{
 			vertical-align: middle;
 			text-align: center;
-			padding-top:20px;
-			padding-bottom:20px;
+/* 			padding-top:20px; */
+/* 			padding-bottom:20px; */
 			border-left:  #39517A 0.1rem solid;
 		}
 		
@@ -122,6 +123,12 @@
 	    word-break: keep-all;
 	    margin-bottom: 30px;
 	    /* font-family: sans-serif; */
+	}
+	.btn {
+		background-color: #39517A;
+		color: white;
+		width:100px;
+		text-align:center;
 	}
 	</style>
          
@@ -144,6 +151,24 @@
 						$(this).css("background-color","white");
 						$(this).children().css("color","black");
 					})
+					//예약취소부분
+					$(".btn").on("click", function() {
+						let popOption = "width = 400px, height =200px, top=600px, left=700px, directoryies=no, location=no, status=no, toolbar=no, scrollbars=no";
+						let openUrl = '/camp/main/mypageBuycancelpopup'
+						window.open(openUrl,'pop',popOption);
+						$.ajax({
+							url:"/camp/main/myprocancel",
+							data:{"pay_no":$(this).val()},
+							success:function(data){
+								console.log("결제취소됨");
+								location.reload();
+							},
+							error:function(error){
+								console.log(error);
+							}
+					})
+					
+			})
 				});
 	    
     </script>
@@ -171,25 +196,31 @@
 				<colgroup>
 					<col style="width: 10%;">
 					<col style="width: 10%;">
-					<col style="width: 60%;">
+					<col style="width: 10%;">
+					<col style="width: 40%;">
+					<col style="width: 10%;">
 					<col style="width: 10%;">
 					<col style="width: 10%;">
 				</colgroup>
 				<tbody class="tbody">
 					<tr>
-						<th scope="col">예약번호</th>
-						<th scope="col">신청일</th>
-						<th scope="col">예약내용</th>
+						<th scope="col">주문상품</th>
+						<th scope="col">주문번호</th>
+						<th scope="col">주문일자</th>
+						<th scope="col">상품명</th>
+						<th scope="col">수량</th>
 						<th scope="col">결제금액</th>
 						<th scope="col">신청취소</th>
 					</tr>
-				<c:forEach var="res" items="${reslist}">
+				<c:forEach var="buy" items="${BuyList}">
 					<tr class="content">
-						<td scope="col">${res.res_no}</td>
-						<td scope="col">${res.appli_date}</td>
-						<td scope="col">${res.res_no}</td>
-						<td scope="col">${res.res_no}</td>
-						<td scope="col">${res.res_no}</td>
+						<td scope="col"><img src="${buy.product_img }" style="width: 100%" height="100%"></td>
+						<td scope="col">${buy.pay_no}</td>
+						<td scope="col">${buy.pay_date}</td>
+						<td scope="col">${buy.product_name}</td>
+						<td scope="col">${buy.quantity}</td>
+						<td scope="col">${buy.total}</td>
+						<td scope="col"><button class="btn" value="${buy.pay_no}">결제취소</button>
 					</tr>
 				</c:forEach>
 				</tbody>

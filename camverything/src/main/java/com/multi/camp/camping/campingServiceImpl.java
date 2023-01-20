@@ -27,10 +27,6 @@ public class campingServiceImpl implements campingService {
 		return dao.search(data);
 	}
 	@Override
-	public List<campingDTO> search2(String search, String local) {
-		return dao.search2(search, local);
-	}
-	@Override
 	public List<campingDTO> findByCategory(String category) {
 		List<campingDTO> list = null;
 		System.out.println(category+"서비스");

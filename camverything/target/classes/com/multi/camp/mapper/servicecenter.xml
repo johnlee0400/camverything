@@ -10,6 +10,9 @@
 	<select id="selectall" resultType="service">
 		select * from servicecenter
 	</select>
+	<select id="indexnotice" parameterType="String" resultType="service" >
+		select * from servicecenter
+	</select>
 	<select id="categorySelect" resultType="service"
 	 parameterType="String">
 		select * from servicecenter where category=#{category}

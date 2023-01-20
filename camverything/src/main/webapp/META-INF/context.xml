@@ -31,4 +31,11 @@
               url="jdbc:oracle:thin:@127.0.0.1:1521:xe"
               username="camp" password="camp" maxTotal="20" maxIdle="10"
               maxWaitMillis="-1"/>
+              
+    <!-- mysql 공인아이피  -->
+    <!-- <Resource name="jdbc/myspring" auth="Container"
+              type="javax.sql.DataSource" driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://118.67.128.168:3306/sample" 
+              username="camp" password="camp" maxTotal="20" maxIdle="10"
+              maxWaitMillis="-1"/>        -->   
 </Context>

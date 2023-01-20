@@ -27,4 +27,17 @@
 		<mapper resource ="com/multi/camp/mapper/reservation.xml"/>
 		<mapper resource ="com/multi/camp/mapper/manager.xml"/>
 	</mappers>
+	
+	<!-- <mappers>
+		<mapper resource="com/multi/camp/mapper/servicecenter_mysql.xml"/>
+		<mapper resource="com/multi/camp/mapper/register_mysql.xml"/>
+		<mapper resource="com/multi/camp/mapper/board_mysql.xml"/>
+		<mapper resource="com/multi/camp/mapper/login_mysql.xml"/>
+		<mapper resource="com/multi/camp/mapper/campingList_mysql.xml"/>
+		<mapper resource="com/multi/camp/mapper/product_mysql.xml"/>
+		<mapper resource="com/multi/camp/mapper/product_Buy_mysql.xml"/>
+		<mapper resource ="com/multi/camp/mapper/reservation_mysql.xml"/>
+		<mapper resource ="com/multi/camp/mapper/manager_mysql.xml"/>
+	</mappers> -->
+	
 </configuration>

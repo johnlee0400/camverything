@@ -18,7 +18,7 @@ public interface BoardService {
 	//제목,작성자, 본문, 작성일별로 검색
 	List<BoardDTO> search(String tag,String data);
 	List<BoardDTO> findByCategory(String category);
-	
+	List<BoardDTO> findboardindex();
 	List<BoardFileDTO> getFileList(String boardno);
 	BoardFileDTO getFile(BoardFileDTO inputdata);
 }

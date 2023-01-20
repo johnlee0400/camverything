@@ -60,6 +60,11 @@ public class ServiceCenterDAOImpl implements ServiceCenterDAO{
 		return sqlSession.selectList("com.multi.camp.service.categorySelect",
 				category);
 	}
+	
+	@Override
+	public List<ServiceCenterDTO> findnoticeindex() {
+		return sqlSession.selectList("com.multi.camp.service.indexnotice");
+	}
 	@Override
 	public List<ServiceCenterDTO> serviceList() {
 //		System.out.println("====================dao=======================");

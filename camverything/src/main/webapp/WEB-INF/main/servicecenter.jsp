@@ -7,6 +7,11 @@
 <!-- Theme Made By www.w3schools.com - No Copyright -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/camp/common/css/board/css.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <title>Insert title here</title>
@@ -47,7 +52,7 @@
 	}
 	.submenu{
 		position: absolute;
-		margin-left:360px;
+		margin-left:800px;
 		/* bottom: 10px; */
 	}
 	
@@ -89,6 +94,10 @@
 	});
 	$(document).ready(
 			function() {
+				if(category=="공지사항"){
+						$("#register").attr("style","display:none");
+						console.log("성");
+				}
 				/*=================submenu제어 ==================== */
 				/*초기 자동 선택된 박스 */
 				$("#active").css("background-color","#39517A");
@@ -97,8 +106,8 @@
 				/* 다른 게시판 박스 선택시  */
 				$(".selectbox").on("mouseover", function() {
 					/*  alert("in");  */
-					$("#active").css("background-color","white");
-					$("#active").children().css("color","black");
+// 					$("#active").css("background-color","white");
+// 					$("#active").children().css("color","black");
 					$(this).css("background-color","#39517A");
 					$(this).children().css("color","white");
 				})
@@ -107,7 +116,9 @@
 					$(this).css("background-color","white");
 					$(this).children().css("color","black");
 				})
+				
 			});
+	
 </script>
 </head>
 <body>
@@ -152,17 +163,22 @@
 				</c:forEach>
 			</tbody>
 		</table>
+		<div class="bt_wrap" id="register">
+            <a href="/camp/service/write.do" class="on" >등록</a>
+        </div>
+        
+
 	</div>
-	<!-- <form action="/camp/service/search.do" method="post">
-		<select name="tag">
-			<option value="id">작성자</option>
-			<option value="title">제목</option>
-			<option value="content">본문</option>
-			<option value="create_date">작성일</option>
-		</select> <input type="text" name="data" /> <input type="submit" value="검색">
-		<ul class="nav navbar-nav navbar-right">
-			<li><a href="/camp/service/write.do" style="text-align: right;">글쓰기</a></li>
-		</ul>
-	</form> -->
+<!-- 	<form action="/camp/service/search.do" method="post"> -->
+<!-- 		<select name="tag"> -->
+<!-- 			<option value="id">작성자</option> -->
+<!-- 			<option value="title">제목</option> -->
+<!-- 			<option value="content">본문</option> -->
+<!-- 			<option value="create_date">작성일</option> -->
+<!-- 		</select> <input type="text" name="data" /> <input type="submit" value="검색"> -->
+<!-- 		<ul class="nav navbar-nav navbar-right"> -->
+<!-- 			<li><a href="/camp/service/write.do" style="text-align: right;">글쓰기</a></li> -->
+<!-- 		</ul> -->
+<!-- 	</form>  -->
 </body>
 </html>

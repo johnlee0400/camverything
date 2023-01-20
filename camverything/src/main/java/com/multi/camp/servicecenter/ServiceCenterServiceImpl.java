@@ -5,9 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-//serviceDAO의 메소드를 호출
-//=> 컨틀로러에게 받은 데이터를 가공해서 DAO로 넘기거나 DAO에서 받은 데이터를 가공해서 컨트롤러로 넘기는 작업
-//=> 트랜잭션처리
+
 @Service
 public class ServiceCenterServiceImpl implements ServiceCenterService{
 	ServiceCenterDAO dao;
@@ -57,9 +55,23 @@ public class ServiceCenterServiceImpl implements ServiceCenterService{
 		return list;
 	}
 	@Override
-	public int insert(ServiceCenterDTO service) {
-		dao.insert(service);
+	public int insert(ServiceCenterDTO service,List<ServiceFileDTO> servicefiledtolist) {
+		if(servicefiledtolist.size()!=0) {
+			dao.insert(service);
+			dao.insertFile(servicefiledtolist);
+		}else {
+			dao.insert(service);
+		}
 		return 0;
+		
+	}
+	@Override
+	public List<ServiceFileDTO> getFileList(String serviceno) {
+		return dao.getFileList(serviceno);
+	}
+	@Override
+	public ServiceFileDTO getFile(ServiceFileDTO inputdata) {
+		return dao.getFile(inputdata);
 	}
 
 }

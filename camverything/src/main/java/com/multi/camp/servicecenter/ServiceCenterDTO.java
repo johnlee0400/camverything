@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import com.multi.camp.board.BoardFileDTO;
+
 public class ServiceCenterDTO {
 	private int service_no;
 	private String id;
@@ -92,6 +94,8 @@ public class ServiceCenterDTO {
 	public void setFiles(List<MultipartFile> files) {
 		this.files = files;
 	}
+
+
 	
 	
 }

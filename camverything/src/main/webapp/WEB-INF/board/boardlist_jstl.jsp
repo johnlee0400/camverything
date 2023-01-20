@@ -85,7 +85,7 @@
 	}
 	.submenu{
 		position: absolute;
-		margin-left:360px;
+		margin-left:800px;
 		/* bottom: 10px; */
 	}
 	
@@ -136,27 +136,61 @@
         <div class="board_title">
             <strong>${category}</strong>
         </div>
-		<div class="board_list_wrap">
-            <div class="board_list">
-				<div class="top">
-                    <div class="num">번호</div>
-                    <div class="title">제목</div>
-                    <div class="writer">글쓴이</div>
-                    <div class="date">작성일</div>
-                    <div class="count">조회</div>
-                </div>
-                <div>
-				<c:forEach var="board" items="${boardlist }" >
-					<div class="selectbox">
-						<div class="num">(${category})</div>
-						<div class="title"><a href="/camp/board/read.do?board_no=${board.board_no }&state=READ">${board.title }</a></div>
-						<div class="writer">${board.id }</div>
-						<div class="date">${board.create_date }</div>
-						<div class="count"><a href="/camp/board/delete.do?board_no=${board.board_no }">삭제</a></div>
-					</div>
+<!-- 		<div class="board_list_wrap"> -->
+<!--             <div class="board_list"> -->
+<!-- 				<div class="top"> -->
+<!--                     <div class="num">번호</div> -->
+<!--                     <div class="title">제목</div> -->
+<!--                     <div class="writer">글쓴이</div> -->
+<!--                     <div class="date">작성일</div> -->
+<!--                     <div class="count">조회</div> -->
+<!--                 </div> -->
+<!--                 <div> -->
+<%-- 				<c:forEach var="board" items="${boardlist }" > --%>
+<!-- 					<div class="selectbox"> -->
+<%-- 						<div class="num">(${category})</div> --%>
+<%-- 						<div class="title"><a href="/camp/board/read.do?board_no=${board.board_no }&state=READ">${board.title }</a></div> --%>
+<%-- 						<div class="writer">${board.id }</div> --%>
+<%-- 						<div class="date">${board.create_date }</div> --%>
+<%-- 						<div class="count"><a href="/camp/board/delete.do?board_no=${board.board_no }">삭제</a></div> --%>
+<!-- 					</div> -->
+<%-- 				</c:forEach> --%>
+<!-- 				</div> -->
+<!-- 	</div> -->
+	
+	
+	<table class="table" style="text-align: center;">
+			<thead>
+				<tr>
+					<th scope="col" class="text-center">번호</th>
+					<th scope="col" class="text-center">제목</th>
+					<th scope="col" class="text-center">아이디</th>
+					<th scope="col" class="text-center">등록일</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%
+						int i=1;
+					%>
+				<c:forEach var="board" items="${boardlist }">
+					<tr>
+					
+						<td><%=i%></td>
+						<%i++; %>	
+<!-- 						<td><img src="/camp/images/logo.png"  width="50px" height="35px"></td> -->
+						<td><a
+							href="/camp/board/read.do?board_no=${board.board_no }&state=READ">${board.title }</a></td>
+						<td>${board.id }</td>
+						<td>${board.create_date }</td>
+						<td><a
+							href="/camp/board/delete.do?board_no=${board.board_no }">삭제</a></td>
+					</tr>
+					
 				</c:forEach>
-				</div>
-	</div>
+			</tbody>
+		</table>
+		
+	
 	<div class="board_page">
                 <a href="#" class="bt first"><<</a>
                 <a href="#" class="bt prev"><</a>
@@ -170,10 +204,9 @@
             </div>
             <div class="bt_wrap">
                 <a href="/camp/board/write.do" class="on">등록</a>
-                <!--<a href="#">수정</a>-->
+                <a href="#">수정</a>
             </div>
         </div>
-    </div>
 
 </body>
 </html>

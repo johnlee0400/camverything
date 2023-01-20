@@ -3,6 +3,19 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.multi.camp.service">
+<select id="fileselect" parameterType="String" resultType="servicefile" >
+		select * from service_file where service_no = #{serviceno}
+	</select>
+	<select id="getfileinfo" parameterType="servicefile" resultType="servicefile" >
+		select * from service_file where service_no = #{service_no} and serviceFileno = #{serviceFileno}
+	</select>
+	<insert id="fileinsert" parameterType="java.util.List">
+		insert all
+		<foreach collection="list" item="file" separator=" ">
+			into service_file values(service_seq.currval,#{file.originalFilename}, #{file.storeFilename},#{file.serviceFileno})
+		</foreach>
+		select * from dual
+	</insert>
 	<insert id="write" parameterType="service">
 		insert into servicecenter 
 		values(service_seq.nextval,#{id},#{service_title},#{service_content},sysdate,#{category})

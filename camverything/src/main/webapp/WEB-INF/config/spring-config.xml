@@ -18,6 +18,7 @@
 	<resources mapping="/images/**" location="/WEB-INF/static/images/" />
 	<resources mapping="/common/**" location="/WEB-INF/static/common/" />
 	<resources mapping="/upload/**" location="/WEB-INF/upload/" />
+	<resources mapping="/serviceupload/**" location="/WEB-INF/serviceupload/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -71,8 +72,7 @@
 	class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<beans:property name="maxUploadSize" value="4000000"/>
 	</beans:bean>
-	
-	
+
 	<!-- =========빈을 생성하기 위해 패키지등록========== -->	
 	<context:component-scan base-package="com" />
 	

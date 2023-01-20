@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
+import java.net.URLEncoder;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -40,10 +41,6 @@ public class BoardController {
 	public String writePage() {
 		return "board/writepage";
 	}
-	//ResponseEntity는 HttpEntity의 하위객체
-	//HttpEntity는 Http요청과 응답을 관리하는 객체 - 요청헤더, 바디, 응답헤더, 바디를 관리하는 객체
-	//ResponseEntity는 응답의 데이터를 관리하는 객체
-	//=> Http헤더, Http바디, Http상태정보...
 	@RequestMapping("/board/download/{id}/{board_no}/{boardFileno}")
 	public ResponseEntity<UrlResource> downloadFile(@PathVariable String id,@PathVariable String board_no,@PathVariable String boardFileno, HttpSession session) throws MalformedURLException, FileNotFoundException, UnsupportedEncodingException {
 //		System.out.println(id+","+board_no+","+boardFileno);
@@ -73,6 +70,7 @@ public class BoardController {
 		String path = WebUtils.getRealPath(session.getServletContext(), "/WEB-INF/upload");
 		System.out.println(path);
 		
+
 		//3. 파일업로드 서비스를 호출해서 실제 서버에 업로드 되도록 작업하기
 		List<BoardFileDTO> boardfiledtolist = fileuploadService.uploadFiles(files, path);
 		int count = 1;
@@ -87,8 +85,8 @@ public class BoardController {
 		service.insert(board,boardfiledtolist);
 		return "redirect:/board/list.do?category=all";
 	}
-	@RequestMapping("/board/list.do")
-	public ModelAndView list(String category) {
+	@RequestMapping(value = "/board/list.do")
+	public ModelAndView list(String category){
 //		System.out.println("category=>"+category);
 		ModelAndView mav = new ModelAndView("board/list");
 		List<BoardDTO> boardlist = service.findByCategory(category);
@@ -118,7 +116,7 @@ public class BoardController {
 		model.addAttribute("boardfiledtolist", boardfiledtolist);
 		return view;
 	}
-	@RequestMapping("/board/delete.do")
+	@RequestMapping("/board/delete.do" )
 	public String delete(String board_no,HttpSession session) {
 		//로그인한 사용자를 찾는다.
 		LoginDTO user = (LoginDTO)session.getAttribute("user");

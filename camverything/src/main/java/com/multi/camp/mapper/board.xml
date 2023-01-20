@@ -21,11 +21,11 @@
 		values(board_seq.nextval,#{id},null,#{title},#{content},sysdate,#{view_cnt},#{category})
 	</insert>
 	<select id="selectall" resultType="board">
-		select * from board
+		select * from board order by board_no desc
 	</select>
 	<select id="categorySelect" resultType="board"
 	 parameterType="String">
-		select * from board where category=#{category}
+		select * from board where category=#{category} order by board_no desc
 	</select>
 	<select id="read" resultType="board" parameterType="String">
 		select * from board where board_no = #{board_no}

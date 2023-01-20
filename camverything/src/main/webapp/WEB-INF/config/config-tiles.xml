@@ -43,13 +43,11 @@
 	<definition name="main/register" extends="indexTemplate">
 		<put-attribute name="content" value="/WEB-INF/main/register.jsp"/>
 	</definition>
-	<definition name="servicecenter" extends="mainTemplate">
+	<definition name="servicecenter" extends="indexTemplate">
 		<put-attribute name="content" value="/WEB-INF/main/servicecenter.jsp"/>
-		<put-attribute name="menu" value="/WEB-INF/menu/servicemenu.jsp"/>
 	</definition>
-	<definition name="notice" extends="mainTemplate">
+	<definition name="notice" extends="indexTemplate">
 		<put-attribute name="content" value="/WEB-INF/service/notice.jsp"/>
-		<put-attribute name="menu" value="/WEB-INF/menu/servicemenu.jsp"/>		
 	</definition>
 	
 	<definition name="product/product_read" extends="indexTemplate">

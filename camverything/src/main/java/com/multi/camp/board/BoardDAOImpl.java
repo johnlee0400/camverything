@@ -60,6 +60,12 @@ public class BoardDAOImpl implements BoardDAO{
 		return sqlSession.selectList("com.multi.camp.board.categorySelect",
 				category);
 	}
+	
+	@Override
+	public List<BoardDTO> findboardindex() {
+		System.out.println("daoimpl");
+		return sqlSession.selectList("com.multi.camp.board.indexboard");
+	}
 	@Override
 	public List<BoardDTO> boardList() {
 //		System.out.println("====================dao=======================");

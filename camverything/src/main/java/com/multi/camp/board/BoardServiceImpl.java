@@ -80,6 +80,12 @@ public class BoardServiceImpl implements BoardService{
 		// TODO Auto-generated method stub
 		return dao.getFile(inputdata);
 	}
+	@Override
+	public List<BoardDTO> findboardindex() {
+		System.out.println("asdadasdasd");
+		return dao.findboardindex();
+	}
+	
 
 }
 

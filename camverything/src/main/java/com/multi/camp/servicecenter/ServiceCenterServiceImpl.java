@@ -61,6 +61,11 @@ public class ServiceCenterServiceImpl implements ServiceCenterService{
 		dao.insert(service);
 		return 0;
 	}
+	@Override
+	public List<ServiceCenterDTO> findnoticeindex() {
+		return dao.findnoticeindex();
+	}
+	
 
 }
 

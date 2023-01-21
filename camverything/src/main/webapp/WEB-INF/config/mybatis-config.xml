@@ -5,10 +5,9 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.multi.camp.reservation.ReservationDTO" alias="reservation"/>
-		<typeAlias type="com.multi.camp.register.MemberDTO" alias="member"/>
+		<typeAlias type="com.multi.camp.login.LoginDTO" alias="member"/>
 		<typeAlias type="com.multi.camp.board.BoardDTO" alias="board"/>
 		<typeAlias type="com.multi.camp.board.BoardFileDTO" alias="boardfile"/>
-		<typeAlias type="com.multi.camp.login.LoginDTO" alias="login"/>
 		<typeAlias type="com.multi.camp.camping.campingDTO" alias="campingList"/>
 		<typeAlias type="com.multi.camp.product.productDTO" alias="product"/>
 		<typeAlias type="com.multi.camp.product_Buy.product_BuyDTO" alias="product_Buy"/>	

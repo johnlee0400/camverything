@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.multi.camp.login.LoginDTO;
+
 //MemberDAO의 메소드 호출
 //-> 컨트롤러에서 받은 데이터를 dao로 넘기거나 dao에서 받은 데이터를 가공해 컨트롤러로 넘김
 //-> 트랜잭션 처리
@@ -23,13 +25,15 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public int insert(MemberDTO member) {
+	public int insert(LoginDTO member) {
+		System.out.println("memberService"+member);
 		return dao.insert(member);
 	}
 	@Override
-	public int insert(MemberDTO member, HttpServletRequest request, HttpServletResponse response) {
+	public int insert(LoginDTO member, HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
 
 }

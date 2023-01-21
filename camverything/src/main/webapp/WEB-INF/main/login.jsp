@@ -9,9 +9,16 @@
 	<title>Insert title here</title>
 	<link href="/camp/common/css/registercss.css" rel="stylesheet" />
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<!-- <script src="https://code.jquery.com/jquery-3.2.1.js"></script> -->
 	
 	<!-- 회원가입 유효성 검사 -->
 	<script type="text/javascript">
+	//회원가입 submit작
+	function register_form() {
+		console.log("폼들어옴");
+		document.getElementById('loginregister').submit();
+	}
+	
 	$(document).ready(function(){ 
 		$("#myid").on("blur",function(){
 			var querydata = {"id":$("#myid").val()}
@@ -96,7 +103,7 @@
 					return false;
 				}
 				
-				location.href="/camp/main/insert.do"				
+				//location.href="/camp/main/insert.do"				
 				return true;
 			});
 		
@@ -148,7 +155,13 @@
 	</script>
 	
 </head>
-	
+	<div id="imageeee">
+		<div class="container">
+			<div class="masthead-subheading">
+				<h1>로그인</h1>
+			</div>
+		</div>
+	</div>	
 <body>
 	<script>/* 버튼으로 이동 */
 	$(document).ready(function() {
@@ -157,9 +170,9 @@
 		});
 	});
 	</script>
-	<form action="/camp/login.do" method="post">
+	<form action="/camp/login.do" method="post" id="loginregister">
 	
-		<div class="cont"  style="margin-top: 200px">
+		<div class="cont"  style="margin-top: 100px">
 		  <div class="form sign-in">
 		    <h2>Login</h2>
 		    <label>
@@ -265,13 +278,15 @@
 	        <span>이메일</span>
 	        <input type="email" id="email" name="email"/>
 	      </label>
-	      <button type="button" class="submit" id="registerbtn">가입하기</button>
 	      
+	      <button type="button" class="submit" id="registerbtn" onclick="return register_form()">가입하기</button>
+	      <!-- <input type="submit" value="가입하기" class="btn btn-success"id="registerbtn"/> -->
 	    </div>
 	  </div>
 	</div>
 </form>
 	
 </body>
+
 </html>
 	

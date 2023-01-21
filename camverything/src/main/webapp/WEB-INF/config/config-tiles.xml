@@ -40,9 +40,7 @@
 	<definition name="login" extends="indexTemplate">
 		<put-attribute name="content" value="/WEB-INF/main/login.jsp"/>
 	</definition>
-	<definition name="main/register" extends="indexTemplate">
-		<put-attribute name="content" value="/WEB-INF/main/register.jsp"/>
-	</definition> 
+	
 	<definition name="servicecenter" extends="indexTemplate">
 		<put-attribute name="content" value="/WEB-INF/main/servicecenter.jsp"/>
 	</definition>

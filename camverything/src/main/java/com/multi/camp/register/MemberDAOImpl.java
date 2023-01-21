@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.multi.camp.login.LoginDTO;
+
 @Repository
 public class MemberDAOImpl implements MemberDAO{
 		
@@ -20,8 +22,8 @@ public class MemberDAOImpl implements MemberDAO{
 	}
 
 	@Override
-	public int insert(MemberDTO member) {
-
+	public int insert(LoginDTO member) {
+		System.out.println("memberDAO"+member);
 		return sqlSession.insert("com.multi.camp.register", member);
 	}
 

@@ -6,7 +6,7 @@ package com.multi.camp.reservation;
 public class ReservationDTO {
 	private int res_no;
 	private String facltNm;
-	private String appli_date;
+	private String appli_date; 
 	private String id;
 	private String camp_date;
 	private String camp_period;

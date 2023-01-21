@@ -20,7 +20,7 @@ public class LoginDAOImpl implements LoginDAO {
 	public LoginDTO login(LoginDTO loginUser) {
 		System.out.println(loginUser + "----------dao------------");
 		LoginDTO user = sqlSession.selectOne("com.multi.camp.login", loginUser);
-		System.out.println(user);
+		System.out.println(user+"======logindaoImpl======");
 		return user;
 	}
 

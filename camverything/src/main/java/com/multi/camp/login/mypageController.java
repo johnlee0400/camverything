@@ -30,16 +30,15 @@ public class mypageController {
 		this.res_service = res_service;
 		this.pro_service = pro_service;
 	}
-
-	@RequestMapping("/main/mypage")
-	public ModelAndView mypage(HttpSession session) {
-		ModelAndView mav = new ModelAndView("main/mypage_main");
-		
-		LoginDTO user = (LoginDTO) session.getAttribute("user");
-		List <ReservationDTO> reslist = res_service.getResDataById(user.getId());
-		System.out.println("reslist체크"+reslist);
-		mav.addObject("reslist",reslist);
-		return mav;
+	
+	@RequestMapping(value = "/main/mypage_update")
+	public String mypage_update() {
+		return "main/mypage_update";
+	}
+	
+	@RequestMapping(value = "/main/mypage")
+	public String mypage() {
+		return "main/mypage_main";
 	}
 	
 	@RequestMapping("/main/mypagereservation")

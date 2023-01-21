@@ -17,12 +17,8 @@ public class LoginServiceImpl implements LoginService {
 
 	@Override
 	public LoginDTO login(LoginDTO loginUser) {
-		LoginDTO user = dao.login(loginUser);
-		System.out.println("service"+user);
-		if(user!=null) {
-			System.out.println("!!!로그인성공!!!");
-		}
-		return user;
+		System.out.println("서비스쪽 잘들어왔는지=>"+loginUser);
+		return dao.login(loginUser);
 		
 	}
 	

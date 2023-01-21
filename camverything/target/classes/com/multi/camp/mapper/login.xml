@@ -12,5 +12,10 @@
 		select * from member
 		where id=#{loginid}
 	</select>
+	<insert id="register" parameterType="member">
+		insert into member
+		values(#{loginid},#{loginpass},#{id},#{pass},#{name},#{zonecode},
+		#{addr},#{detailaddr},#{tel},#{nickname},#{birth},#{email})
+	</insert>
 	
 </mapper>

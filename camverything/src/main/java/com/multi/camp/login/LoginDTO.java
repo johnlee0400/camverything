@@ -7,33 +7,33 @@ public class LoginDTO {
 	private String id;
 	private String pass;
 	private String name;
+	private String zonecode;
 	private String addr;
+	private String detailaddr;
 	private Integer tel;
 	private String nickname;
 	private Integer birth;
 	private String email;
-	private String zonecode;
-	private String detailaddr;
 	
 	public LoginDTO() {
 		//System.out.println("기본생성자");
 	}
 
-	public LoginDTO(String loginid, String loginpass, String id, String pass, String name, String addr, Integer tel,
-			String nickname, Integer birth, String email, String zonecode, String detailaddr) {
+	public LoginDTO(String loginid, String loginpass, String id, String pass, String name, String zonecode, String addr,
+			String detailaddr, Integer tel, String nickname, Integer birth, String email) {
 		super();
 		this.loginid = loginid;
 		this.loginpass = loginpass;
 		this.id = id;
 		this.pass = pass;
 		this.name = name;
+		this.zonecode = zonecode;
 		this.addr = addr;
+		this.detailaddr = detailaddr;
 		this.tel = tel;
 		this.nickname = nickname;
 		this.birth = birth;
 		this.email = email;
-		this.zonecode = zonecode;
-		this.detailaddr = detailaddr;
 	}
 
 	public String getLoginid() {
@@ -76,12 +76,28 @@ public class LoginDTO {
 		this.name = name;
 	}
 
+	public String getZonecode() {
+		return zonecode;
+	}
+
+	public void setZonecode(String zonecode) {
+		this.zonecode = zonecode;
+	}
+
 	public String getAddr() {
 		return addr;
 	}
 
 	public void setAddr(String addr) {
 		this.addr = addr;
+	}
+
+	public String getDetailaddr() {
+		return detailaddr;
+	}
+
+	public void setDetailaddr(String detailaddr) {
+		this.detailaddr = detailaddr;
 	}
 
 	public Integer getTel() {
@@ -116,30 +132,13 @@ public class LoginDTO {
 		this.email = email;
 	}
 
-	public String getZonecode() {
-		return zonecode;
-	}
-
-	public void setZonecode(String zonecode) {
-		this.zonecode = zonecode;
-	}
-
-	public String getDetailaddr() {
-		return detailaddr;
-	}
-
-	public void setDetailaddr(String detailaddr) {
-		this.detailaddr = detailaddr;
-	}
-
 	@Override
 	public String toString() {
 		return "LoginDTO [loginid=" + loginid + ", loginpass=" + loginpass + ", id=" + id + ", pass=" + pass + ", name="
-				+ name + ", addr=" + addr + ", tel=" + tel + ", nickname=" + nickname + ", birth=" + birth + ", email="
-				+ email + ", zonecode=" + zonecode + ", detailaddr=" + detailaddr + "]";
+				+ name + ", zonecode=" + zonecode + ", addr=" + addr + ", detailaddr=" + detailaddr + ", tel=" + tel
+				+ ", nickname=" + nickname + ", birth=" + birth + ", email=" + email + "]";
 	}
-
-
+	
 }
 
 	

@@ -41,9 +41,10 @@ public class LoginController {
 		System.out.println(loginuserInfo);
 		System.out.println("============================== 에러");
 		LoginDTO user = service.login(loginuserInfo);
+		System.out.println("user확인=>"+user);
 		HttpSession session = request.getSession();
-		if (user !=null) {
-//			System.out.println("로그인성공");
+		if (user!=null) {
+			System.out.println("로그인성공");
 			session.setAttribute("user", user);
 //			viewName =user.getId();
 			viewName = "index";
@@ -67,7 +68,7 @@ public class LoginController {
 		String viewName = "";
 		if (user != null) {
 			model.addAttribute("user",user);
-			viewName = user.getMenupath();
+			viewName = "index";
 		} else { // 로그인실패
 			//JOptionPane.showMessageDialog(null, "아이디와 비밀번호를 확인하세요", "로그인실패", JOptionPane.ERROR_MESSAGE);
 			viewName ="login";

@@ -31,17 +31,6 @@ public class mypageController {
 		this.pro_service = pro_service;
 	}
 
-	@RequestMapping("/main/mypage")
-	public ModelAndView mypage(HttpSession session) {
-		ModelAndView mav = new ModelAndView("main/mypage_main");
-		
-		LoginDTO user = (LoginDTO) session.getAttribute("user");
-		List <ReservationDTO> reslist = res_service.getResDataById(user.getId());
-		System.out.println("reslist체크"+reslist);
-		mav.addObject("reslist",reslist);
-		return mav;
-	}
-	
 	@RequestMapping("/main/mypagereservation")
 	public ModelAndView mypagereservation(HttpSession session) {
 		ModelAndView mav = new ModelAndView("main/mypage_reservation");

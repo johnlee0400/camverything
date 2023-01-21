@@ -59,6 +59,10 @@
 		<put-attribute name
 		="content" value="/WEB-INF/main/mypage_main.jsp"/>
 	</definition>
+	<definition name="main/mypage_update" extends="indexTemplate">
+		<put-attribute name
+		="content" value="/WEB-INF/main/mypage_update.jsp"/>
+	</definition>
 	<definition name="main/mypage_reservation" extends="indexTemplate">
 		<put-attribute name
 		="content" value="/WEB-INF/main/mypage_reservation.jsp"/>

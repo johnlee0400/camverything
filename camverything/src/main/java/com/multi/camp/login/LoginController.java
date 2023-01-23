@@ -61,7 +61,8 @@ public class LoginController {
 		System.out.println("Member=>"+loginuserInfo);
 //		service.insert(member);
 //		return "main/login";
-		if(loginuserInfo.getId()!=null) {
+		System.out.println("getid=>"+loginuserInfo.getTel());
+		if(loginuserInfo.getTel()!=null) {
 			
 			System.out.println("===================");
 			int result = service2.insert(loginuserInfo);
@@ -160,8 +161,18 @@ public class LoginController {
 				view = "redirect:/camp/main/mypage_main";
 			}else {
 				int result = service2.delete(id);
+				if(result==1) {
+					System.out.println("회원탈퇴성공!!");
+				}
+				System.out.println("delete=------------");
+				user = null;
 				session.invalidate();
+				session = null;
+				view = "index";
+				System.out.println("session=>"+session);
+				if(session==null) 
+					System.out.println("세션초기화완료");
 			}
-			return "index";
+			return view;
 		}
 }

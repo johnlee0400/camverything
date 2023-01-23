@@ -414,6 +414,13 @@
 		 		
 		$('.datepicker').on("changeDate", function(e) { //https://www.javatpoint.com/bootstrap-datepicker-get-date-on-change-event
 			            var date = e.format();  //bootstrap datepicker 날짜얻기
+			            //바비큐 초기상태로 바뀌게
+			            $("#bbq").empty();
+			            $("#bbq").append("<option id='nobbq'>바비큐 사용안함</option>");
+			            $("#bbq").append("<option id='yesbbq'>바비큐(+20000)</option>");
+			            //bbqtotal초기화
+			            $("#bbqtotal").text(0);
+			            
 			        	//===========Ajax 데이터 주고받는곳=========
 			    		$.ajax({
 			    			url:"/camp/res/campdatelist",

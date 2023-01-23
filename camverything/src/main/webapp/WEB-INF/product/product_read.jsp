@@ -78,6 +78,7 @@ $(document).ready(function() {
 	}
 	.mainWrapper{
 		width:1200px;
+		margin: auto;
 /* 		float:left; */
 		
 	}

@@ -169,7 +169,7 @@
 	#update{
 		position:absolute;
 		width:200px;
-		left:80px;
+		left:0;
 		padding-top:10px;
 		padding-bottom:10px;
 	}
@@ -178,7 +178,7 @@
 		padding-top:10px;
 		padding-bottom:10px;
 		width:200px;
-		right:80px;
+		right:0;
 	}
 	</style>
          

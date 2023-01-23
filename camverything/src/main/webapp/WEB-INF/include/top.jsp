@@ -14,7 +14,7 @@
 <body id="page-top">
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 		<div class="container">
-			<a class="navbar-brand" href="#page-top"><img
+			<a class="navbar-brand" href="/camp/test/index"><img
 				src="/camp/images/logo1.png" alt="..." class="logo"/></a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
@@ -24,7 +24,6 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-					<li class="nav-item"><a class="nav-link" href="/camp/test/index">Home</a></li>
 
 					<li class="nav-item"><a class="nav-link" href="/camp/camping/list.do?doNm=1">캠핑장목록</a></li>
 					<li class="nav-item"><a class="nav-link" href="/camp/board/list.do?category=정보공유">커뮤니티</a></li>

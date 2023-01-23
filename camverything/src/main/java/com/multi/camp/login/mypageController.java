@@ -80,7 +80,7 @@ public class mypageController {
 	public String mypageproductBuycancel() {
 		return "product/mypage_productBuycancel";
 	}
-	
+	//주석
 	@RequestMapping("/main/myprocancel")
 	@ResponseBody
 	public String mypageproductcancel(int pay_no) {

@@ -87,7 +87,7 @@
 		
 		
 		#resTable{
-			width:800px;
+			width:600px;
 			border-top:  #39517A 0.1rem solid;
 			border-bottom:  #39517A 0.1rem solid;
 			border-left:  #39517A 0.1rem solid;
@@ -159,7 +159,7 @@
 	
 	.tableWrapper{
 		position: relative;
-		width:800px;
+		width:600px;
 		margin:auto;
 	}
 	
@@ -178,7 +178,7 @@
 		left:0;
 	}
 	#zonecode{
-		width:300px;
+		width:240px;
 		float:left;
 		margin-right:10px;
 	}
@@ -333,11 +333,11 @@
 		</div>
 	</div>
 	<div class="mainWrapper">
-		<form role="form" class="form-horizontal"	action="/camp/main/mypage_update.do" method="POST" name="mypageupdate">
 		<div class="camptitle">
 				나의 정보<br/>
 		</div>
 		<div class="tableWrapper">
+		<form role="form" class="form-horizontal"	action="/camp/main/mypage_update.do" method="POST" name="mypageupdate">
 		
 		<table class="table" id="resTable">
 				<colgroup>
@@ -496,12 +496,12 @@
 			</table>
 		
 	<div style="width:600px">
-    	<button class="btn" onclick="MemberCancel()" id="cancel">취소하기</button>
     	<button class="btn" onclick="MemberUpdate()" id="update">수정완료</button>
           			  			<!-- if(confirm('정말 삭제하시겠습니까?')) -->
     </div>  
-    </div>  
      </form>     			  			
+    	<button class="btn" onclick="MemberCancel()" id="cancel">취소하기</button>
+    </div>  
 	</div>
     
     </body>

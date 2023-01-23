@@ -25,15 +25,18 @@ public class product_BuyServiceImpl implements product_BuyService {
 	}
 
 	@Override
-	public List<product_BuyDTO> getpayDate(product_BuyDTO dto) {
-		System.out.println("service쪽 dto:"+dto);
-		return dao.getpayDate(dto);
+	public List<product_BuyDTO> BuyList(String id) {
+		System.out.println("service쪽 dto:"+id);
+		return dao.BuyList(id);
 	}
 
 	@Override
-	public int cancel() {
-		// TODO Auto-generated method stub
-		return dao.cancel();
+	public int cancel(String pay_date) {
+		return dao.cancel(pay_date);
+	}
+	@Override
+	public int mypageCancel(int pay_no) {
+		return dao.mypageCancel(pay_no);
 	}
 
 }

@@ -81,12 +81,13 @@
 			padding-top:120px;
 			margin:auto;
 			width:1200px;
-			height:600px;
+			height:auto;
+			padding-bottom:200px;
 		}
 		
 		
 		#resTable{
-			width:1200px;
+			width:600px;
 			border-top:  #39517A 0.1rem solid;
 			border-bottom:  #39517A 0.1rem solid;
 			border-left:  #39517A 0.1rem solid;
@@ -106,9 +107,34 @@
 		.table > tbody > tr > td{
 			vertical-align: middle;
 			text-align: center;
-			padding-top:20px;
-			padding-bottom:20px;
+			padding-top:10px;
+			padding-bottom:10px;
 			border-left:  #39517A 0.1rem solid;
+		}
+		
+		#contentTable{
+			border-top:  0;
+			border-bottom:  0;
+			border-left: 0;
+			border-right:  #39517A 0.1rem solid;
+		}
+		
+		#contentTable > tbody > tr > th{
+			border: #ddd 0.1rem solid;
+			background-color: white;
+			padding:0;
+		}
+		
+		#contentTable tr:nth-child(1) th {
+    	border-top: 2px solid #e55450;
+    	
+		}
+		#contentTable tr:nth-child(1) td {
+	 	 	border-top: 2px solid #39517A;
+		}
+		
+		#contentTable> :not(:first-child){
+			border: #39517A 0.1rem solid;
 		}
 		
 		.camptitle{
@@ -123,9 +149,46 @@
 	    margin-bottom: 30px;
 	    /* font-family: sans-serif; */
 	}
+	
+	.btn {
+		background-color: #39517A;
+		color: white;
+		width:100px;
+		text-align:center;
+	}
+	
+	.tableWrapper{
+		position: relative;
+		width:600px;
+		margin:auto;
+	}
+	.btns{
+		width:600px;
+	}
+	
+	#update{
+		position:absolute;
+		width:200px;
+		left:80px;
+		padding-top:10px;
+		padding-bottom:10px;
+	}
+	#delete{
+		position:absolute;
+		padding-top:10px;
+		padding-bottom:10px;
+		width:200px;
+		right:80px;
+	}
 	</style>
          
     <script type="text/javascript">
+    function MemberUpdate(){
+		location.href="mypage_update";
+			}
+    function Memberdelete(){
+    	location.href="/camp/main/mypage_delete.do?id=${user.id}";
+    }
 	    $(document).ready(
 				function() {
 					/*=================submenu제어 ==================== */
@@ -169,34 +232,47 @@
 		<div class="camptitle">
 				나의 정보<br/>
 		</div>
+		<div class="tableWrapper">
 		<table class="table" id="resTable">
 				<colgroup>
-					<col style="width: 10%;">
-					<col style="width: 10%;">
-					<col style="width: 60%;">
-					<col style="width: 10%;">
-					<col style="width: 10%;">
+					<col style="width: 20%;">
+					<col style="width: 80%;">
+					
 				</colgroup>
 				<tbody class="tbody">
 					<tr>
-						<th scope="col">예약번호</th>
-						<th scope="col">신청일</th>
-						<th scope="col">예약내용</th>
-						<th scope="col">결제금액</th>
-						<th scope="col">신청취소</th>
+						<th scope="col">아이디</th>
+						<td scope="col">${user.id}</td>
 					</tr>
-				<c:forEach var="res" items="${reslist}">
-					<tr class="content">
-						<td scope="col">${res.res_no}</td>
-						<td scope="col">${res.appli_date}</td>
-						<td scope="col">${res.res_no}</td>
-						<td scope="col">${res.res_no}</td>
-						<td scope="col">${res.res_no}</td>
+					<tr>
+						<th scope="col">닉네임</th>
+						<td scope="col">${user.nickname}</td>
 					</tr>
-				</c:forEach>
-				</tbody>
+					<tr>
+						<th scope="col">핸드폰번호</th>
+						<td scope="col">${user.tel}</td>
+					</tr>
+					<tr>
+						<th scope="col">주소</th>
+						<td scope="col">${user.addr}</td>
+					</tr>
+					<tr>
+						<th scope="col">생년월일</th>
+						<td scope="col">${user.birth}</td>
+					</tr>
+					<tr>
+						<th scope="col">이메일</th>
+						<td scope="col">${user.email}</td>
+					</tr>
+							</tbody>
 			</table>
+			
+	<div style="width:600px" class="btns">
+    	<button class="btn" onclick="MemberUpdate()" id="update">내정보수정</button>
+    	<button class="btn" onclick="Memberdelete()" id="delete">회원탈퇴</button>
+    </div>  
+    </div>  
 	</div>
-        
+    
     </body>
 </html>

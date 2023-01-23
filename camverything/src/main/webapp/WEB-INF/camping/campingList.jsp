@@ -92,13 +92,28 @@ form{
 	margin-top: 50px;
 }
 
+#imageeee{
+	padding-top:200px;
+	padding-bottom:150px;
+	background-image: url("/camp/images/campList_banner.jpg");
+}
+
+#doNm{
+	float: right;
+	margin-top: 50px;
+}
 </style>
 </head>
 <body>
 
 <div id="imageeee">
 	<div class="container">
-		<div class="masthead-subheading"><h1>커뮤니티</h1></div>
+		<div class="text-center">
+               
+                    <h1 class="section-heading text-uppercase">캠핑장</h1>
+                    <h3 class="section-subheading text-muted">당신의 선택을 응원합니다.</h3>
+                    
+                </div>
 	</div>
 </div>
 <div class="container">
@@ -123,12 +138,12 @@ form{
 	
 			
             <div class="container">
-					<div class="text-center">
+<!-- 					<div class="text-center"> -->
                
-                    <h2 class="section-heading text-uppercase">캠핑장</h2>
-                    <h3 class="section-subheading text-muted">당신의 선택을 응원합니다.</h3>
+<!--                     <h2 class="section-heading text-uppercase">캠핑장</h2> -->
+<!--                     <h3 class="section-subheading text-muted">당신의 선택을 응원합니다.</h3> -->
                     
-                </div>
+<!--                 </div> -->
     <div id="products" class="row list-group">
      <c:forEach var="campingList" items="${campingList }">
         <div class="item  col-xs-4 col-lg-4 list-group-item">
@@ -143,8 +158,6 @@ form{
                       입지 : ${campingList.lctCl }<br/>
                        <p>지역 : ${campingList.doNm }</p>
                     <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                        </div>
                         <div class="col-xs-12 col-md-6">
                            <button type="button" class="btn btn-success" onclick="location.href='/camp/res/camp_read?facltNm=${campingList.facltNm }'">예약/상세보기</button>
                         </div>

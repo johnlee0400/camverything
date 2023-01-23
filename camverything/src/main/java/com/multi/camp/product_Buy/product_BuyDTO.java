@@ -9,13 +9,14 @@ public class product_BuyDTO {
 	private String quantity;
 	private int total;
 	private String product_img;
+	private String product_name;
 	
 	public product_BuyDTO() {
 		
 	}
 
 	public product_BuyDTO(int pay_no, int product_code, String manager_id, String id, String pay_date, String quantity,
-			int total, String product_img) {
+			int total, String product_img, String product_name) {
 		super();
 		this.pay_no = pay_no;
 		this.product_code = product_code;
@@ -25,13 +26,14 @@ public class product_BuyDTO {
 		this.quantity = quantity;
 		this.total = total;
 		this.product_img = product_img;
+		this.product_name = product_name;
 	}
 
 	@Override
 	public String toString() {
 		return "product_BuyDTO [pay_no=" + pay_no + ", product_code=" + product_code + ", manager_id=" + manager_id
 				+ ", id=" + id + ", pay_date=" + pay_date + ", quantity=" + quantity + ", total=" + total
-				+ ", product_img=" + product_img + "]";
+				+ ", product_img=" + product_img + ", product_name=" + product_name + "]";
 	}
 
 	public int getPay_no() {
@@ -96,6 +98,14 @@ public class product_BuyDTO {
 
 	public void setProduct_img(String product_img) {
 		this.product_img = product_img;
+	}
+
+	public String getProduct_name() {
+		return product_name;
+	}
+
+	public void setProduct_name(String product_name) {
+		this.product_name = product_name;
 	}
 
 	

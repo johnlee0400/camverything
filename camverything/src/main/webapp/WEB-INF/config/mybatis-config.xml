@@ -5,10 +5,9 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.multi.camp.reservation.ReservationDTO" alias="reservation"/>
-		<typeAlias type="com.multi.camp.register.MemberDTO" alias="member"/>
+		<typeAlias type="com.multi.camp.login.LoginDTO" alias="member"/>
 		<typeAlias type="com.multi.camp.board.BoardDTO" alias="board"/>
 		<typeAlias type="com.multi.camp.board.BoardFileDTO" alias="boardfile"/>
-		<typeAlias type="com.multi.camp.login.LoginDTO" alias="login"/>
 		<typeAlias type="com.multi.camp.camping.campingDTO" alias="campingList"/>
 		<typeAlias type="com.multi.camp.product.productDTO" alias="product"/>
 		<typeAlias type="com.multi.camp.product_Buy.product_BuyDTO" alias="product_Buy"/>	
@@ -18,7 +17,6 @@
 	
 	<mappers>
 		<mapper resource="com/multi/camp/mapper/servicecenter.xml"/>
-		<mapper resource="com/multi/camp/mapper/register.xml"/>
 		<mapper resource="com/multi/camp/mapper/board.xml"/>
 		<mapper resource="com/multi/camp/mapper/login.xml"/>
 		<mapper resource="com/multi/camp/mapper/campingList.xml"/>
@@ -27,4 +25,17 @@
 		<mapper resource ="com/multi/camp/mapper/reservation.xml"/>
 		<mapper resource ="com/multi/camp/mapper/manager.xml"/>
 	</mappers>
+	
+	<!-- <mappers>
+		<mapper resource="com/multi/camp/mapper/servicecenter_mysql.xml"/>
+		<mapper resource="com/multi/camp/mapper/register_mysql.xml"/>
+		<mapper resource="com/multi/camp/mapper/board_mysql.xml"/>
+		<mapper resource="com/multi/camp/mapper/login_mysql.xml"/>
+		<mapper resource="com/multi/camp/mapper/campingList_mysql.xml"/>
+		<mapper resource="com/multi/camp/mapper/product_mysql.xml"/>
+		<mapper resource="com/multi/camp/mapper/product_Buy_mysql.xml"/>
+		<mapper resource ="com/multi/camp/mapper/reservation_mysql.xml"/>
+		<mapper resource ="com/multi/camp/mapper/manager_mysql.xml"/>
+	</mappers> -->
+	
 </configuration>

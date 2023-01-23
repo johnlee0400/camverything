@@ -28,14 +28,19 @@ public class product_BuyDAOImpl implements product_BuyDAO {
 	}
 
 	@Override
-	public List<product_BuyDTO> getpayDate(product_BuyDTO dto) {
-		System.out.println("상품결제 DAO List 확인"+dto+"+++++++");
-		return sqlSession.selectList("com.multi.camp.product_Buy.pay_dateSelect", dto);
+	public List<product_BuyDTO> BuyList(String id) {
+		System.out.println("상품결제 DAO List 확인"+id+"+++++++");
+		return sqlSession.selectList("com.multi.camp.product_Buy.selectall", id);
 	}
 
 	@Override
-	public int cancel() {
-		return sqlSession.selectOne("com.multi.camp.product_Buy.cancel");
+	public int cancel(String pay_date) {
+		return sqlSession.delete("com.multi.camp.product_Buy.cancel", pay_date);
+	}
+
+	@Override
+	public int mypageCancel(int pay_no) {
+		return sqlSession.delete("com.multi.camp.product_Buy.mypagecancel", pay_no);
 	}
 
 }

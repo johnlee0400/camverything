@@ -6,7 +6,6 @@
 <head>
 <title>Bootstrap Example</title>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="/camp/common/css/board/css.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script
@@ -85,7 +84,7 @@
 	}
 	.submenu{
 		position: absolute;
-		margin-left:360px;
+		margin-left:500px;
 		/* bottom: 10px; */
 	}
 	
@@ -109,6 +108,46 @@
 		text-decoration: none;
 	}
 	/* 여기까지 submenu  */
+	/*여기부터 페이징처리*/
+	#pagenum {
+	width: 100%;
+	text-align: center;
+	}
+	#pagenum a {
+		display: inline-block;
+		padding: 3px 5px;
+		margin-right: 10px;
+		font-family:Tahoma;
+		background: #ccc;
+		color: #000;
+		text-decoration: none;
+	}
+	#pagenum a.active {
+		background: #333;
+		color: #fff;
+	}
+	.off-screen {
+		display: none;
+	}
+	/*여기까지 페이징처리*/
+	.bt_wrap {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0;
+}
+	.bt_wrap a {
+    display: inline-block;
+    min-width: 80px;
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 2px;
+    font-size: 1rem;
+}
+	.bt_wrap a.on {
+    background: #000;
+    color: #fff;
+}
 </style>
 </head>
 <body>
@@ -122,58 +161,48 @@
 	<div class="location">
 		<div class="submenu">
 			<ul>
-				<li class="selectbox" id="active" value="상품"><a href="/camp/board/list.do?category=상품" class="link">상품</a></li>
-				<li class="selectbox" value="여행지"><a href="/camp/board/list.do?category=여행지" class="link">여행지</a></li>
-				<li class="selectbox" value="정보공유"><a href="/camp/board/list.do?category=정보공유" class="link">정보공유</a></li>
+				<li class="selectbox" id="active" value="상품"><a
+					href="/camp/board/list.do?category=상품" class="link">상품</a></li>
+				<li class="selectbox" value="여행지"><a
+					href="/camp/board/list.do?category=여행지" class="link">여행지</a></li>
+				<li class="selectbox" value="정보공유"><a
+					href="/camp/board/list.do?category=정보공유" class="link">정보공유</a></li>
 			</ul>
 		</div>
 	</div>
-	
-		<div class="board_wrap">
-		<div style="padding-top: 30px">
-		
-	</div>
-        <div class="board_title">
-            <strong>${category}</strong>
-        </div>
-		<div class="board_list_wrap">
-            <div class="board_list">
-				<div class="top">
-                    <div class="num">번호</div>
-                    <div class="title">제목</div>
-                    <div class="writer">글쓴이</div>
-                    <div class="date">작성일</div>
-                    <div class="count">조회</div>
-                </div>
-                <div>
-				<c:forEach var="board" items="${boardlist }" >
-					<div class="selectbox">
-						<div class="num">(${category})</div>
-						<div class="title"><a href="/camp/board/read.do?board_no=${board.board_no }&state=READ">${board.title }</a></div>
-						<div class="writer">${board.id }</div>
-						<div class="date">${board.create_date }</div>
-						<div class="count"><a href="/camp/board/delete.do?board_no=${board.board_no }">삭제</a></div>
-					</div>
+		<h2>${category}</h2>
+		<form action="" id="setRows">
+		<table class="table" style="text-align: center;" id="products">
+			<thead>
+				<tr>
+					<th scope="col" class="text-center">번호</th>
+					<th scope="col" class="text-center">제목</th>
+					<th scope="col" class="text-center">글쓴이</th>
+					<th scope="col" class="text-center">작성일</th>
+					<th scope="col" class="text-center">조회</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="board" items="${boardlist }">
+					<tr>
+						<td>(${category})</td>
+						<td><a
+							href="/camp/board/read.do?board_no=${board.board_no }&state=READ">${board.title }</a>
+						</td>
+						<td>${board.id }</td>
+						<td>${board.create_date }</td>
+						<td><a
+							href="/camp/board/delete.do?board_no=${board.board_no }">삭제</a></td>
+							
+					</tr>
+					
 				</c:forEach>
-				</div>
+			</tbody>
+		</table>
+		</form>
+	<div class="bt_wrap">
+		<a href="/camp/board/write.do" class="on">등록</a>
 	</div>
-	<div class="board_page">
-                <a href="#" class="bt first"><<</a>
-                <a href="#" class="bt prev"><</a>
-                <a href="#" class="num on">1</a>
-                <a href="#" class="num">2</a>
-                <a href="#" class="num">3</a>
-                <a href="#" class="num">4</a>
-                <a href="#" class="num">5</a>
-                <a href="#" class="bt next">></a>
-                <a href="#" class="bt last">>></a>
-            </div>
-            <div class="bt_wrap">
-                <a href="/camp/board/write.do" class="on">등록</a>
-                <!--<a href="#">수정</a>-->
-            </div>
-        </div>
-    </div>
-
+	<script src="/camp/common/js/page.js"></script>
 </body>
 </html>

@@ -77,12 +77,12 @@ $(document).ready(function() {
 		margin-left: 200px;
 	}
 	.mainWrapper{
-		width:1000px;
+		width:1200px;
 /* 		float:left; */
 		
 	}
 	.main{
-		width:1000px;
+		width:1200px;
 		height:600px;
 /* 		float:left; */
 	}
@@ -104,14 +104,20 @@ $(document).ready(function() {
 		float:left;
 	}
 		.content{
-		width:400px;
+		width:600px;
 		height:600px;
 		float:left;
 	}
 	.col-lg-10{
-		border: 1px solid gray;
 		border-radius: 4px;
 		padding: 10px;
+	}
+	.table > tbody > tr > th{
+		background-color:#ADD8E6;
+		vertical-align: middle;
+	}
+	.table > tbody > tr > td{
+		vertical-align: middle;
 	}
 
 </style>
@@ -153,23 +159,58 @@ $(document).ready(function() {
 				action="/camp/product_Buy/insert.do" method="get" name="myform">
 				<div class="col-lg-10" id="font">
  				<input type="hidden" id="result" name="product_img" value="${product.product_img }">
-					<h5>
-						${product.product_name }
-					</h5>
-					<hr/>
-					<p>${product.product_content }</p>
-					<hr/>
-					<p>가격 : ${product.product_price }</p>
-					<hr/>
-					<p>종류 : ${product.category }</p>
-					<hr/>
-					<p>
-						<input type="hidden" name="product_code" value="${product.product_code }">
-						구매수량 : <input type="text" name="quantity" id="num">
-					</p>
-					<p>
-						결제금액 : <input type="number" name="total" id="total" readonly="readonly" style="border: none">
-					</p>
+				<input type="hidden" name="product_name" value="${product.product_name }">
+<!-- 					<h5> -->
+<%-- 						${product.product_name } --%>
+<!-- 					</h5> -->
+<%-- 					<input type="hidden" name="product_name" value="${product.product_name }"> --%>
+<!-- 					<hr/> -->
+<%-- 					<p>${product.product_content }</p> --%>
+<!-- 					<hr/> -->
+<%-- 					<p>가격 : ${product.product_price }</p> --%>
+<!-- 					<hr/> -->
+<%-- 					<p>종류 : ${product.category }</p> --%>
+<!-- 					<hr/> -->
+<!-- 					<p> -->
+<!-- 						구매수량 : <input type="text" name="quantity" id="num"> -->
+<!-- 					</p> -->
+<!-- 					<p> -->
+<!-- 						결제금액 : <input type="number" name="total" id="total" readonly="readonly" style="border: none"> -->
+<!-- 					</p> -->
+					<table class="table" id="contentTable">
+				<colgroup>
+					<col style="width: 30%;">
+					<col style="width: 70%;">
+				</colgroup>
+				<tbody class="tbody">
+					<tr>
+						<th scope="col">상품명</th>
+						<td>${product.product_name }</td>
+					</tr>
+					<tr>
+						<th scope="col">상품상세</th>
+						<td>${product.product_content }</td>
+					</tr>
+					<tr>
+						<th scope="col">가격</th>
+						<td>${product.product_price }</td>
+					</tr>
+					<tr>
+						<th scope="col">분류</th>
+						<td>${product.category }</td>
+					</tr>
+					<tr>
+						<th scope="col">구매수량</th>
+						<td><input type="text" name="quantity" id="num" value="0"></td>
+					</tr>
+					<tr>
+						<th scope="col">결제금액</th>
+						<td>
+							<input type="number" name="total" id="total" readonly="readonly" style="border: none" value="0">
+						</td>
+					</tr>						
+				</tbody>
+			</table>
 
 					<button type="submit" class="btn btn-primary btn-lg">결제하기</button>
 				</div>

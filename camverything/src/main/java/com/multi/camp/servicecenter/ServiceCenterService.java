@@ -18,4 +18,5 @@ public interface ServiceCenterService {
 	//제목,작성자, 본문, 작성일별로 검색
 	List<ServiceCenterDTO> search(String tag,String data);
 	List<ServiceCenterDTO> findByCategory(String category);
+	List<ServiceCenterDTO> findnoticeindex();
 }

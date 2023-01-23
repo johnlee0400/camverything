@@ -33,14 +33,6 @@ public class campingDAOImpl implements campingDAO {
 	}
 
 	@Override
-	public List<campingDTO> search2(String search, String local) {
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("local", local);
-		map.put("search", "%"+search+"%");
-		return sqlSession.selectList("com.multi.camp.camping.search2" ,map);
-	}
-
-	@Override
 	public List<campingDTO> findByCategory(String category) {
 		return sqlSession.selectList("com.multi.camp.camping.categorySelect" ,category);
 	}

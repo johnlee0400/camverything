@@ -7,7 +7,6 @@
 		select * from member
 		where id=#{loginid} and pass=#{loginpass}
 	</select>
-	
 	<select id ="mypage" resultType="member" parameterType="member">
 		select * from member
 		where id=#{loginid}
@@ -17,5 +16,14 @@
 		values(#{loginid},#{loginpass},#{id},#{pass},#{name},#{zonecode},
 		#{addr},#{detailaddr},#{tel},#{nickname},#{birth},#{email})
 	</insert>
-	
+	<update id = "mypage_update" parameterType="member">
+		update member 
+		set pass = #{pass}, zonecode = #{zonecode},
+		addr = #{addr}, detailaddr = #{detailaddr},
+		tel = #{tel}, nickname = #{nickname}, email = #{email}
+		where id =#{id}
+	</update>
+	<delete id="mypage_delete" parameterType="String">
+		delete member where id =#{id}
+	</delete>	
 </mapper>

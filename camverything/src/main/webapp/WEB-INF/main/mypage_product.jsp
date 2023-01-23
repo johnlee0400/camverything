@@ -215,12 +215,12 @@
 				<c:forEach var="buy" items="${BuyList}">
 					<tr class="content">
 						<td scope="col"><img src="${buy.product_img }" style="width: 100%" height="100%"></td>
-						<td scope="col">${buy.pay_no}</td>
+						<td scope="col">${buy.product_payno}</td>
 						<td scope="col">${buy.pay_date}</td>
 						<td scope="col">${buy.product_name}</td>
 						<td scope="col">${buy.quantity}</td>
 						<td scope="col">${buy.total}</td>
-						<td scope="col"><button class="btn" value="${buy.pay_no}">결제취소</button>
+						<td scope="col"><button class="btn" value="${buy.product_payno}">결제취소</button>
 					</tr>
 				</c:forEach>
 				</tbody>

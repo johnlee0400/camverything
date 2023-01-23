@@ -39,8 +39,8 @@ public class product_BuyDAOImpl implements product_BuyDAO {
 	}
 
 	@Override
-	public int mypageCancel(int pay_no) {
-		return sqlSession.delete("com.multi.camp.product_Buy.mypagecancel", pay_no);
+	public int mypageCancel(int product_payno) {
+		return sqlSession.delete("com.multi.camp.product_Buy.mypagecancel", product_payno);
 	}
 
 }

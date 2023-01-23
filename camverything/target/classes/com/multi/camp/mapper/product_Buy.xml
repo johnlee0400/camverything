@@ -13,6 +13,6 @@
 		delete product_Buy where pay_date = #{pay_date}
 	</delete>
 	<delete id="mypagecancel" parameterType="Integer">
-		delete product_Buy where pay_no = #{pay_no}
+		delete product_Buy where product_payno = #{product_payno}
 	</delete>
 </mapper>

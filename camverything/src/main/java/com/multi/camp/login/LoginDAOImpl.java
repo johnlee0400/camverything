@@ -18,10 +18,8 @@ public class LoginDAOImpl implements LoginDAO {
 
 	@Override
 	public LoginDTO login(LoginDTO loginUser) {
-		System.out.println(loginUser + "----------dao------------");
-		LoginDTO user = sqlSession.selectOne("com.multi.camp.login", loginUser);
-		System.out.println(user);
-		return user;
+		System.out.println("dao쪽 잘들어왔는지=>"+loginUser);
+		return sqlSession.selectOne("com.multi.camp.login", loginUser);
 	}
 
 }

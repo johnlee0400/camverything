@@ -35,8 +35,8 @@
 				/* 다른 게시판 박스 선택시  */
 				$(".selectbox").on("mouseover", function() {
 					/*  alert("in");  */
-					$("#active").css("background-color","white");
-					$("#active").children().css("color","black");
+// 					$("#active").css("background-color","white");
+// 					$("#active").children().css("color","black");
 					$(this).css("background-color","#39517A");
 					$(this).children().css("color","white");
 				})
@@ -80,18 +80,19 @@
 		float: left;
 		background: #ffffff;
 		height: 50px;
-		border-bottom: #dddddd 1px solid;
+/* 		border-bottom: #dddddd 1px solid;  */
 	}
 	.submenu{
 		position: absolute;
-		margin-left:500px;
+		margin-left:800px;
 		/* bottom: 10px; */
 	}
 	
 	.submenu li {
 		clear: both;
 		width: 170px;
-		border: #ccc 1px solid;
+ 		border: #ccc 1px solid;
+ 		display : inline-block;  
 		height:50px;
 		margin-top: 10px;
 		box-sizing: border-box;
@@ -106,6 +107,7 @@
 	.submenu a {
 		color:black;
 		text-decoration: none;
+		font-weight: bold;
 	}
 	/* 여기까지 submenu  */
 	/*여기부터 페이징처리*/
@@ -148,6 +150,11 @@
     background: #000;
     color: #fff;
 }
+.categorytext{
+	text-align: center;
+	margin-top: 100px;
+	margin-bottom: 40px;
+}
 </style>
 </head>
 <body>
@@ -170,7 +177,10 @@
 			</ul>
 		</div>
 	</div>
+	<div class="container">
+	<div class="categorytext">
 		<h2>${category}</h2>
+		</div>
 		<form action="" id="setRows">
 		<table class="table" style="text-align: center;" id="products">
 			<thead>
@@ -183,9 +193,14 @@
 				</tr>
 			</thead>
 			<tbody>
+				<%
+						int i=1;
+					%>
 				<c:forEach var="board" items="${boardlist }">
 					<tr>
-						<td>(${category})</td>
+					
+						<td><%=i%></td>
+						<%i++; %>	
 						<td><a
 							href="/camp/board/read.do?board_no=${board.board_no }&state=READ">${board.title }</a>
 						</td>
@@ -200,6 +215,7 @@
 			</tbody>
 		</table>
 		</form>
+		</div>
 	<div class="bt_wrap">
 		<a href="/camp/board/write.do" class="on">등록</a>
 	</div>

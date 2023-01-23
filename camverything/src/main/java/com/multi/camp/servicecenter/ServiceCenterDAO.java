@@ -20,4 +20,8 @@ public interface ServiceCenterDAO {
 	List<ServiceCenterDTO> search(String tag,String data);
 	List<ServiceCenterDTO> findByCategory(String category);
 	List<ServiceCenterDTO> findnoticeindex();
+	int insertFile(List<ServiceFileDTO> servicefiledtolist);
+	//게시글을 상세보기한 겨우 보여질 업로드한 파일의 목록 조회
+	List<ServiceFileDTO> getFileList(String serviceno);
+	ServiceFileDTO getFile(ServiceFileDTO inputdata);
 }

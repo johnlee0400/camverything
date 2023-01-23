@@ -58,7 +58,8 @@
 	                </div>
 	                <div>
 	                	<c:forEach var="file" items="${boardfiledtolist}">
-							<h5><img src="/camp/board/download/${board.id}/${board.board_no}/${file.boardFileno}"></h5>
+							<h5><a href="/camp/board/download/${board.id}/${board.board_no}/${file.boardFileno}">
+								<img src="/camp/upload/${file.storeFilename}"></a></h5>
 						</c:forEach>
 	                </div>
 	                <div class="cont">

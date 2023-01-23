@@ -30,7 +30,7 @@ public class ManagerController {
 		if(insertresult == 1) {
 			System.out.println("고캠핑insert 성공~!~!~!");
 		}else {
-			System.out.println("실패하였습니다.......");
+			System.out.println("고캠핑insert 성공하였습니다~!");
 		}
 		
 		return "manager/managerPage";

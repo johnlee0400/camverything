@@ -3,9 +3,8 @@ package com.multi.camp.servicecenter;
 import java.util.List;
 //dao의 메소드를 호출
 public interface ServiceCenterService {
+	int insert(ServiceCenterDTO service, List<ServiceFileDTO> servicefiledtolist);
 	//게시글등록 
-	int insert(ServiceCenterDTO service);
-	//게시글목록보기
 	List<ServiceCenterDTO> serviceList();
 	//게시글상세조회
 	ServiceCenterDTO getserviceInfo(String service_no);
@@ -19,4 +18,7 @@ public interface ServiceCenterService {
 	List<ServiceCenterDTO> search(String tag,String data);
 	List<ServiceCenterDTO> findByCategory(String category);
 	List<ServiceCenterDTO> findnoticeindex();
+	
+	List<ServiceFileDTO> getFileList(String serviceno);
+	ServiceFileDTO getFile(ServiceFileDTO inputdata);
 }

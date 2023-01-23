@@ -57,8 +57,13 @@ public class ServiceCenterServiceImpl implements ServiceCenterService{
 		return list;
 	}
 	@Override
-	public int insert(ServiceCenterDTO service) {
-		dao.insert(service);
+	public int insert(ServiceCenterDTO service,List<ServiceFileDTO> servicefiledtolist) {
+		if(servicefiledtolist.size()!=0) {
+			dao.insert(service);
+			dao.insertFile(servicefiledtolist);
+		}else {
+			dao.insert(service);
+		}
 		return 0;
 	}
 	@Override
@@ -66,7 +71,18 @@ public class ServiceCenterServiceImpl implements ServiceCenterService{
 		return dao.findnoticeindex();
 	}
 	
-
+		
+	
+	@Override
+	public List<ServiceFileDTO> getFileList(String serviceno) {
+		return dao.getFileList(serviceno);
+	}
+	@Override
+	public ServiceFileDTO getFile(ServiceFileDTO inputdata) {
+		return dao.getFile(inputdata);
+	}
+	
+	
 }
 
 

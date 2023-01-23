@@ -73,6 +73,18 @@ public class ServiceCenterDAOImpl implements ServiceCenterDAO{
 //		System.out.println("====================dao끝=======================");
 		return  list;
 	}
+	@Override
+	public int insertFile(List<ServiceFileDTO> servicefiledtolist) {
+		return sqlSession.insert("com.multi.camp.service.fileinsert", servicefiledtolist);
+	}
+	@Override
+	public List<ServiceFileDTO> getFileList(String serviceno) {
+		return sqlSession.selectList("com.multi.camp.service.fileselect", serviceno);
+	}
+	@Override
+	public ServiceFileDTO getFile(ServiceFileDTO inputdata) {
+		return sqlSession.selectOne("com.multi.camp.service.getfileinfo", inputdata);
+	}
 }
 
 

@@ -13,6 +13,7 @@
 		<typeAlias type="com.multi.camp.product.productDTO" alias="product"/>
 		<typeAlias type="com.multi.camp.product_Buy.product_BuyDTO" alias="product_Buy"/>	
 		<typeAlias type="com.multi.camp.servicecenter.ServiceCenterDTO" alias="service"/>		
+		<typeAlias type="com.multi.camp.servicecenter.ServiceFileDTO" alias="servicefile"/>		
 		<typeAlias type="com.multi.camp.manager.GoCampingDTO" alias="gocamping"/>	
 	</typeAliases>
 	

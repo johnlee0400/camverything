@@ -9,16 +9,20 @@
 	</definition>
 	<definition name="service/writepage" extends="indexTemplate">
 		<put-attribute name="content" 
-			value="/WEB-INF/servicecenter/notice_write.jsp"/>
+			value="/WEB-INF/servicecenter/service_write.jsp"/>
 	</definition>
-	<!-- <definition name="service/read" extends="indexTemplate">
+	<definition name="service/read" extends="indexTemplate">
 		<put-attribute name="content" 
-			value="/WEB-INF/servicexenter/notice_read.jsp"/>
+			value="/WEB-INF/servicecenter/service_read.jsp"/>
 	</definition>
 	<definition name="service/update" extends="indexTemplate">
 		<put-attribute name="content" 
-			value="/WEB-INF/servicexenter/service_update.jsp"/>
-	</definition> -->
+ 			value="/WEB-INF/servicecenter/service_update.jsp"/>
+	</definition> 
+	<definition name="manager/service/writepage" extends="indexTemplate">
+		<put-attribute name="content" 
+ 			value="/WEB-INF/servicecenter/manager_write.jsp"/>
+	</definition> 
 </tiles-definitions>
 	
       

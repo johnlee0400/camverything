@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,65 +12,92 @@
 <title>Insert title here</title>
 
 <style type="text/css">
-	.main {
-		width: 1200px;
-		margin: auto;
-	}
-	
-	.mainstart{
-	
-		padding-top:100px;
-	}
-	
-	ul, li {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		border: 0;
-		outline: 0;
-		font-weight: 400;
-		font-style: inherit;
-		font-size: 15px;
-		font-family: 'S-Core Dream', 'notokr', sans-serif;
-		vertical-align: baseline;
-		color: #555;
-	}
-	
-	
-	.location {
-		position:relative;
-		width: 100%;
-		float: left;
-		background: #ffffff;
-		height: 50px;
-		border-bottom: #dddddd 1px solid;
-	}
-	.submenu{
-		position: absolute;
-		margin-left:360px;
-		/* bottom: 10px; */
-	}
-	
-	.submenu li {
-		clear: both;
-		width: 170px;
-		border: #ccc 1px solid;
-		height:50px;
-		margin-top: 10px;
-		box-sizing: border-box;
-		display: inline-block;
-		margin: 0 -3px;
-		
-		padding-top:15px;
-		vertical-align: middle;
-	    text-align: center;
-	}
-	
-	.submenu a {
-		color:black;
-		text-decoration: none;
-	}
-	/* 여기까지 submenu  */
+.main {
+	width: 1200px;
+	margin: auto;
+}
+
+.mainstart {
+	padding-top: 100px;
+}
+
+ul, li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: 400;
+	font-style: inherit;
+	font-size: 15px;
+	font-family: 'S-Core Dream', 'notokr', sans-serif;
+	vertical-align: baseline;
+	color: #555;
+}
+
+ .location { 
+ 	position: relative; 
+ 	width: 100%; 
+	float: left;
+	background: #ffffff; 
+	height: 50px; 
+	border-bottom: #dddddd 1px solid;  
+ } 
+
+.submenu {
+	position: absolute;
+	margin-left: 800px;
+	/* bottom: 10px; */
+}
+
+.submenu li {
+	clear: both;
+	width: 170px;
+	border: #ccc 1px solid;
+	height: 50px;
+	margin-top: 10px;
+	box-sizing: border-box;
+	display: inline-block;
+	margin: 0 -3px;
+	padding-top: 15px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.submenu a {
+	color: black;
+	text-decoration: none;
+}
+
+.bt_wrap {
+	margin-top: 30px;
+	text-align: center;
+	font-size: 0;
+}
+
+.bt_wrap a {
+	display: inline-block;
+	min-width: 80px;
+	margin-left: 10px;
+	padding: 10px;
+	border: 1px solid #000;
+	border-radius: 2px;
+	font-size: 1rem;
+}
+
+.bt_wrap a.on {
+	background: #000;
+	color: #fff;
+}
+.categorytext{
+	text-align: center;
+	margin-top: 100px;
+	margin-bottom: 40px;
+}
+
+
+
+/* 여기까지 submenu  */
 </style>
 <script type="text/javascript">
 	//문서가 실행되면 익명의 함수를 실행하겠습니다.
@@ -88,7 +115,11 @@
 		});
 	});
 	$(document).ready(
-			function() {
+				function() {
+					if(category=="공지사항"){
+							$("#register").attr("style","display:none");
+							console.log("성");
+					}
 				/*=================submenu제어 ==================== */
 				/*초기 자동 선택된 박스 */
 				$("#active").css("background-color","#39517A");
@@ -121,14 +152,19 @@
 	<div class="location">
 		<div class="submenu">
 			<ul>
-				<li class="selectbox" id="active" value="공지사항"><a href="/camp/service/list.do?category=공지사항" class="link">공지사항</a></li>
-				<li class="selectbox" value="예약문의"><a href="/camp/service/list.do?category=예약문의" class="link">예약문의</a></li>
-				<li class="selectbox" value="상품문의"><a href="/camp/service/list.do?category=상품문의" class="link">상품문의</a></li>
+				<li class="selectbox" id="active" value="공지사항"><a
+					href="/camp/service/list.do?category=공지사항" class="link">공지사항</a></li>
+				<li class="selectbox" value="예약문의"><a
+					href="/camp/service/list.do?category=예약문의" class="link">예약문의</a></li>
+				<li class="selectbox" value="상품문의"><a
+					href="/camp/service/list.do?category=상품문의" class="link">상품문의</a></li>
 			</ul>
 		</div>
 	</div>
 	<div class="container">
+	<div class="categorytext">
 		<h2>${category}</h2>
+		</div>
 		<table class="table" style="text-align: center;">
 			<thead>
 				<tr>
@@ -141,7 +177,7 @@
 			<tbody>
 				<c:forEach var="service" items="${servicelist }">
 					<tr>
-						<td><img src="/camp/images/공지.gif" ></td>
+						<td><img src="/camp/images/공지.gif"></td>
 						<td><a
 							href="/camp/service/read.do?service_no=${service.service_no }&state=READ">${service.service_title }</a></td>
 						<td>${service.id }</td>
@@ -152,6 +188,9 @@
 				</c:forEach>
 			</tbody>
 		</table>
+		<div class="bt_wrap" id="register">
+			<a href="/camp/service/write.do" class="on">등록</a>
+		</div>
 	</div>
 	<!-- <form action="/camp/service/search.do" method="post">
 		<select name="tag">

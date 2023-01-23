@@ -35,8 +35,8 @@ public class product_BuyServiceImpl implements product_BuyService {
 		return dao.cancel(pay_date);
 	}
 	@Override
-	public int mypageCancel(int pay_no) {
-		return dao.mypageCancel(pay_no);
+	public int mypageCancel(int product_payno) {
+		return dao.mypageCancel(product_payno);
 	}
 
 }

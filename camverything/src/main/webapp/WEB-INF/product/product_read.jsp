@@ -84,6 +84,7 @@ $(document).ready(function() {
 	.main{
 		width:1200px;
 		height:600px;
+		margin: auto;
 /* 		float:left; */
 	}
 	
@@ -160,23 +161,7 @@ $(document).ready(function() {
 				<div class="col-lg-10" id="font">
  				<input type="hidden" id="result" name="product_img" value="${product.product_img }">
 				<input type="hidden" name="product_name" value="${product.product_name }">
-<!-- 					<h5> -->
-<%-- 						${product.product_name } --%>
-<!-- 					</h5> -->
-<%-- 					<input type="hidden" name="product_name" value="${product.product_name }"> --%>
-<!-- 					<hr/> -->
-<%-- 					<p>${product.product_content }</p> --%>
-<!-- 					<hr/> -->
-<%-- 					<p>가격 : ${product.product_price }</p> --%>
-<!-- 					<hr/> -->
-<%-- 					<p>종류 : ${product.category }</p> --%>
-<!-- 					<hr/> -->
-<!-- 					<p> -->
-<!-- 						구매수량 : <input type="text" name="quantity" id="num"> -->
-<!-- 					</p> -->
-<!-- 					<p> -->
-<!-- 						결제금액 : <input type="number" name="total" id="total" readonly="readonly" style="border: none"> -->
-<!-- 					</p> -->
+				<input type="hidden" name="product_code" value="${product.product_code }">
 					<table class="table" id="contentTable">
 				<colgroup>
 					<col style="width: 30%;">
@@ -206,7 +191,7 @@ $(document).ready(function() {
 					<tr>
 						<th scope="col">결제금액</th>
 						<td>
-							<input type="number" name="total" id="total" readonly="readonly" style="border: none" value="0">
+							<input type="number" name="total" id="total" readonly="readonly" style="border: none" value="0">원
 						</td>
 					</tr>						
 				</tbody>

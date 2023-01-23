@@ -39,13 +39,23 @@
 	height: 70%;
 }
 
+#imageeee{
+	padding-top:200px;
+	padding-bottom:150px;
+	background-image: url("/camp/images/product_banner.jpg");
+}
 
 </style>
 </head>
 <body>
 <div id="imageeee">
 	<div class="container">
-		<div class="masthead-subheading"><h1>커뮤니티</h1></div>
+		<div class="text-center">
+               
+                    <h1 class="section-heading text-uppercase">캠핑 용품</h1>
+                    <h3 class="section-subheading text-muted">당신의 선택을 응원합니다.</h3>
+                    
+                </div>
 	</div>
 </div>
 	<div class="container">
@@ -71,12 +81,12 @@
 			
             <div class="container">
             	 
-                <div class="text-center">
+<!--                 <div class="text-center"> -->
                
-                    <h2 class="section-heading text-uppercase">캠핑 용품</h2>
-                    <h3 class="section-subheading text-muted">당신의 선택을 응원합니다.</h3>
+<!--                     <h2 class="section-heading text-uppercase">캠핑 용품</h2> -->
+<!--                     <h3 class="section-subheading text-muted">당신의 선택을 응원합니다.</h3> -->
                     
-                </div>
+<!--                 </div> -->
                 <div class="row">
                 <c:forEach var="productList" items="${productList }">
                     <div class="col-lg-4 col-sm-6 mb-4">

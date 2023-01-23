@@ -154,11 +154,11 @@ public class LoginController {
 		}
 		
 		@RequestMapping("/main/mypage_delete.do")
-		public String mypage_delate(String id,HttpSession session) {
+		public String mypage_delate(String id,HttpSession session,SessionStatus status) {
 			LoginDTO user = (LoginDTO)session.getAttribute("user");
 			String view="";
 			if(user==null) {
-				view = "redirect:/camp/main/mypage_main";
+				view = "redirect:/main/mypage_main";
 			}else {
 				int result = service2.delete(id);
 				if(result==1) {
@@ -167,11 +167,8 @@ public class LoginController {
 				System.out.println("delete=------------");
 				user = null;
 				session.invalidate();
-				session = null;
-				view = "index";
-				System.out.println("session=>"+session);
-				if(session==null) 
-					System.out.println("세션초기화완료");
+				status.setComplete();
+				view = "redirect:/test/index";
 			}
 			return view;
 		}

@@ -32,7 +32,7 @@
 					<li class="nav-item"><a class="nav-link" href="/camp/service/list.do?category=공지사항">고객센터</a></li>
 					<li class="nav-item">
 					<c:choose>
-						<c:when test="${user==null }">
+						<c:when test="${user==null}">
 						<li class="nav-item">
 							<a class="nav-link" href="/camp/loginpage">
 								<span class="glyphicon glyphicon-log-in">

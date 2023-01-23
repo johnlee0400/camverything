@@ -7,7 +7,7 @@
 		insert into product_Buy values (pro_seq.nextval, #{product_code}, null, null, to_char(sysdate,'yyyy-mm-dd'), #{quantity}, #{total}, #{product_img}, #{product_name})
 	</insert>
 	<select id="selectall" parameterType="String" resultType="product_Buy">
-		select product_img,pay_no,to_char(pay_date,'yyyy-mm-dd') as pay_date,product_name,quantity,total from product_Buy
+		select product_img,product_payno,to_char(pay_date,'yyyy-mm-dd') as pay_date,product_name,quantity,total from product_Buy
 	</select>
 	<delete id="cancel" parameterType="String">
 		delete product_Buy where pay_date = #{pay_date}

@@ -2,6 +2,8 @@ package com.multi.camp;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +26,8 @@ public class IndexController {
 		this.servicecenter = servicecenter;
 	}
 	@RequestMapping("/test/index")
-	public ModelAndView index() {
+	public ModelAndView index(HttpSession session) {
+		System.out.println("인덱스쪽 세션값은 =>"+session);
 		ModelAndView mav = new ModelAndView("index");
 		List<BoardDTO> indexboard = service.findboardindex();
 		List<ServiceCenterDTO> indexnotice = servicecenter.findnoticeindex();

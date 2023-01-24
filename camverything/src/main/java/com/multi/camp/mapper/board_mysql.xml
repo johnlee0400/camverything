@@ -13,9 +13,9 @@
 		select * from board_file where board_no = #{board_no} and boardFileno = #{boardFileno}
 	</select>
 	<insert id="fileinsert" parameterType="java.util.List">
-		insert
-		<foreach collection="list" item="file" separator=" ">
-			into board_file values(last_insert_id(),#{file.originalFilename}, #{file.storeFilename},#{file.boardFileno} )
+		insert into board_file values
+		<foreach collection="list" item="file" separator=",">
+			(last_insert_id(),#{file.originalFilename}, #{file.storeFilename},#{file.boardFileno} )
 		</foreach>
 	</insert>
 	<insert id="write" parameterType="board">

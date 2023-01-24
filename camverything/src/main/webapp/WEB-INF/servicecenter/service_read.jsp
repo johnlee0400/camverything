@@ -104,7 +104,7 @@
 <body>
 <div id="imageeee">
 	<div class="container">
-		<div class="masthead-subheading"><h1>커뮤니티</h1></div>
+		<div class="masthead-subheading"><h1>고객센터</h1></div>
 	</div>
 	</div>
 

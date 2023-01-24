@@ -188,7 +188,7 @@
 	    height:54px;
 	    padding: 0 1rem;
 	    font-size: 1.8rem;
-	    font-weight: bold;
+	    font-weight: normal;
 	    background-color: #39517A;
 	    border: 0.1rem solid #39517A;
 	    border-radius: 0.6rem;

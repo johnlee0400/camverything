@@ -3,8 +3,20 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.multi.camp.service">
+	<select id="fileselect" parameterType="String"
+		resultType="servicefile"> select * from service_file where service_no = #{serviceno}
+	</select>
+	<select id="getfileinfo" parameterType="servicefile"
+		resultType="servicefile"> select * from service_file where service_no =
+		#{service_no} and serviceFileno = #{serviceFileno} </select>
+	<insert id="fileinsert" parameterType="java.util.List">
+		insert into service_file values
+		<foreach collection="list" item="file" separator=","> 
+			(last_insert_id(),#{file.originalFilename},
+			#{file.storeFilename},#{file.serviceFileno}) </foreach>
+	</insert>
 	<insert id="write" parameterType="service">
-		insert into servicecenter 
+		insert into servicecenter
 		values(null,#{id},#{service_title},#{service_content},date_format(now(),'%Y-%m-%d'),#{category})
 	</insert>
 	<select id="selectall" resultType="service">

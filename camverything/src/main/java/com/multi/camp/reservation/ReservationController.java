@@ -147,7 +147,7 @@ public class ReservationController {
 			conn.setRequestProperty("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
 			conn.setDoOutput(true);
 			String parameter = "cid=TC0ONETIME&partner_order_id=partner_order_id&partner_user_id=partner_user_id&item_name=초코파이&quantity=1"
-					+ "&total_amount=2200&vat_amount=200&tax_free_amount=0&approval_url=http://localhost:8088/camp/res/kakaoredirect?reservation=success&fail_url=http://localhost:8088/camp/res/camp_read&cancel_url=http://localhost:8088/camp/res/kakaoredirect?reservation=cancel";
+					+ "&total_amount=2200&vat_amount=200&tax_free_amount=0&approval_url=http://101.101.211.176:8088/camp/res/kakaoredirect?reservation=success&fail_url=http://101.101.211.176:8088/camp/res/camp_read&cancel_url=http://101.101.211.176:8088/camp/res/kakaoredirect?reservation=cancel";
 			OutputStream out = conn.getOutputStream();//주는애
 			DataOutputStream  dataout = new DataOutputStream(out);//데이터주는애
 			dataout.writeBytes(parameter);//바이트를 사용함 문자열

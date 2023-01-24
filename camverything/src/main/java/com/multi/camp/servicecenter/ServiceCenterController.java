@@ -166,7 +166,7 @@ public class ServiceCenterController {
 			view = "redirect:/camp/login.do";
 		}else {
 			int result = servicecenter.delete(service_no);
-			view = "redirect:/board/list.do?category="+category;
+			view = "redirect:/service/list.do?category="+category;
 		}
 		return view;
 	}

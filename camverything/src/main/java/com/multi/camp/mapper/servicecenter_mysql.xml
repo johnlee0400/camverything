@@ -5,9 +5,12 @@
 <mapper namespace="com.multi.camp.service">
 	<insert id="write" parameterType="service">
 		insert into servicecenter 
-		values(service_seq.nextval,#{id},#{service_title},#{service_content},sysdate,#{category})
+		values(null,#{id},#{service_title},#{service_content},date_format(now(),'%Y-%m-%d'),#{category})
 	</insert>
 	<select id="selectall" resultType="service">
+		select * from servicecenter
+	</select>
+	<select id="indexnotice" parameterType="String" resultType="service" >
 		select * from servicecenter
 	</select>
 	<select id="categorySelect" resultType="service"
@@ -26,19 +29,19 @@
 		where service_no=#{service_no}
 	</update>
 	<select id="search" resultType="service" parameterType="String" >
-		select * from servicecenter where service_title like  '%' || #{service_title} || '%'
+		select * from servicecenter where service_title like concat('%' , #{service_title} , '%')
 	</select>
 	<select id="dynamicSearch" resultType="service" parameterType="Map">
 		select * from servicecenter
 		<where>
 			<if test="tag=='title' and data!=''" >
-				service_title like '%' || #{data} || '%'
+				service_title like concat('%' , #{data} , '%')
 			</if>
 			<if test="tag=='id' and data!=''" >
-				id like '%' || #{data} || '%'
+				id like concat('%' , #{data} , '%')
 			</if>
 			<if test="tag=='content' and data!=''" >
-				service_content like '%' || #{data} || '%'
+				service_content like concat('%' , #{data} , '%')
 			</if>
 			<if test="tag=='create_date' and data!=''" >
 				<![CDATA[

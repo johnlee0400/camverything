@@ -29,8 +29,8 @@
 			function() {
 				/*=================submenu제어 ==================== */
 				/*초기 자동 선택된 박스 */
-				$("#active").css("background-color","#39517A");
-				$("#active").children().css("color","white");
+				/* $("#active").css("background-color","#39517A");
+				$("#active").children().css("color","white"); */
 				
 				/* 다른 게시판 박스 선택시  */
 				$(".selectbox").on("mouseover", function() {
@@ -48,6 +48,12 @@
 			});
 </script>
 <style type="text/css">
+	#imageeee{
+			padding-top:200px;
+			padding-bottom:150px;
+			background-image: url("/camp/images/community.jpg");
+		} 	
+
 /*===여기서 부터 submenu ====  */
 	.main {
 		width: 1200px;
@@ -84,7 +90,7 @@
 	}
 	.submenu{
 		position: absolute;
-		margin-left:800px;
+		margin-left:700px;
 		/* bottom: 10px; */
 	}
 	
@@ -138,6 +144,7 @@
     font-size: 0;
 }
 	.bt_wrap a {
+	
     display: inline-block;
     min-width: 80px;
     margin-left: 10px;
@@ -155,6 +162,51 @@
 	margin-top: 100px;
 	margin-bottom: 40px;
 }
+
+	a{
+		text-decoration: none;
+	}
+
+	a:hover{
+		text-decoration: none;
+	}
+
+#container{
+	height:auto;
+	padding:100px;
+}
+
+
+#registerbtn {
+		/* clear:both;
+		position:absolute;
+		top:670px;
+		left:0; */
+	    width: 340px;
+	    display: table;
+	   /*  min-height: 5.4rem; */
+	    height:54px;
+	    padding: 0 1rem;
+	    font-size: 1.8rem;
+	    font-weight: bold;
+	    background-color: #39517A;
+	    border: 0.1rem solid #39517A;
+	    border-radius: 0.6rem;
+	    text-align: center;
+	    box-sizing: border-box;
+	    margin:auto;
+	}
+#registerbtn > span { /* > child속성만 css적용시킴 자손제외 (reserveBtn의 child인 span속성만 span전체가아니라) */
+		font-size:16px;
+	    display: table-cell;
+	    height: 100%;
+	    vertical-align: middle;
+	    text-align: center;
+	    line-height: 120%;
+	    color: #fff;
+    
+	}
+
 </style>
 </head>
 <body>
@@ -177,7 +229,7 @@
 			</ul>
 		</div>
 	</div>
-	<div class="container">
+	<div class="container" id="container">
 	<div class="categorytext">
 		<h2>${category}</h2>
 		</div>
@@ -207,7 +259,7 @@
 						<td>${board.id }</td>
 						<td>${board.create_date }</td>
 						<td><a
-							href="/camp/board/delete.do?board_no=${board.board_no }">삭제</a></td>
+							href="/camp/board/delete.do?board_no=${board.board_no}&category=${board.category}">삭제</a></td>
 							
 					</tr>
 					
@@ -215,10 +267,10 @@
 			</tbody>
 		</table>
 		</form>
+			<div class="bt_wrap">
+				<a href="/camp/board/write.do" class="on" id="registerbtn">등록</a>
+			</div>
 		</div>
-	<div class="bt_wrap">
-		<a href="/camp/board/write.do" class="on">등록</a>
-	</div>
 	<script src="/camp/common/js/page.js"></script>
 </body>
 </html>

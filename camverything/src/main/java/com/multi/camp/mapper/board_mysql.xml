@@ -6,19 +6,21 @@
 	<select id="fileselect" parameterType="String" resultType="boardfile" >
 		select * from board_file where board_no = #{boardno}
 	</select>
+	<select id="indexboard" parameterType="String" resultType="board" >
+		select * from board
+	</select>
 	<select id="getfileinfo" parameterType="boardfile" resultType="boardfile" >
 		select * from board_file where board_no = #{board_no} and boardFileno = #{boardFileno}
 	</select>
 	<insert id="fileinsert" parameterType="java.util.List">
-		insert all
+		insert
 		<foreach collection="list" item="file" separator=" ">
-			into board_file values(board_seq.currval,#{file.originalFilename}, #{file.storeFilename},#{file.boardFileno} )
+			into board_file values(last_insert_id(),#{file.originalFilename}, #{file.storeFilename},#{file.boardFileno} )
 		</foreach>
-		select * from dual
 	</insert>
 	<insert id="write" parameterType="board">
 		insert into board 
-		values(board_seq.nextval,#{id},null,#{title},#{content},sysdate,#{view_cnt},#{category})
+		values(null,#{id},null,#{title},#{content},date_format(now(),'%Y-%m-%d'),#{view_cnt},#{category})
 	</insert>
 	<select id="selectall" resultType="board">
 		select * from board
@@ -39,19 +41,19 @@
 		where board_no=#{board_no}
 	</update>
 	<select id="search" resultType="board" parameterType="String" >
-		select * from board where title like  '%' || #{title} || '%'
+		select * from board where title like concat('%' , #{title} , '%')
 	</select>
 	<select id="dynamicSearch" resultType="board" parameterType="Map">
 		select * from board
 		<where>
 			<if test="tag=='title' and data!=''" >
-				title like '%' || #{data} || '%'
+				title like concat('%' , #{data} , '%')
 			</if>
 			<if test="tag=='id' and data!=''" >
-				id like '%' || #{data} || '%'
+				id like concat('%' , #{data} , '%')
 			</if>
 			<if test="tag=='content' and data!=''" >
-				content like '%' || #{data} || '%'
+				content like concat('%' , #{data} , '%')
 			</if>
 			<if test="tag=='create_date' and data!=''" >
 				<![CDATA[

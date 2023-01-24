@@ -159,8 +159,8 @@
 <body>
  <header class="masthead">
             <div class="container">
-                <div class="masthead-subheading">Welcome To Camverything!</div>
-                <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+                <div class="masthead-subheading">캠브리띵</div>
+                <div class="masthead-heading text-uppercase">캠프의 모든것</div>
                 	<div class="container-fluid bg-2 text-center">
 		<div id="wrap">
 			<div id="form">
@@ -195,7 +195,7 @@
 				<c:forEach var="indexnotice" items="${indexnotice }" begin="0" end="3">
 					<div class="notice">
 						<a id="공지사항"
-							href="/camp/service/read.do?service_no=${servicecenter.service_no }&state=READ">
+							href="/camp/service/read.do?service_no=${indexnotice.service_no }&state=READ">
 							${indexnotice.service_title}</a>
 					</div>
 				</c:forEach>
@@ -215,7 +215,7 @@
 				<c:forEach var="indexboard" items="${indexboard }" begin="0" end="3">
 					<div class="notice">
 						<a id="공지사항"
-							href="/camp/board/read.do?board_no=${board.board_no }&state=READ">
+							href="/camp/board/read.do?board_no=${indexboard.board_no }&state=READ">
 							${indexboard.title}</a>
 					</div>
 				</c:forEach>

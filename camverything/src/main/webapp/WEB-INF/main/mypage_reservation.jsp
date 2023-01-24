@@ -15,7 +15,11 @@
   <meta charset="utf-8" />
         <title>mypage</title>
          <style>
-         	
+        #imageeee{
+			padding-top:200px;
+			padding-bottom:150px;
+			background-image: url("/camp/images/mypagemain.jpg");
+		}	
 	         	/*===여기서 부터 submenu ====  */
 		.main {
 			width: 1200px;

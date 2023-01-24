@@ -20,6 +20,11 @@ public class LoginServiceImpl implements LoginService {
 		System.out.println("서비스쪽 잘들어왔는지=>"+loginUser);
 		return dao.login(loginUser);
 	}
+
+	@Override
+	public LoginDTO selectUpdatedInfo(LoginDTO loginUser) {
+		return dao.selectUpdatedInfo(loginUser);
+	}
 	
 
 

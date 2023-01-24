@@ -25,5 +25,9 @@
 	</update>
 	<delete id="mypage_delete" parameterType="String">
 		delete member where id =#{id}
-	</delete>	
+	</delete>
+		<select id ="selectupdate" resultType="member" parameterType="member">
+		select * from member
+		where id=#{id}
+	</select>	
 </mapper>

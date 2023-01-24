@@ -29,7 +29,6 @@
 	
 	<!-- <mappers>
 		<mapper resource="com/multi/camp/mapper/servicecenter_mysql.xml"/>
-		<mapper resource="com/multi/camp/mapper/register_mysql.xml"/>
 		<mapper resource="com/multi/camp/mapper/board_mysql.xml"/>
 		<mapper resource="com/multi/camp/mapper/login_mysql.xml"/>
 		<mapper resource="com/multi/camp/mapper/campingList_mysql.xml"/>

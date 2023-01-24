@@ -16,7 +16,7 @@
 		<typeAlias type="com.multi.camp.manager.GoCampingDTO" alias="gocamping"/>	
 	</typeAliases>
 	
-	<mappers>
+	<!-- <mappers>
 		<mapper resource="com/multi/camp/mapper/servicecenter.xml"/>
 		<mapper resource="com/multi/camp/mapper/board.xml"/>
 		<mapper resource="com/multi/camp/mapper/login.xml"/>
@@ -25,9 +25,9 @@
 		<mapper resource="com/multi/camp/mapper/product_Buy.xml"/>
 		<mapper resource ="com/multi/camp/mapper/reservation.xml"/>
 		<mapper resource ="com/multi/camp/mapper/manager.xml"/>
-	</mappers>
+	</mappers> -->
 	
-	<!-- <mappers>
+	<mappers>
 		<mapper resource="com/multi/camp/mapper/servicecenter_mysql.xml"/>
 		<mapper resource="com/multi/camp/mapper/board_mysql.xml"/>
 		<mapper resource="com/multi/camp/mapper/login_mysql.xml"/>
@@ -36,6 +36,6 @@
 		<mapper resource="com/multi/camp/mapper/product_Buy_mysql.xml"/>
 		<mapper resource ="com/multi/camp/mapper/reservation_mysql.xml"/>
 		<mapper resource ="com/multi/camp/mapper/manager_mysql.xml"/>
-	</mappers> -->
+	</mappers>
 	
 </configuration>

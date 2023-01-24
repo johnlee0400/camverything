@@ -125,7 +125,7 @@ ul, li {
 	    height:54px;
 	    padding: 0 1rem;
 	    font-size: 1.8rem;
-	    font-weight: bold;
+	    font-weight: normal;
 	    background-color: #39517A;
 	    border: 0.1rem solid #39517A;
 	    border-radius: 0.6rem;
@@ -229,7 +229,7 @@ ul, li {
 						<td>${service.id }</td>
 						<td>${service.create_date }</td>
 						<td><a
-							href="/camp/service/delete.do?service_no=${service.service_no }">삭제</a></td>
+							href="/camp/service/delete.do?service_no=${service.service_no }&category=${service.category}">삭제</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

@@ -11,6 +11,13 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<style type="text/css">
+	#imageeee{
+			padding-top:200px;
+			padding-bottom:150px;
+			background-image: url("/camp/images/servicetop.jpg");
+		} 	
+</style>
 </head>
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -23,7 +30,7 @@
 	<div id="imageeee">
 		<div class="container">
 			<div class="masthead-subheading">
-				<h1>커뮤니티</h1>
+				<h1>고객센터</h1>
 			</div>
 		</div>
 	</div>

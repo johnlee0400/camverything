@@ -6,18 +6,16 @@
   
 <mapper namespace="com.multi.camp.reservation">
 	<insert id="insert" parameterType="reservation">
-		<!--#{area_price, jdbcType=VARCHAR} null값일때 처리 -->
-		<!-- id는 jsp에서 hihi로 임시처리중 -->
 		insert into reservation values (null,#{facltNm},date_format(now(),'%Y-%m-%d'),#{id},date_format(#{camp_date},'%Y-%m-%d'),#{camp_period},#{camp_loc},#{bbq_option},#{area_price, jdbcType=VARCHAR},#{pay_price})
 	</insert>
 	<select id="campdateselect" parameterType="reservation" resultType="reservation">
-		select camp_period,camp_loc,area_price from camping_list where camp_date=#{camp_date} order by camp_period asc
+		select camp_period,camp_loc,area_price from camping_list where camp_date=date_format(#{camp_date},'%Y-%m-%d') order by camp_period asc
 	</select>
 	<delete id="cancel" parameterType="String">
-		delete reservation where camp_date= #{camp_date}
+		delete from reservation where camp_date= #{camp_date}
 	</delete>
 	<delete id="mypagecancel" parameterType="Integer">
-		delete reservation where res_no= #{res_no}
+		delete from reservation where res_no= #{res_no}
 	</delete>
 	<select id="gocampingdata" parameterType="String" resultType="gocamping">
 		select * from gocamping where facltNm =#{facltNm}

@@ -4,9 +4,9 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.multi.camp.manager">
 	<insert id="insertgocamping" parameterType="java.util.List">
-		insert
-		<foreach collection="list" item="dto"> <!--'camverything06'  -->
-			into gocamping values('camverything06',#{dto.facltNm},#{dto.lineIntro},#{dto.intro},#{dto.bizrno},#{dto.facltDivNm},#{dto.featureNm}
+		insert into gocamping values
+		<foreach collection="list" item="dto" separator=",">
+			('camverything06',#{dto.facltNm},#{dto.lineIntro},#{dto.intro},#{dto.bizrno},#{dto.facltDivNm},#{dto.featureNm}
 		,#{dto.induty},#{dto.lctCl},#{dto.doNm},#{dto.addr1},#{dto.mapX},#{dto.mapY},#{dto.tel},#{dto.homepage},#{dto.operPdCl},#{dto.operDeCl},#{dto.sbrsCl},#{dto.firstImageUrl})
 		</foreach>
 	</insert>

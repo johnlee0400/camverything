@@ -82,7 +82,7 @@ public class product_BuyController {
 			conn.setRequestProperty("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
 			conn.setDoOutput(true);
 			String parameter = "cid=TC0ONETIME&partner_order_id=partner_order_id&partner_user_id=partner_user_id&item_name=초코파이&quantity=1"
-					+ "&total_amount=2200&vat_amount=200&tax_free_amount=0&approval_url=http://localhost:8088/camp/product/buyRead?reservation=success&fail_url=http://localhost:8088/camp/proaduct/buyRead&cancel_url=http://localhost:8088/camp/product/kakaoredirect?reservation=cancel";
+					+ "&total_amount=2200&vat_amount=200&tax_free_amount=0&approval_url=http://101.101.211.176:8088/camp/product/buyRead?reservation=success&fail_url=http://101.101.211.176:8088/camp/product/buyRead&cancel_url=http://101.101.211.176:8088/camp/product/kakaoredirect?reservation=cancel";
 			OutputStream out = conn.getOutputStream();
 			DataOutputStream  dataout = new DataOutputStream(out);
 			dataout.writeBytes(parameter);

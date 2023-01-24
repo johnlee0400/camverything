@@ -13,7 +13,7 @@
 		select * from product where category=#{category}
 	</select>
 	<select id="search" resultType="product" parameterType="String">
-		select * from product where product_name like '%' || #{product_name} ||'%'
+		select * from product where product_name like concat('%' , #{product_name} ,'%')
 	</select>
 	<select id="ajax_read" resultType="product" parameterType="String">
 		select * from product where product_code = #{product_code}

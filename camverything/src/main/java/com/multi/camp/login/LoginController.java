@@ -49,7 +49,7 @@ public class LoginController {
 //			System.out.println("로그인성공");
 			session.setAttribute("user", user);
 //			viewName =user.getId();
-			viewName = "index";
+			viewName = "redirect:/test/index";
 //			viewName = user.getMenupath();
 		}else {
 			///JOptionPane.showMessageDialog(null, "아이디와 비밀번호를 확인하세요", "로그인실패", JOptionPane.ERROR_MESSAGE);
@@ -70,7 +70,7 @@ public class LoginController {
 				
 				System.out.println("성공=========");
 				
-				viewName = "index";
+				viewName = "redirect:/test/index";
 			}else {
 				System.out.println("실패=========");
 				viewName ="login";
@@ -142,34 +142,4 @@ public class LoginController {
 		return msg2;
 	}
 	
-	//정보수정하기
-		@RequestMapping(value="/main/mypage_update.do")
-		public String mypage_update(LoginDTO member) {
-			System.out.println("회원정보수정=>"+member);
-			int result = service2.update(member);
-			if(result==1) {
-				return "index";
-			}
-			return "redirect:/main/mypage";
-		}
-		
-		@RequestMapping("/main/mypage_delete.do")
-		public String mypage_delate(String id,HttpSession session,SessionStatus status) {
-			LoginDTO user = (LoginDTO)session.getAttribute("user");
-			String view="";
-			if(user==null) {
-				view = "redirect:/main/mypage_main";
-			}else {
-				int result = service2.delete(id);
-				if(result==1) {
-					System.out.println("회원탈퇴성공!!");
-				}
-				System.out.println("delete=------------");
-				user = null;
-				session.invalidate();
-				status.setComplete();
-				view = "redirect:/test/index";
-			}
-			return view;
-		}
 }

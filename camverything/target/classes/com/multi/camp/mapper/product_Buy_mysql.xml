@@ -4,9 +4,15 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.multi.camp.product_Buy">
 	<insert id="insert" parameterType="product_Buy">
-		insert into product_Buy values (null, #{product_code}, null, null, to_date(sysdate,'yyyy-mm-dd'), #{quantity}, #{total}, #{product_img})
+		insert into product_Buy values (null, #{product_code}, null, null, date_format(now(),'%Y-%m-%d'), #{quantity}, #{total}, #{product_img})
 	</insert>
+	<select id="selectall" parameterType="String" resultType="product_Buy">
+		select product_img,product_payno,DATE_FORMAT(pay_date,'%Y-%m-%d') as pay_date,product_name,quantity,total from product_Buy
+	</select>
 	<delete id="cancel">
 		delete product_Buy where id = #{id}
+	</delete>
+	<delete id="mypagecancel" parameterType="Integer">
+		delete product_Buy where product_payno = #{product_payno}
 	</delete>
 </mapper>

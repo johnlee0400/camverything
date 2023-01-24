@@ -12,6 +12,11 @@
 <title>Insert title here</title>
 
 <style type="text/css">
+#imageeee{
+			padding-top:200px;
+			padding-bottom:150px;
+			background-image: url("/camp/images/servicetop.jpg");
+		} 	
 .main {
 	width: 1200px;
 	margin: auto;
@@ -46,7 +51,7 @@ ul, li {
 
 .submenu {
 	position: absolute;
-	margin-left: 800px;
+	margin-left: 700px;
 	/* bottom: 10px; */
 }
 
@@ -91,12 +96,53 @@ ul, li {
 }
 .categorytext{
 	text-align: center;
-	margin-top: 100px;
+	/* margin-top: 300px; */
 	margin-bottom: 40px;
 }
 
+	a{
+		text-decoration: none;
+	}
+
+	a:hover{
+		text-decoration: none;
+	}
+
+#container{
+	height:auto;
+	padding:200px;
+}
 
 
+#registerbtn {
+		/* clear:both;
+		position:absolute;
+		top:670px;
+		left:0; */
+	    width: 340px;
+	    display: table;
+	   /*  min-height: 5.4rem; */
+	    height:54px;
+	    padding: 0 1rem;
+	    font-size: 1.8rem;
+	    font-weight: bold;
+	    background-color: #39517A;
+	    border: 0.1rem solid #39517A;
+	    border-radius: 0.6rem;
+	    text-align: center;
+	    box-sizing: border-box;
+	    margin:auto;
+	}
+#registerbtn > span { /* > child속성만 css적용시킴 자손제외 (reserveBtn의 child인 span속성만 span전체가아니라) */
+		font-size:16px;
+	    display: table-cell;
+	    height: 100%;
+	    vertical-align: middle;
+	    text-align: center;
+	    line-height: 120%;
+	    color: #fff;
+    
+	}
 /* 여기까지 submenu  */
 </style>
 <script type="text/javascript">
@@ -122,8 +168,8 @@ ul, li {
 					}
 				/*=================submenu제어 ==================== */
 				/*초기 자동 선택된 박스 */
-				$("#active").css("background-color","#39517A");
-				$("#active").children().css("color","white");
+				/* $("#active").css("background-color","#39517A");
+				$("#active").children().css("color","white"); */
 				
 				/* 다른 게시판 박스 선택시  */
 				$(".selectbox").on("mouseover", function() {
@@ -161,7 +207,7 @@ ul, li {
 			</ul>
 		</div>
 	</div>
-	<div class="container">
+	<div class="container" id="container">
 	<div class="categorytext">
 		<h2>${category}</h2>
 		</div>
@@ -189,7 +235,7 @@ ul, li {
 			</tbody>
 		</table>
 		<div class="bt_wrap" id="register">
-			<a href="/camp/service/write.do" class="on">등록</a>
+			<a href="/camp/service/write.do" class="on" id="registerbtn">등록</a>
 		</div>
 	</div>
 	<!-- <form action="/camp/service/search.do" method="post">
@@ -203,5 +249,6 @@ ul, li {
 			<li><a href="/camp/service/write.do" style="text-align: right;">글쓰기</a></li>
 		</ul>
 	</form> -->
+<script src="/camp/common/js/page.js"></script> 
 </body>
 </html>

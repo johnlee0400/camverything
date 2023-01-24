@@ -13,7 +13,7 @@ public interface BoardDAO {
 	//게시글수정 - db에 처리
 	int update(BoardDTO board);
 	//게시글삭제 - db에 처리
-	int delete(String board_no);
+	int delete(String category);
 	//제목으로 검색
 	List<BoardDTO> search(String data);
 	//제목,작성자, 본문, 작성일별로 검색

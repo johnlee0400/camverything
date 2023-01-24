@@ -15,6 +15,12 @@
   <meta charset="utf-8" />
         <title>mypage</title>
          <style>
+         
+         #imageeee{
+		padding-top:200px;
+		padding-bottom:150px;
+		background-image: url("/camp/images/mypagemain.jpg");
+	}
          	
 	         	/*===여기서 부터 submenu ====  */
 		.main {
@@ -187,7 +193,11 @@
 		location.href="mypage_update";
 			}
     function Memberdelete(){
-    	location.href="/camp/main/mypage_delete.do?id=${user.id}";
+    	let popOption = "width = 400px, height =200px, top=400px, left=700px, directoryies=no, location=no, status=no, toolbar=no, scrollbars=no";
+		let openUrl = '/camp/main/mypageinfodeletepopup'
+		window.open(openUrl,'pop',popOption);
+
+		location.href="/camp/main/mypage_delete.do?id=${user.id}";
     }
 	    $(document).ready(
 				function() {

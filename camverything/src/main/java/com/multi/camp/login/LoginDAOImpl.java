@@ -22,4 +22,9 @@ public class LoginDAOImpl implements LoginDAO {
 		return sqlSession.selectOne("com.multi.camp.login", loginUser);
 	}
 
+	@Override
+	public LoginDTO selectUpdatedInfo(LoginDTO loginUser) {
+		return sqlSession.selectOne("com.multi.camp.selectupdate", loginUser);
+	}
+
 }

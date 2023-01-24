@@ -126,9 +126,10 @@ public class BoardController {
 		//로그인한 사용자를 찾는다.
 		LoginDTO user = (LoginDTO)session.getAttribute("user");
 		String view = "";
+		System.out.println("보드넘버들어왔는지=>"+board_no);
 		category= URLEncoder.encode(category, "UTF-8");
 		if(user==null) {
-			view = "redirect:/camp/login.do";
+			view = "redirect:/loginpage";
 		}else {
 			int result = service.delete(board_no);
 			view = "redirect:/board/list.do?category="+category;

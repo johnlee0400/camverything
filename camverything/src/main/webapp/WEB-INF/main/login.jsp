@@ -8,6 +8,14 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <title>login</title>
 	<title>Insert title here</title>
 	<link href="/camp/common/css/registercss.css" rel="stylesheet" />
+	<style type="text/css">
+	#imageeee{
+			padding-top:200px;
+			padding-bottom:150px;
+			background-image: url("/camp/images/logintop.png");
+		} 	
+	
+	</style>
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<!-- <script src="https://code.jquery.com/jquery-3.2.1.js"></script> -->
 	
@@ -130,9 +138,19 @@
        				return false;
 	       			}
        			}
-			
+        
 		})//end click
-		
+		  $("#loginbtn").on("click", function() {
+	            if ($("#loginid").val() == "") {
+	                alert("아이디를 입력해주세요");
+	                return false;
+	            }
+	            if ($("#loginpass").val() == "") {
+	                alert("비밀번호를 입력해주세요");
+	                return false;
+	            }
+	            return true;
+	        });	
 		
 		})//document끝지점
 		
@@ -177,11 +195,11 @@
 		    <h2>Login</h2>
 		    <label>
 	      		<span>아이디</span>
-	      		<input type="text" name="loginid" />
+	      		<input type="text" name="loginid" id="loginid"/>
 	    	</label>
 	    	<label>
 			      <span>비밀번호</span>
-			      <input type="password" name="loginpass"/>
+			      <input type="password" name="loginpass" id="loginpass"/>
 	    	</label>
 		    
 		    <button type="submit" class="submit">로그인</button>

@@ -16,6 +16,11 @@
         <title>mypage</title>
          <style>
          	
+        #imageeee{
+			padding-top:200px;
+			padding-bottom:150px;
+			background-image: url("/camp/images/mypagemain.jpg");
+		}
 	         	/*===여기서 부터 submenu ====  */
 		.main {
 			width: 1200px;
@@ -219,7 +224,7 @@
 						<td scope="col">${buy.pay_date}</td>
 						<td scope="col">${buy.product_name}</td>
 						<td scope="col">${buy.quantity}</td>
-						<td scope="col">${buy.total}</td>
+						<td scope="col">${buy.total}원</td>
 						<td scope="col"><button class="btn" value="${buy.product_payno}">결제취소</button>
 					</tr>
 				</c:forEach>

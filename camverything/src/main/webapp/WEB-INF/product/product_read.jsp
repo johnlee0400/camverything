@@ -50,7 +50,7 @@ $(document).ready(function() {
 		console.log(paramValue);
 		//키의 값에 따라 결제팝업창띄우기 
 		if(paramValue == "cancel"){
-			let popOption = "width = 400px, height =200px, top=300px, left=350px, directoryies=no, location=no, status=no, toolbar=no, scrollbars=no";
+			let popOption = "width = 400px, height =200px, top=500px, left=550px, directoryies=no, location=no, status=no, toolbar=no, scrollbars=no";
 			let openUrl = '/camp/product/fail'
 			window.open(openUrl,'pop',popOption);
 			$.ajax({
@@ -62,7 +62,7 @@ $(document).ready(function() {
 			})
 		}
 		else if(paramValue == "success"){
-			let popOption = "width = 400px, height =280px, top=300px, left=350px, directoryies=no, location=no, status=no, toolbar=no, scrollbars=no";
+			let popOption = "width = 400px, height =280px, top=500px, left=550px, directoryies=no, location=no, status=no, toolbar=no, scrollbars=no";
 			let openUrl = '/camp/product/success'
 			window.open(openUrl,'pop',popOption);
 		}
@@ -122,19 +122,24 @@ $(document).ready(function() {
 		vertical-align: middle;
 	}
 
+	#imageeee{
+		padding-top:200px;
+		padding-bottom:150px;
+		background-image: url("/camp/images/product_banner.jpg");
+	}
 </style>
 </head>
 <body>
 <div id="imageeee">
 		<div class="container">
-			<div class="masthead-subheading"><h1></h1></div>
+			<div class="masthead-subheading"><h1>상품상세</h1></div>
 		</div>
 	</div>
 	<input style="display:none" id="check" value="${check}"/>
 <div class="subcontainer">
 	<div class="mainWrapper"> <!-- 그림, 설명포함 -->
 		<div class="camptitle">
-				<h3>상품상세</h3>
+				<h3>${product.product_name }</h3>
 		</div>
 		<div class="main">
 			<div class="picture">

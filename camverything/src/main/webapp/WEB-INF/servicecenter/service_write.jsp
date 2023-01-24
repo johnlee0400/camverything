@@ -99,7 +99,7 @@
 						</div>
 					</div>
 				<div class="bt_wrap">
-					<button type="submit" class="on"><a>등록</a></button>
+					<button type="submit" class="btn btn-success">등록</button>
 					<button type="reset" class="btn btn-default">취소</button>
 				</div>
 			</div>

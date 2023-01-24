@@ -22,7 +22,7 @@ public class GoCampingInfoOpenApi {
 		
 		String gocampingurl ="http://apis.data.go.kr/B551011/GoCamping/basedList"; //End Point + API목록중하나
 		String key="UBakkE%2FihnBG11v4sgIy99%2BDpgzf5M%2FgWkAx7%2FxJj0cW1Et4rkrddRT0Yrln%2FqWDJR4db9SSTo%2FHxnNRqeDkiQ%3D%3D"; //일반 인증키(Encoding)
-		String numOfRows = "2" ;
+		String numOfRows = "30" ;
 		String PageNo = "1" ;
 		String MobileOS = "WIN";
 		String MobileApp = "testtest";

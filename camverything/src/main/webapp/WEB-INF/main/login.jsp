@@ -202,7 +202,7 @@
 			      <input type="password" name="loginpass" id="loginpass"/>
 	    	</label>
 		    
-		    <button type="submit" class="submit">로그인</button>
+		    <button type="submit" class="submit" id="loginbtn">로그인</button>
 		  </div>
 		 
 	 

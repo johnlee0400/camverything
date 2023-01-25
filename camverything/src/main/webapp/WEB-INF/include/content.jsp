@@ -160,7 +160,7 @@
  <header class="masthead">
             <div class="container">
                 <div class="masthead-subheading">캠브리띵</div>
-                <div class="masthead-heading text-uppercase">캠프의 모든것</div>
+                <div class="masthead-heading text-uppercase">캠핑의 모든것</div>
                 	<div class="container-fluid bg-2 text-center">
 		<div id="wrap">
 			<div id="form">

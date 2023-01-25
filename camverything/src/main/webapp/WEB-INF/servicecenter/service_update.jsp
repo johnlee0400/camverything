@@ -23,6 +23,7 @@
 	$(document).ready(function(){
 		data = "${service.category}"
 		$("#category").val(data).attr("selected","selected");
+		
 	});
 
 </script>
@@ -47,7 +48,7 @@
 						<dl>
 							<dt>제목</dt>
 							<dd>
-								<input type="text" name="title" value="${service.service_title }">
+								<input type="text" name="service_title" value="${service.service_title }">
 							</dd>
 						</dl>
 					</div>
@@ -65,7 +66,7 @@
 						</dl>
 					</div>
 					<div class="cont">
-						<textarea placeholder="내용 입력" name="content">
+						<textarea placeholder="내용 입력" name="service_content">
                         ${service.service_content }</textarea>
 					</div>
 				</div>

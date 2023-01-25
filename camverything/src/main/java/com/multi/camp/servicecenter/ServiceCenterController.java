@@ -141,7 +141,6 @@ public class ServiceCenterController {
 	public String read(String service_no,String state,Model model) {
 //		ModelAndView mav = new ModelAndView();
 		ServiceCenterDTO service = servicecenter.getserviceInfo(service_no);
-//		System.out.println(servicefiledtolist);
 		List<ServiceFileDTO> servicefiledtolist = servicecenter.getFileList(service_no);
 		String view = "";
 		if(state.equals("READ")) {
@@ -150,8 +149,8 @@ public class ServiceCenterController {
 			view = "service/update";
 		}
 //		mav.setViewName(view);
-//		System.out.println("model로 수정하기===========================");
-//		System.out.println(service);
+		System.out.println("model로 수정하기===========================");
+		System.out.println(service.getCategory());
 		model.addAttribute("service", service);
 		model.addAttribute("servicefiledtolist", servicefiledtolist);
 		return view;
@@ -173,7 +172,8 @@ public class ServiceCenterController {
 	//실제 업데이트기능을 처리
 	@RequestMapping("/service/update.do")
 	public String update(@RequestParam("category") String category,ServiceCenterDTO service)throws IOException {
-//		System.out.println(service+"-----------업데이트---------------------");
+		//System.out.println(service+"-----------업데이트---------------------");
+		//System.out.println("category=>"+category);
 		int result = servicecenter.update(service);
 		category= URLEncoder.encode(category, "UTF-8");
 		String url="redirect:/service/list.do?category="+category;

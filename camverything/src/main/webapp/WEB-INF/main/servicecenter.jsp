@@ -225,7 +225,7 @@ ul, li {
 					<tr>
 						<td><img src="/camp/images/공지.gif"></td>
 						<td><a
-							href="/camp/service/read.do?service_no=${service.service_no }&state=READ">${service.service_title }</a></td>
+							href="/camp/service/read.do?service_no=${service.service_no }&state=READ&category=${service.category}">${service.service_title }</a></td>
 						<td>${service.id }</td>
 						<td>${service.create_date }</td>
 						<td><a

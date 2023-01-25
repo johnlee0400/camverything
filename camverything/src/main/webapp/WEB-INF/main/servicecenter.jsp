@@ -166,6 +166,10 @@ ul, li {
 							$("#register").attr("style","display:none");
 							console.log("성");
 					}
+					if(category=="공지사항"){
+							$(".sdelete").attr("style","display:none");
+							console.log("삭제테스트")
+					}
 				/*=================submenu제어 ==================== */
 				/*초기 자동 선택된 박스 */
 				/* $("#active").css("background-color","#39517A");
@@ -229,7 +233,7 @@ ul, li {
 						<td>${service.id }</td>
 						<td>${service.create_date }</td>
 						<td><a
-							href="/camp/service/delete.do?service_no=${service.service_no }&category=${service.category}">삭제</a></td>
+							href="/camp/service/delete.do?service_no=${service.service_no }&category=${service.category}" class="sdelete">삭제</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

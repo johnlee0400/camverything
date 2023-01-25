@@ -11,10 +11,17 @@
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-
+	category = "${service.category}"
 	$(document).ready(function(){ //자바스크립트가 실행되면
 		data = "${service.category}"//서버에서 받아온 board객체의 getCategory()메소드를 호출해서 값을 받은 후에 자바스크립트 data변수에 저장해주
 		$("#category").val(data).attr("selected","selected");
+		
+		console.log("test");
+		//공지사항 수정 숨기기
+		if(category=="공지사항"){
+				$("#noticeupdate").attr("style","display:none");
+				console.log(category);
+		}
 	});
 
 </script>
@@ -150,7 +157,7 @@
 	            </div>
 	            <div class="bt_wrap">
 	                <a href="/camp/service/list.do?category=${service.category }" class="on" id="registerbtn">목록</a>
-	                <input type="submit" class="btn btn-lg btn-primary" value="수정">
+	                <input type="submit" class="btn btn-lg btn-primary" value="수정" id="noticeupdate">
 	            </div>
 	        </div>
 	    </div>

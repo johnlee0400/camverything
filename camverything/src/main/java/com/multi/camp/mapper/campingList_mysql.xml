@@ -7,7 +7,7 @@
 		select distinct *  from gocamping
 	</select>
 	<select id="search" resultType="campingList" parameterType="String">
-		select distinct * from gocamping where facltNm like '%' || #{facltNm} ||'%'
+		select distinct * from gocamping where facltNm like concat('%', #{facltNm}, '%') or doNm like concat('%', #{doNm}, '%')
 	</select>
 	<select id="categorySelect"	resultType="campingList" parameterType="String">
 		select distinct * from gocamping where doNm=#{doNm}

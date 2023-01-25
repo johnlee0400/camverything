@@ -26,13 +26,13 @@ CREATE TABLE `board` (
   `board_no` int(11) NOT NULL AUTO_INCREMENT,
   `id` varchar(30) COLLATE utf8_bin DEFAULT NULL,
   `nickname` varchar(30) COLLATE utf8_bin DEFAULT NULL,
-  `title` varchar(50) COLLATE utf8_bin DEFAULT NULL,
-  `content` varchar(300) COLLATE utf8_bin DEFAULT NULL,
+  `title` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `content` varchar(1000) COLLATE utf8_bin DEFAULT NULL,
   `create_date` date DEFAULT NULL,
   `view_cnt` int(11) DEFAULT NULL,
   `category` varchar(300) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`board_no`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `board` (
 
 LOCK TABLES `board` WRITE;
 /*!40000 ALTER TABLE `board` DISABLE KEYS */;
-INSERT INTO `board` VALUES (1,'1111',NULL,'텐트 추천','                        캠핑 고수분들 초보캠 텐트 추천해주세요~','2023-01-25',0,'정보공유');
+INSERT INTO `board` VALUES (2,'leee',NULL,'제주도 백패킹 시 참고 (남부쪽만)','21년 5월 14일 기준입니다.\r\n\r\n모슬포항부터 동쪽으로 이동하며 텐트 칠 장소 확인했습니다. 트레일러는 가능한 곳이 많습니다만, 텐트가 가능한 곳은 별로 없습니다. 다만 둘레길로 사람들이 캠핑장비를 가지고 여행을 하다보니 번화가(해수욕장 근처)를 제외하고는 주민들께 여쭤봐서 캠핑할 장소들이 곳곳에 있습니다.\r\n알뜨르 비행장은 날씨 영향이 많이 받습니다. 바람 불때 가시면 차도 흔들릴 정도로 심하게 바람이 부니 날씨 잘 확인하시고 가시면 됩니다.\r\n단점으로는 땅이 고르지 못할 경우도 있고 벌레가 많이 나오는 경우도 있습니다.\r\n특히 당캐포구는 텐트 및 야외취사 금지 푯말이 여러곳이 있었습니다. 맞은편 해안가 둘레길에 해가 진 후에 캠핑을 할 수 있었습니다.\r\n우도 안 들어가실 분은 섭지코지 가시면 캠핑할 장소 명당으로 많이 있습니다 “섭지해녀의집”을 지나가시면 해당 라인으로 쭉 보이실 겁니다.\r\n우도는 비수기라 그런지 사람이 많이 없었고 적정거리 유지하며 캠핑 잘 하고 왔네요. (화장실+휴지도 비치되어있습니다.)\r\n\r\n차량 렌트해서 돌아다니느라 시간에 쫓겨서 그리 많은 곳을 확인하지는 못했지만 참고하시면 좋을듯 합니다.','2023-01-25',0,'정보공유'),(3,'leee',NULL,'실생활에서도 유용한 쉬운 캠핑 매듭법 4가지','                        사실 매듭법은 너무 많고 응용법도 다양해서,\r\n어려울것 같다는 선입견이 있습니다.\r\n하지만, 딱 4가지만 알아도 정말 다양하게 응용이 가능한데요.\r\n\r\n오늘은 제가 잘 이용하는 매듭법중 너무 쉽고 간단하지만\r\n캠핑과 일상속에서 다양하게 활용할수 있는 매듭법 4가지를 엄선하여\r\n소개해 드립니다.\r\n\r\n5분이면 익힐수 있으니 꼭 한번 연습해보세요~\r\n\r\n#캠핑 #매듭 #매듭법 #캠핑꿀팀 #캠핑노하우 #knots','2023-01-25',0,'정보공유'),(4,'leee',NULL,'캠핑을 편하게 해주는 실용적 꿀템 7가지','캠핑을 오래 하다보면, 손에 딱 익어서 너무 편하게 잘 사용하고\r\n그 덕분에 캠핑이 편해지는 그런 장비들이 있습니다.\r\n꼭 전문 캠핑장비가 아니어도 다양한 활용법이 있다든지,\r\n특별한 장점이 있는 그런 것들인데요.\r\n\r\n사용하는 방법에 따라 캠핑이 정말 편해지는 그런 장비들을\r\n소개해 드립니다.\r\n영상을 보시면서 좋은 아이디어나 노하우가 있으시면\r\n댓글에 남겨주시면 다른 캠퍼님들께 도움이 많이 될거 같습니다.\r\n\r\n오늘도 시청해 주셔서 감사합니다.\r\n\r\n#캠핑 #캠핑꿀팁 #캠핑노하우','2023-01-25',0,'정보공유'),(5,'leee',NULL,'캠핑가서 내가 모기에 절대 안물리는 이유',' 바로! 캠핑꿀팁!!\r\n\r\n사실 꿀팁까지는 아니고\r\n혹시나 모르시는 분들을 위해서 제가 알고있는 약간의 팁? 을\r\n공유하고자 시도해보았어요.\r\n\r\n그것은 바로 제가 모기에 잘 안 물리는 체질입니다.','2023-01-25',0,'정보공유'),(6,'leee',NULL,'상품등록','상품등록','2023-01-25',0,'상품'),(7,'leee',NULL,'상품등록 확인하기','상품등록확인','2023-01-25',0,'상품'),(8,'leee',NULL,'이상품 추천','추천','2023-01-25',0,'상품'),(9,'leee',NULL,'이거 어떤가요','ㅎ','2023-01-25',0,'상품'),(10,'leee',NULL,'이거 정말 좋아요','좋습니다','2023-01-25',0,'상품'),(11,'leee',NULL,'꿀템','굿','2023-01-25',0,'상품'),(12,'leee',NULL,'이거 꼭 써보세요','써봐요','2023-01-25',0,'상품'),(13,'leee',NULL,'이거 무슨상품인가요?','','2023-01-25',0,'상품'),(14,'leee',NULL,'이렇게 사용하는거 맞나요?','이거요','2023-01-25',0,'상품'),(15,'leee',NULL,'써보세요','ㅇ','2023-01-25',0,'상품'),(16,'leee',NULL,'이 텐트 대체 뭐죠? 너무 편하고 따뜻해요','따뜻하다 못해 뜨거워서 죽을거같아요. 환기가 전혀 안됩니다.\r\n추운것보다 일산화탄소로 먼저가겠어요.','2023-01-25',0,'상품'),(17,'leee',NULL,'요즘에 네모난 기타가 나오나요?','이거요','2023-01-25',0,'상품'),(19,'leee',NULL,'여행지 등록','ㅇ행','2023-01-25',0,'여행지'),(20,'leee',NULL,'여행지 추천','추천','2023-01-25',0,'여행지');
 /*!40000 ALTER TABLE `board` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -66,6 +66,7 @@ CREATE TABLE `board_file` (
 
 LOCK TABLES `board_file` WRITE;
 /*!40000 ALTER TABLE `board_file` DISABLE KEYS */;
+INSERT INTO `board_file` VALUES (17,'캠핑상품.jpg','ea5c7749-ed1b-4601-a845-697f1555d886.jpg','1'),(18,'캠핑상품.jpg','13f8f656-2b34-49c3-9197-460b68db9092.jpg','1');
 /*!40000 ALTER TABLE `board_file` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -320,7 +321,7 @@ CREATE TABLE `member` (
 
 LOCK TABLES `member` WRITE;
 /*!40000 ALTER TABLE `member` DISABLE KEYS */;
-INSERT INTO `member` VALUES ('','','1111','1111','1111','1111','11','11',11,'113',11,'11');
+INSERT INTO `member` VALUES ('','','1111','1111','1111','1111','11','11',11,'113',11,'11'),('','','leee','asdfasdf','lee','01026','인천광역시','123',20202020,'1233',123145,'123213'),('','','leee','123456789','1234','1234','1234','1234',1234,'1234',1234,'1234'),('','','hoho','12341234','22','222','222','22',22,'222',22,'22'),('','','hoho','12341234','333','333','333','333',333,'333',333,'333'),('','','hoho','12341234','333','34','2134','2222',23423,'2222',15252,'2222'),('','','hoho','12341234','23423424','234234234','234234234','2342342',234234234,'234234234',234234234,'234234234'),('','','hoho','12341234','하하하','17796','경기 평택시 청북읍 판교길 14','101동101호',2020301010,'하하히히',232323,'kssl@gmail.com'),('','','campingjjang','11111111','캠핑짱','16979','경기 용인시 기흥구 강남동로 1','상세주소',1011111111,'캠핑짱',652222,'ahsdfl!@sdkgjl'),('','','camverything_ppt','12341234','1234123','12341234','213412','341231234',12341234,'2314234123',1234123421,'12341234'),('','','camverything','asdfasdf','lee','01026','인천광역시','ㅁㄴㄻㄴㄹ',22322323,'1233',123145,'123213'),('','','campingjjang','11111111','캠핑짱','06035','서울 강남구 가로수길 5','강남아파트',1022222222,'캠핑',655555,'djslkf@dgholsk'),('','',' jjang','11111111','짱짱이','27492','충북 충주시 살미면 위가르네길 16','위위',1012345678,'짱짱',885555,'fbajkf!@snaflk'),('','','camp','11111111','캠프네','07751','서울 강서구 강서로18가길 12','나이',1055555555,'나이',456416,'aklf@dfgjkdf');
 /*!40000 ALTER TABLE `member` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -375,7 +376,7 @@ CREATE TABLE `product_Buy` (
   `product_img` varchar(500) COLLATE utf8_bin DEFAULT NULL,
   `product_name` varchar(100) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`product_payno`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -384,7 +385,7 @@ CREATE TABLE `product_Buy` (
 
 LOCK TABLES `product_Buy` WRITE;
 /*!40000 ALTER TABLE `product_Buy` DISABLE KEYS */;
-INSERT INTO `product_Buy` VALUES (1,11,NULL,NULL,'2023-01-25','1',314833,'https://img.danawa.com/prod_img/500000/115/431/img/14431115_1.jpg?shrink=500:500=20210609170959','아이두젠 패스트캠프 원터치 텐트 마운트프로 MAX'),(2,10,NULL,NULL,'2023-01-25','01',354070,'https://img.danawa.com/prod_img/500000/814/608/img/17608814_1.jpg?shrink=500:500=20220805135951','네이처하이크 빌리지 13 자동 텐트');
+INSERT INTO `product_Buy` VALUES (5,10,NULL,NULL,'2023-01-25','1',354070,'https://img.danawa.com/prod_img/500000/814/608/img/17608814_1.jpg?shrink=500:500=20220805135951','네이처하이크 빌리지 13 자동 텐트'),(6,10,NULL,NULL,'2023-01-25','1',354070,'https://img.danawa.com/prod_img/500000/814/608/img/17608814_1.jpg?shrink=500:500=20220805135951','네이처하이크 빌리지 13 자동 텐트'),(9,10,NULL,NULL,'2023-01-25','2',708140,'https://img.danawa.com/prod_img/500000/814/608/img/17608814_1.jpg?shrink=500:500=20220805135951','네이처하이크 빌리지 13 자동 텐트'),(10,15,NULL,NULL,'2023-01-25','2',258520,'https://img.danawa.com/prod_img/500000/554/254/img/11254554_1.jpg?shrink=500:500=20210608130207','발뮤다 LED 랜턴 L02B'),(11,10,NULL,NULL,'2023-01-25','1',354070,'https://img.danawa.com/prod_img/500000/814/608/img/17608814_1.jpg?shrink=500:500=20220805135951','네이처하이크 빌리지 13 자동 텐트'),(15,14,NULL,NULL,'2023-01-25','2',1038000,'https://shop3.daumcdn.net/thumb/R500x500/?fname=http%3A%2F%2Fshop3.daumcdn.net%2Fshophow%2Fp%2FB5097325996.jpg%3Fut%3D20200820110829','스모크 할로우 바베큐 그릴 차콜'),(16,11,NULL,NULL,'2023-01-25','2',629666,'https://img.danawa.com/prod_img/500000/115/431/img/14431115_1.jpg?shrink=500:500=20210609170959','아이두젠 패스트캠프 원터치 텐트 마운트프로 MAX'),(18,12,NULL,NULL,'2023-01-25','0',0,'https://gorgoshop.com/web/product/small/202109/344f3044edec0779f15922df88937063.jpg','접이식 캠핑용 롤 테이블'),(19,14,NULL,NULL,'2023-01-25','2',1038000,'https://shop3.daumcdn.net/thumb/R500x500/?fname=http%3A%2F%2Fshop3.daumcdn.net%2Fshophow%2Fp%2FB5097325996.jpg%3Fut%3D20200820110829','스모크 할로우 바베큐 그릴 차콜'),(20,10,NULL,NULL,'2023-01-25','6',2124420,'https://img.danawa.com/prod_img/500000/814/608/img/17608814_1.jpg?shrink=500:500=20220805135951','네이처하이크 빌리지 13 자동 텐트');
 /*!40000 ALTER TABLE `product_Buy` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -423,7 +424,7 @@ DROP TABLE IF EXISTS `reservation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `reservation` (
-  `res_no` int(11) NOT NULL,
+  `res_no` int(11) NOT NULL AUTO_INCREMENT,
   `facltNm` varchar(200) COLLATE utf8_bin DEFAULT NULL,
   `appli_date` varchar(30) COLLATE utf8_bin DEFAULT NULL,
   `id` varchar(30) COLLATE utf8_bin DEFAULT NULL,
@@ -434,7 +435,7 @@ CREATE TABLE `reservation` (
   `area_price` varchar(30) COLLATE utf8_bin DEFAULT NULL,
   `pay_price` varchar(30) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`res_no`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -443,6 +444,7 @@ CREATE TABLE `reservation` (
 
 LOCK TABLES `reservation` WRITE;
 /*!40000 ALTER TABLE `reservation` DISABLE KEYS */;
+INSERT INTO `reservation` VALUES (9,'(주)디노담양힐링파크 지점','2023-01-25','','2023-01-25','1박2일','강변캠핑장A(25,000원)','바비큐 사용안함',NULL,'25,000');
 /*!40000 ALTER TABLE `reservation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -467,6 +469,7 @@ CREATE TABLE `service_file` (
 
 LOCK TABLES `service_file` WRITE;
 /*!40000 ALTER TABLE `service_file` DISABLE KEYS */;
+INSERT INTO `service_file` VALUES (2,'캠핑생활.jpg','97e3f821-1b5c-4cc0-a5d9-d54772c61789.jpg','1'),(3,'새해.jpg','36ed803b-93dc-4129-abf7-d8a5bd6a4932.jpg','1'),(7,'camping logo.png','6a860e5d-01af-4c3e-be28-7fe232fd3b25.png','1'),(10,'캠핑상품.jpg','e3ad30cf-bf26-42de-b12a-968d0f7f76b8.jpg','1');
 /*!40000 ALTER TABLE `service_file` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -485,7 +488,7 @@ CREATE TABLE `servicecenter` (
   `create_date` date DEFAULT NULL,
   `category` varchar(30) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`service_no`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -494,6 +497,7 @@ CREATE TABLE `servicecenter` (
 
 LOCK TABLES `servicecenter` WRITE;
 /*!40000 ALTER TABLE `servicecenter` DISABLE KEYS */;
+INSERT INTO `servicecenter` VALUES (1,'camverything','사이트 이용 안내 게시판','안녕하세요. 캠브리띵 관리자입니다. 캠핑만 다니다 보니 관련 정보가 많이 부족하고 찾기도 힘들어 홈페이지를 구축해 보고자 시작하게된 개인적인 프로젝트입니다. 약 1개월간 , 제작을 해서 아직도 많이 부족하고 버그도 많이 보이고 자료양도 많이 부족하고 그렇습니다. 천천히 업그레이드하면서 관리해 나갈 예정이오니 많은 관심 부탁드립니다. 감사합니다.\r\n','2023-01-25','공지사항'),(2,'camverything','안전수칙','캠핑 안전수칙을 꼭!! 지켜주시기 바랍니다. 감사합니다.','2023-01-25','공지사항'),(3,'camverything','2022년 모두 고생하셨습니다.','2023년 모두 건강히 즐거운 캠핑하시길 바랍니다.','2023-01-25','공지사항'),(4,'camverything','1/26 서비스 종료안내','1/26 회사 개발자들이 모두 흩어지므로 서비스를 종료합니다.','2023-01-25','공지사항'),(5,'leee','예약 취소해주세요','취소부탁드립니다.','2023-01-25','예약문의'),(6,'leee','예약 번호 문의','예약번호 어디서 보나요?','2023-01-25','예약문의'),(7,'leee','캠브리띵에서 예약하세요','굿','2023-01-25','예약문의'),(8,'leee','상품 관련해서 문의 드립니다.','상품문의','2023-01-25','상품문의'),(9,'leee','이상품 좋아요','','2023-01-25','상품문의'),(10,'leee','상품 어떻게 사용하는 건가요?','상품문의','2023-01-25','상품문의');
 /*!40000 ALTER TABLE `servicecenter` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -506,4 +510,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-25 13:52:12
+-- Dump completed on 2023-01-25 19:08:57

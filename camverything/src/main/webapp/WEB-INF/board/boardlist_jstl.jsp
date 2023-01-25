@@ -241,7 +241,6 @@
 					<th scope="col" class="text-center">제목</th>
 					<th scope="col" class="text-center">글쓴이</th>
 					<th scope="col" class="text-center">작성일</th>
-					<th scope="col" class="text-center">조회</th>
 				</tr>
 			</thead>
 			<tbody>

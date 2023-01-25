@@ -278,8 +278,8 @@
 	      </label>
 	      <label>
 	        <span>핸드폰</span>
-	        <input type="text" id="tel" name="tel" placeholder="예)010-1234-5670"
-				onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');"/>
+	        <input type="text" id="tel" name="tel" placeholder="예)01012345670"
+				onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"/>
 	      </label>
 	      <label>
 	        <span>닉네임</span>

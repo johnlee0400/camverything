@@ -7,7 +7,7 @@
 		insert into product_Buy values (null, #{product_code}, null, null, date_format(now(),'%Y-%m-%d'), #{quantity}, #{total}, #{product_img},#{product_name})
 	</insert>
 	<select id="selectall" parameterType="String" resultType="product_Buy">
-		select product_img,product_payno,DATE_FORMAT(#{pay_date},'%Y-%m-%d') as pay_date,product_name,quantity,total from product_Buy
+		select product_img,product_payno,DATE_FORMAT(pay_date,'%Y-%m-%d') as pay_date,product_name,quantity,total from product_Buy
 	</select>
 	<delete id="cancel">
 		delete from product_Buy where pay_date = #{pay_date}

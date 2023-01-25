@@ -2,7 +2,7 @@ var $setRows = $('#setRows');
 
 $setRows.submit(function (e) {
 	e.preventDefault();
-	var rowPerPage = 20;// 1 을  곱하여 문자열을 숫자형로 변환
+	var rowPerPage = 10;// 1 을  곱하여 문자열을 숫자형로 변환
 
 //		console.log(typeof rowPerPage);
 
